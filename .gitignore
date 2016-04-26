@@ -11,3 +11,8 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /RetamDatabase/nbproject/private/
+/RetamDatabase2/nbproject/private/
+/RetamDatabase2/build/
+/RetamDatabase2/dist/
+/RetamDatabase/dist/
+/RetamDatabase/build/
