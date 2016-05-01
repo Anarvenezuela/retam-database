@@ -11,12 +11,13 @@ import fundabitat.retam.persistence.PersistenceManager;
  *
  * @author marcos
  */
-public class Main {
+public class Migration {
 
-    public static void main(String[] args) {
+    private Migration() {
+    }
 
-        PersistenceManager manager = PersistenceManager.getInstance();
-        manager.closeEntityManagerFactory();
+    public static void start(PersistenceManager manager) {
+
     }
 
 }

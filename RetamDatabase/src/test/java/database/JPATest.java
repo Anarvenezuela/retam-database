@@ -6,9 +6,9 @@
 package database;
 
 import fundabitat.retam.models.Country;
+import fundabitat.retam.persistence.PersistenceManager;
 import javax.persistence.*;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -19,19 +19,18 @@ public class JPATest {
     public JPATest() {
     }
 
-    @Test
+    //@Test
     public void hello() throws Exception {
 
         // Creating objects representing some products
         Country country1 = new Country();
         country1.setName("Venezuela3");
 
-        /*Product product2 = new Product();
-		product2.setId(2);
-		product2.setName("Guitar");*/
         // Connecting to the database through EntityManagerFactory
         // connection details loaded from persistence.xml
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Retam Database PU");
+        PersistenceManager manager = PersistenceManager.getInstance();
+
+        EntityManagerFactory emf = manager.getEntityManagerFactory();
 
         EntityManager em = emf.createEntityManager();
 
@@ -60,7 +59,6 @@ public class JPATest {
         // Closing connection
         em.close();
 
-        emf.close();
-
+        manager.closeEntityManagerFactory();
     }
 }
