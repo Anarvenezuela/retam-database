@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fundabitat.retam.retammigration;
+package fundabitat.retam.retammigration.migrators;
 
 import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBean;
@@ -16,12 +16,13 @@ import javax.persistence.EntityManager;
 /**
  *
  * @author marcos
+ * @param <E>
  */
-public abstract class AbstractMigrator {
+public abstract class AbstractMigrator<E> {
 
-    private String filename;
-    private EntityManager em;
-    private char separator;
+    protected String filename;
+    protected EntityManager em;
+    protected char separator;
 
     public String getFilename() {
         return filename;
@@ -47,7 +48,7 @@ public abstract class AbstractMigrator {
         this.separator = separator;
     }
 
-    public <E> List<E> read(Class<E> elemClass) throws FileNotFoundException {
+    public List<E> read(Class<E> elemClass) throws FileNotFoundException {
         HeaderColumnNameMappingStrategy<E> strategy;
         strategy = new HeaderColumnNameMappingStrategy();
         strategy.setType(elemClass);
@@ -55,7 +56,7 @@ public abstract class AbstractMigrator {
         return csvToBean.parse(strategy, createReader());
     }
 
-    public abstract void write();
+    public abstract void write(List<E> elements);
 
     protected CSVReader createReader() throws FileNotFoundException {
         return new CSVReader(new FileReader(filename), separator);

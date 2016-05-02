@@ -11,36 +11,36 @@ import com.opencsv.bean.CsvBind;
  *
  * @author marcos
  */
-public class Country {
+public class Pais {
 
     @CsvBind
-    private int id;
+    private int IdPais;
 
     @CsvBind
-    private String name;
+    private String Pais;
 
-    public Country() {
+    public Pais() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdPais() {
+        return IdPais;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdPais(int IdPais) {
+        this.IdPais = IdPais;
     }
 
-    public String getName() {
-        return name;
+    public String getPais() {
+        return Pais;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPais(String Pais) {
+        this.Pais = Pais;
     }
 
     @Override
     public String toString() {
-        return "Country{" + "id=" + id + ", name=" + name + '}';
+        return "Country{" + "id=" + IdPais + ", name=" + Pais + '}';
     }
 
 }

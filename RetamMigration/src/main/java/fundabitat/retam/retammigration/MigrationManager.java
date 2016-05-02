@@ -5,6 +5,8 @@
  */
 package fundabitat.retam.retammigration;
 
+import fundabitat.retam.retammigration.migrators.CountryMigrator;
+import fundabitat.retam.retammigration.migrators.AbstractMigrator;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +28,7 @@ public class MigrationManager {
     public static void migrate(EntityManager manager) throws FileNotFoundException {
         List<AbstractMigrator> migrators = new ArrayList();
 
-        AbstractMigrator countryMigrator = new CountryMigrator();
-        countryMigrator.setFilename(COUNTRY_FILE);
+        AbstractMigrator countryMigrator = new CountryMigrator(COUNTRY_FILE);
 
         migrators.add(countryMigrator);
 
