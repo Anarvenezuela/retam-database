@@ -28,8 +28,7 @@ CREATE TABLE organization (
     fax2 TEXT,
     email TEXT,
     website TEXT,
-    postalCode TEXT,
-    telex TEXT,
+    postalCode TEXT
     FOREIGN KEY(idCountry) REFERENCES country(idCountry)
 );
 

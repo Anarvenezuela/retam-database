@@ -70,8 +70,6 @@ public class Organization implements Serializable {
     private String website;
     @Column(name = "postalCode")
     private String postalCode;
-    @Column(name = "telex")
-    private String telex;
     @JoinColumn(name = "idCountry", referencedColumnName = "idCountry")
     @ManyToOne(optional = false)
     private Country idCountry;
@@ -188,14 +186,6 @@ public class Organization implements Serializable {
         this.postalCode = postalCode;
     }
 
-    public String getTelex() {
-        return telex;
-    }
-
-    public void setTelex(String telex) {
-        this.telex = telex;
-    }
-
     public Country getIdCountry() {
         return idCountry;
     }
@@ -226,13 +216,13 @@ public class Organization implements Serializable {
             return false;
         }
         Organization other = (Organization) object;
-        return !((this.idOrganization == null && other.idOrganization != null) || 
-                (this.idOrganization != null && !this.idOrganization.equals(other.idOrganization)));
+        return !((this.idOrganization == null && other.idOrganization != null)
+                || (this.idOrganization != null && !this.idOrganization.equals(other.idOrganization)));
     }
 
     @Override
     public String toString() {
         return "fundabitat.retam.models.Organization[ idOrganization=" + idOrganization + " ]";
     }
-    
+
 }

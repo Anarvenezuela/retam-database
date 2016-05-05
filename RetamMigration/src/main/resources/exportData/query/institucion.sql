@@ -1,0 +1,27 @@
+SELECT DISTINCT p.Cod_InstitucionEjecutora,
+                i.Cod_InstitucionEjecutora as Cod_InstitucionEjecutora2,
+                p.Institucion,
+                p.NombreInstitucion,
+                i.Institucion as Institucion2,
+                p.Direccion,
+                p.DireccionInstitucion,
+                p.DireccionProfesional,
+                p.Ciudad,
+                p.CiudadInstitucion,
+                p.CiudadProfesional,
+                p.IdPais,
+                p.PaisInstitucion,
+                p.PaisProfesional,
+                Tlf1Proyecto,
+                Telefono1,
+                Telefono2,
+                FaxProyecto,
+                Fax1Proyecto,
+                Fax2Proyecto,
+                EmailProyecto,
+                Email,
+                PaginaWeb,
+                ApartadoAereo
+FROM Proyectos p
+FULL OUTER JOIN InstitucionesEjecutoras i ON p.Cod_InstitucionEjecutora = i.Cod_InstitucionEjecutora
+ORDER BY Cod_InstitucionEjecutora
