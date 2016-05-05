@@ -29,7 +29,6 @@ public class CountryMigrator extends AbstractMigrator<Pais> {
 
         for (Pais p : elements) {
 
-            System.out.println(p);
             Country country = new Country();
             country.setName(p.getPais());
             country.setIdCountry(p.getIdPais());

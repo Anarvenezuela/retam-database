@@ -20,7 +20,7 @@ public class MigrationManager {
 
     // TODO config file
     public static final char SEPARATOR = '|';
-    public static final String COUNTRY_FILE = "src/main/resources/exportData/exportPais.csv";
+    public static final String COUNTRY_FILE = "src/main/resources/exportData/asIs/exportPais.csv";
 
     private MigrationManager() {
     }

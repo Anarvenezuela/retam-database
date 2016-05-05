@@ -28,7 +28,7 @@ CREATE TABLE organization (
     fax2 TEXT,
     email TEXT,
     website TEXT,
-    postalCode TEXT
+    postalCode TEXT,
     FOREIGN KEY(idCountry) REFERENCES country(idCountry)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE project_subDescriptor (
     idSubDescriptor INTEGER NOT NULL,
     PRIMARY KEY (idProject, idSubDescriptor),
     FOREIGN KEY(idProject) REFERENCES project(idProject),
-    FOREIGN KEY(idSubDescriptor) REFERENCES subDescriptor(idSubDescriptor) 
+    FOREIGN KEY(idSubDescriptor) REFERENCES subDescriptor(idSubDescriptor)
 );
 
 
