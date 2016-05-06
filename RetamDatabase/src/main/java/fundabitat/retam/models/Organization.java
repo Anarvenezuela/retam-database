@@ -29,24 +29,14 @@ import javax.persistence.Table;
     @NamedQuery(name = "Organization.findAll", query = "SELECT o FROM Organization o"),
     @NamedQuery(name = "Organization.findByIdOrganization", query = "SELECT o FROM Organization o WHERE o.idOrganization = :idOrganization"),
     @NamedQuery(name = "Organization.findByCode", query = "SELECT o FROM Organization o WHERE o.code = :code"),
-    @NamedQuery(name = "Organization.findByName", query = "SELECT o FROM Organization o WHERE o.name = :name"),
-    @NamedQuery(name = "Organization.findByAddress", query = "SELECT o FROM Organization o WHERE o.address = :address"),
-    @NamedQuery(name = "Organization.findByCity", query = "SELECT o FROM Organization o WHERE o.city = :city"),
-    @NamedQuery(name = "Organization.findByPhone1", query = "SELECT o FROM Organization o WHERE o.phone1 = :phone1"),
-    @NamedQuery(name = "Organization.findByPhone2", query = "SELECT o FROM Organization o WHERE o.phone2 = :phone2"),
-    @NamedQuery(name = "Organization.findByFax1", query = "SELECT o FROM Organization o WHERE o.fax1 = :fax1"),
-    @NamedQuery(name = "Organization.findByFax2", query = "SELECT o FROM Organization o WHERE o.fax2 = :fax2"),
-    @NamedQuery(name = "Organization.findByEmail", query = "SELECT o FROM Organization o WHERE o.email = :email"),
-    @NamedQuery(name = "Organization.findByWebsite", query = "SELECT o FROM Organization o WHERE o.website = :website"),
-    @NamedQuery(name = "Organization.findByPostalCode", query = "SELECT o FROM Organization o WHERE o.postalCode = :postalCode"),
-    @NamedQuery(name = "Organization.findByTelex", query = "SELECT o FROM Organization o WHERE o.telex = :telex")})
+    @NamedQuery(name = "Organization.findByName", query = "SELECT o FROM Organization o WHERE o.name = :name")})
 public class Organization implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     private Integer idOrganization;
     @Column(name = "code")
-    private String code;
+    private Integer code;
     @Basic(optional = false)
     @Column(name = "name")
     private String name;
@@ -98,11 +88,11 @@ public class Organization implements Serializable {
         this.idOrganization = idOrganization;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 

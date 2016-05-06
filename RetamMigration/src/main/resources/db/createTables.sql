@@ -17,7 +17,7 @@ CREATE TABLE subDescriptor (
 
 CREATE TABLE organization (
     idOrganization INTEGER PRIMARY KEY,
-    code TEXT UNIQUE,
+    code INTEGER UNIQUE,
     name TEXT NOT NULL,
     address TEXT NOT NULL,
     city TEXT NOT NULL,

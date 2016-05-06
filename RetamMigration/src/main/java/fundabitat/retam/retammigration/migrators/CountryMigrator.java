@@ -9,7 +9,6 @@ import fundabitat.retam.models.Country;
 import fundabitat.retam.retammigration.oldmodels.Pais;
 import java.io.FileNotFoundException;
 import java.util.List;
-import javax.persistence.EntityTransaction;
 
 /**
  *
@@ -22,20 +21,15 @@ public class CountryMigrator extends AbstractMigrator<Pais> {
     }
 
     @Override
-    public void write(List<Pais> elements) {
-
-        EntityTransaction trans = em.getTransaction();
-        trans.begin();
+    protected void process(List<Pais> elements) {
 
         for (Pais p : elements) {
-
             Country country = new Country();
             country.setName(p.getPais());
             country.setIdCountry(p.getIdPais());
             em.persist(country);
         }
 
-        trans.commit();
     }
 
     @Override

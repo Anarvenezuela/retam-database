@@ -7,6 +7,7 @@ package fundabitat.retam.retammigration;
 
 import fundabitat.retam.retammigration.migrators.CountryMigrator;
 import fundabitat.retam.retammigration.migrators.AbstractMigrator;
+import fundabitat.retam.retammigration.migrators.OrganizationMigrator;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ public class MigrationManager {
     // TODO config file
     public static final char SEPARATOR = '|';
     public static final String COUNTRY_FILE = "src/main/resources/exportData/asIs/exportPais.csv";
+    public static final String ORGANIZATION_FILE = "src/main/resources/exportData/query/exportInstitucion.csv";
 
     private MigrationManager() {
     }
@@ -29,8 +31,9 @@ public class MigrationManager {
         List<AbstractMigrator> migrators = new ArrayList();
 
         AbstractMigrator countryMigrator = new CountryMigrator(COUNTRY_FILE);
-
         migrators.add(countryMigrator);
+        AbstractMigrator organizationMigrator = new OrganizationMigrator(ORGANIZATION_FILE);
+        migrators.add(organizationMigrator);
 
         for (AbstractMigrator migrator : migrators) {
             migrator.setSeparator(SEPARATOR);

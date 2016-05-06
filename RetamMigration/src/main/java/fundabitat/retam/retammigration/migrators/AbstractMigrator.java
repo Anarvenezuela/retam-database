@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 /**
  *
@@ -48,7 +49,7 @@ public abstract class AbstractMigrator<E> {
         this.separator = separator;
     }
 
-    public List<E> read(Class<E> elemClass) throws FileNotFoundException {
+    protected List<E> read(Class<E> elemClass) throws FileNotFoundException {
         HeaderColumnNameMappingStrategy<E> strategy;
         strategy = new HeaderColumnNameMappingStrategy();
         strategy.setType(elemClass);
@@ -56,7 +57,14 @@ public abstract class AbstractMigrator<E> {
         return csvToBean.parse(strategy, createReader());
     }
 
-    public abstract void write(List<E> elements);
+    public void write(List<E> elements) {
+        EntityTransaction trans = em.getTransaction();
+        trans.begin();
+        process(elements);
+        trans.commit();
+    }
+
+    protected abstract void process(List<E> elements);
 
     protected CSVReader createReader() throws FileNotFoundException {
         return new CSVReader(new FileReader(filename), separator);
