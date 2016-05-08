@@ -8,10 +8,19 @@ package fundabitat.retam.retammigration;
 import fundabitat.retam.retammigration.migrators.CountryMigrator;
 import fundabitat.retam.retammigration.migrators.AbstractMigrator;
 import fundabitat.retam.retammigration.migrators.OrganizationMigrator;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import javax.persistence.EntityManager;
+import utils.ScriptRunner;
 
 /**
  *
@@ -19,26 +28,58 @@ import javax.persistence.EntityManager;
  */
 public class MigrationManager {
 
-    // TODO config file
-    public static final char SEPARATOR = '|';
-    public static final String COUNTRY_FILE = "src/main/resources/exportData/asIs/exportPais.csv";
-    public static final String ORGANIZATION_FILE = "src/main/resources/exportData/query/exportInstitucion.csv";
+    private static final Properties PROP = new Properties();
+    public static char separator;
+    public static String countryFile;
+    public static String organizationFile;
 
     private MigrationManager() {
     }
 
-    public static void migrate(EntityManager manager) throws FileNotFoundException {
+    public static void migrate(EntityManager manager) throws Exception {
+
+        loadProperties();
+        runScripts();
+
         List<AbstractMigrator> migrators = new ArrayList();
 
-        AbstractMigrator countryMigrator = new CountryMigrator(COUNTRY_FILE);
+        AbstractMigrator countryMigrator = new CountryMigrator(countryFile);
         migrators.add(countryMigrator);
-        AbstractMigrator organizationMigrator = new OrganizationMigrator(ORGANIZATION_FILE);
+        AbstractMigrator organizationMigrator = new OrganizationMigrator(organizationFile);
         migrators.add(organizationMigrator);
 
         for (AbstractMigrator migrator : migrators) {
-            migrator.setSeparator(SEPARATOR);
+            migrator.setSeparator(separator);
             migrator.setEm(manager);
             migrator.run();
         }
+    }
+
+    private static void runScripts() throws IOException, SQLException, ClassNotFoundException {
+
+        Class.forName("org.sqlite.JDBC");
+
+        Connection mConnection;
+        mConnection = DriverManager.getConnection("jdbc:sqlite:" + PROP.getProperty("databaseFile"));
+
+        ScriptRunner runner = new ScriptRunner(mConnection, false, true);
+        String[] scripts = getScripts();
+
+        for (String script : scripts) {
+            runner.runScript(new BufferedReader(new FileReader(script)));
+        }
+    }
+
+    private static String[] getScripts() {
+        String allScripts = PROP.getProperty("scripts");
+        return allScripts.split(",");
+    }
+
+    private static void loadProperties() throws FileNotFoundException, IOException {
+        FileInputStream propFile = new FileInputStream("src/main/resources/config.properties");
+        PROP.load(propFile);
+        separator = PROP.getProperty("separator").charAt(0);
+        countryFile = PROP.getProperty("countryFile");
+        organizationFile = PROP.getProperty("organizationFile");
     }
 }

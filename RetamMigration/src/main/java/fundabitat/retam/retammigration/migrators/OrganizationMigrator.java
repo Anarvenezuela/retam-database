@@ -120,8 +120,6 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
      * Gets a country from the list of countries.
      */
     private Country getCountryByName(List<Country> countries, String name) {
-        System.out.println(name);
-
         return countries.stream().
                 filter(c -> c.getName().equals(name)).
                 collect(toList()).get(0);
