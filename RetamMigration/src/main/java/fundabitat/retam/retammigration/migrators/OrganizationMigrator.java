@@ -150,7 +150,7 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
         List<Institucion> orgsIdNonZero = getIDNonZeroOrgs(organizations);
 
         //initialize
-        Organization org = initializeOrg();
+        Organization org = Organization.createEmptyStrOrg();
         int currentCode = orgsIdNonZero.get(0).getCod_InstitucionEjecutora();
 
         for (Institucion inst : orgsIdNonZero) {
@@ -158,9 +158,11 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
             if (inst.getCod_InstitucionEjecutora() != currentCode) {
 
                 org.setCode(currentCode);
+                org.setFieldsToNullIfEmpty();
+                checkAddress(org);
                 em.persist(org);
 
-                org = initializeOrg();
+                org = Organization.createEmptyStrOrg();
                 currentCode = inst.getCod_InstitucionEjecutora();
             }
 
@@ -169,7 +171,18 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
 
         // save last
         org.setCode(currentCode);
+        org.setFieldsToNullIfEmpty();
         em.persist(org);
+    }
+
+    /**
+     * Sets the address to N/A if it's null. There's just one org without
+     * address in the project table...
+     */
+    private void checkAddress(Organization o) {
+        if (o.getAddress() == null) {
+            o.setAddress(NOT_AVAILABLE);
+        }
     }
 
     private String getLongest(String current, String newStr) {
@@ -255,22 +268,6 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
         }
 
         return c;
-    }
-
-    private Organization initializeOrg() {
-        Organization o = new Organization();
-        o.setAddress("");
-        o.setCity("");
-        o.setEmail("");
-        o.setFax1("");
-        o.setFax2("");
-        o.setName("");
-        o.setPhone1("");
-        o.setPhone2("");
-        o.setPostalCode("");
-        o.setWebsite("");
-
-        return o;
     }
 
     private void updateCurrentOrg(Organization o, Institucion i,

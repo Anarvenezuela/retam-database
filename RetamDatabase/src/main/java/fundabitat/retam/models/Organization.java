@@ -80,6 +80,22 @@ public class Organization implements Serializable {
         this.city = city;
     }
 
+    public static Organization createEmptyStrOrg() {
+        Organization o = new Organization();
+        o.setAddress("");
+        o.setCity("");
+        o.setEmail("");
+        o.setFax1("");
+        o.setFax2("");
+        o.setName("");
+        o.setPhone1("");
+        o.setPhone2("");
+        o.setPostalCode("");
+        o.setWebsite("");
+
+        return o;
+    }
+
     public Integer getIdOrganization() {
         return idOrganization;
     }
@@ -192,6 +208,54 @@ public class Organization implements Serializable {
         this.representativeCollection = representativeCollection;
     }
 
+    /**
+     * Sets fields to null if they are empty. Fields are set to empty to make
+     * migration easier. But when saving I'd rather store nulls than empty
+     * strings.
+     */
+    public void setFieldsToNullIfEmpty() {
+
+        if (address.isEmpty()) {
+            address = null;
+        }
+
+        if (city.isEmpty()) {
+            city = null;
+        }
+
+        if (email.isEmpty()) {
+            email = null;
+        }
+
+        if (fax1.isEmpty()) {
+            fax1 = null;
+        }
+
+        if (fax2.isEmpty()) {
+            fax2 = null;
+        }
+
+        if (name.isEmpty()) {
+            name = null;
+        }
+
+        if (phone1.isEmpty()) {
+            phone1 = null;
+        }
+
+        if (phone2.isEmpty()) {
+            phone2 = null;
+        }
+
+        if (postalCode.isEmpty()) {
+            postalCode = null;
+        }
+
+        if (website.isEmpty()) {
+            website = null;
+        }
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -212,7 +276,7 @@ public class Organization implements Serializable {
 
     @Override
     public String toString() {
-        return "fundabitat.retam.models.Organization[ idOrganization=" + idOrganization + " ]";
+        return "fundabitat.retam.models.Organization[ name=" + name + " ]";
     }
 
 }
