@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -35,6 +37,7 @@ public class Representative implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer idRepresentative;
     @Basic(optional = false)
     @Column(name = "name")
@@ -123,13 +126,13 @@ public class Representative implements Serializable {
             return false;
         }
         Representative other = (Representative) object;
-        return !((this.idRepresentative == null && other.idRepresentative != null) ||
-                (this.idRepresentative != null && !this.idRepresentative.equals(other.idRepresentative)));
+        return !((this.idRepresentative == null && other.idRepresentative != null)
+                || (this.idRepresentative != null && !this.idRepresentative.equals(other.idRepresentative)));
     }
 
     @Override
     public String toString() {
-        return "fundabitat.retam.models.Representative[ idRepresentative=" + idRepresentative + " ]";
+        return "fundabitat.retam.models.Representative[ name=" + name + " ]";
     }
-    
+
 }

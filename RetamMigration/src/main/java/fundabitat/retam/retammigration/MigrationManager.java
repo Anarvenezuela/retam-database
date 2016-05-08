@@ -8,6 +8,7 @@ package fundabitat.retam.retammigration;
 import fundabitat.retam.retammigration.migrators.CountryMigrator;
 import fundabitat.retam.retammigration.migrators.AbstractMigrator;
 import fundabitat.retam.retammigration.migrators.OrganizationMigrator;
+import fundabitat.retam.retammigration.migrators.RepresentativeMigrator;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -32,6 +33,7 @@ public class MigrationManager {
     public static char separator;
     public static String countryFile;
     public static String organizationFile;
+    public static String representativeFile;
 
     private MigrationManager() {
     }
@@ -41,18 +43,29 @@ public class MigrationManager {
         loadProperties();
         runScripts();
 
-        List<AbstractMigrator> migrators = new ArrayList();
-
-        AbstractMigrator countryMigrator = new CountryMigrator(countryFile);
-        migrators.add(countryMigrator);
-        AbstractMigrator organizationMigrator = new OrganizationMigrator(organizationFile);
-        migrators.add(organizationMigrator);
+        List<AbstractMigrator> migrators = addMigrators();
 
         for (AbstractMigrator migrator : migrators) {
             migrator.setSeparator(separator);
             migrator.setEm(manager);
             migrator.run();
         }
+    }
+
+    private static List<AbstractMigrator> addMigrators() {
+
+        List<AbstractMigrator> migrators = new ArrayList();
+
+        AbstractMigrator migrator = new CountryMigrator(countryFile);
+        migrators.add(migrator);
+
+        migrator = new OrganizationMigrator(organizationFile);
+        migrators.add(migrator);
+
+        migrator = new RepresentativeMigrator(representativeFile);
+        migrators.add(migrator);
+
+        return migrators;
     }
 
     private static void runScripts() throws IOException, SQLException, ClassNotFoundException {
@@ -81,5 +94,6 @@ public class MigrationManager {
         separator = PROP.getProperty("separator").charAt(0);
         countryFile = PROP.getProperty("countryFile");
         organizationFile = PROP.getProperty("organizationFile");
+        representativeFile = PROP.getProperty("representativeFile");
     }
 }

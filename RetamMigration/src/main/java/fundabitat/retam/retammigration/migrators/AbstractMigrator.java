@@ -21,6 +21,8 @@ import javax.persistence.EntityTransaction;
  */
 public abstract class AbstractMigrator<E> {
 
+    protected static final String NOT_AVAILABLE = "No Disponible";
+
     protected String filename;
     protected EntityManager em;
     protected char separator;
@@ -71,5 +73,14 @@ public abstract class AbstractMigrator<E> {
     }
 
     public abstract void run() throws FileNotFoundException;
+
+    protected String getLongest(String current, String newStr) {
+
+        if (newStr != null && newStr.length() > current.length()) {
+            return newStr.trim();
+        }
+
+        return current;
+    }
 
 }

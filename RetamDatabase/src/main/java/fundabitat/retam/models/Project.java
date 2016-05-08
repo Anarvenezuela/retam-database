@@ -10,6 +10,8 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -34,6 +36,7 @@ public class Project implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "idProject")
     private Integer idProject;
     @Basic(optional = false)
@@ -124,8 +127,8 @@ public class Project implements Serializable {
     public void setIdRepresentative(Representative idRepresentative) {
         this.idRepresentative = idRepresentative;
     }
-    
-    public String getCountryName(){
+
+    public String getCountryName() {
         return idCountry.getName();
     }
 
@@ -143,13 +146,13 @@ public class Project implements Serializable {
             return false;
         }
         Project other = (Project) object;
-        return !((this.idProject == null && other.idProject != null) || 
-                (this.idProject != null && !this.idProject.equals(other.idProject)));
+        return !((this.idProject == null && other.idProject != null)
+                || (this.idProject != null && !this.idProject.equals(other.idProject)));
     }
 
     @Override
     public String toString() {
         return "fundabitat.retam.models.Project[ idProject=" + idProject + " ]";
     }
-    
+
 }

@@ -19,8 +19,6 @@ import javax.persistence.Query;
  */
 public class OrganizationMigrator extends AbstractMigrator<Institucion> {
 
-    private static final String NOT_AVAILABLE = "No Disponible";
-
     public OrganizationMigrator(String filename) {
         this.filename = filename;
     }
@@ -122,7 +120,7 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
     private Country getCountryByName(List<Country> countries, String name) {
         return countries.stream().
                 filter(c -> c.getName().equals(name)).
-                collect(toList()).get(0);
+                findFirst().get();
     }
 
     /**
@@ -183,15 +181,6 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
         if (o.getAddress() == null) {
             o.setAddress(NOT_AVAILABLE);
         }
-    }
-
-    private String getLongest(String current, String newStr) {
-
-        if (newStr != null && newStr.length() > current.length()) {
-            return newStr.trim();
-        }
-
-        return current;
     }
 
     private String longestInstitutionName(String currentName, Institucion i) {
