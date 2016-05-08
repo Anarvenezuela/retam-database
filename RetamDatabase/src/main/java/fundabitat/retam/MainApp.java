@@ -15,7 +15,7 @@ public class MainApp extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/MainScene.fxml"));
         
         Scene scene = new Scene(root);
-        //scene.getStylesheets().add("/styles/Styles.css");
+        scene.getStylesheets().add("/styles/modena.css");
 
         stage.setTitle("RETAM - Base de datos");
         stage.setScene(scene);

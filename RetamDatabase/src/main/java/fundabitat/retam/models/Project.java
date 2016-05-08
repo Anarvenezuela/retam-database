@@ -124,6 +124,10 @@ public class Project implements Serializable {
     public void setIdRepresentative(Representative idRepresentative) {
         this.idRepresentative = idRepresentative;
     }
+    
+    public String getCountryName(){
+        return idCountry.getName();
+    }
 
     @Override
     public int hashCode() {
