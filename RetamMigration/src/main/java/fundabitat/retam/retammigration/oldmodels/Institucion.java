@@ -17,7 +17,7 @@ public class Institucion {
     private int Cod_InstitucionEjecutora;
 
     @CsvBind
-    private int Cod_InstitucionEjecutora2;
+    private int Cod_InstitucionEjecutoraIE;
 
     @CsvBind
     private String Institucion;
@@ -26,7 +26,7 @@ public class Institucion {
     private String NombreInstitucion;
 
     @CsvBind
-    private String Institucion2;
+    private String InstitucionIE;
 
     @CsvBind
     private String Direccion;
@@ -90,12 +90,12 @@ public class Institucion {
         this.Cod_InstitucionEjecutora = Cod_InstitucionEjecutora;
     }
 
-    public int getCod_InstitucionEjecutora2() {
-        return Cod_InstitucionEjecutora2;
+    public int getCod_InstitucionEjecutoraIE() {
+        return Cod_InstitucionEjecutoraIE;
     }
 
-    public void setCod_InstitucionEjecutora2(int Cod_InstitucionEjecutora2) {
-        this.Cod_InstitucionEjecutora2 = Cod_InstitucionEjecutora2;
+    public void setCod_InstitucionEjecutoraIE(int Cod_InstitucionEjecutora2) {
+        this.Cod_InstitucionEjecutoraIE = Cod_InstitucionEjecutora2;
     }
 
     public String getInstitucion() {
@@ -114,12 +114,12 @@ public class Institucion {
         this.NombreInstitucion = NombreInstitucion;
     }
 
-    public String getInstitucion2() {
-        return Institucion2;
+    public String getInstitucionIE() {
+        return InstitucionIE;
     }
 
-    public void setInstitucion2(String Institucion2) {
-        this.Institucion2 = Institucion2;
+    public void setInstitucionIE(String Institucion2) {
+        this.InstitucionIE = InstitucionIE;
     }
 
     public String getDireccion() {
@@ -271,10 +271,10 @@ public class Institucion {
         return "Institucion{" + "Cod_InstitucionEjecutora="
                 + Cod_InstitucionEjecutora
                 + ", Cod_InstitucionEjecutora2="
-                + Cod_InstitucionEjecutora2
+                + Cod_InstitucionEjecutoraIE
                 + ", Institucion=" + Institucion
                 + ", NombreInstitucion=" + NombreInstitucion
-                + ", Institucion2=" + Institucion2
+                + ", Institucion2=" + InstitucionIE
                 + ", Direccion=" + Direccion
                 + ", DireccionInstitucion=" + DireccionInstitucion
                 + ", DireccionProfesional=" + DireccionProfesional
