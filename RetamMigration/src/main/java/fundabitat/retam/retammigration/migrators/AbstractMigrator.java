@@ -74,10 +74,17 @@ public abstract class AbstractMigrator<E> {
 
     public abstract void run() throws FileNotFoundException;
 
-    protected String getLongest(String current, String newStr) {
+    protected String getLongest(String... strs) {
+        String current = strs[0];
+        current = (current == null ? "" : current);
 
-        if (newStr != null && newStr.length() > current.length()) {
-            return newStr.trim();
+        for (int i = 1; i < strs.length; ++i) {
+
+            String newStr = strs[i];
+
+            if (newStr != null && newStr.length() > current.length()) {
+                current = newStr.trim();
+            }
         }
 
         return current;

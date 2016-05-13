@@ -83,22 +83,6 @@ public class Organization implements Serializable {
         this.city = city;
     }
 
-    public static Organization createEmptyStrOrg() {
-        Organization o = new Organization();
-        o.setAddress("");
-        o.setCity("");
-        o.setEmail("");
-        o.setFax1("");
-        o.setFax2("");
-        o.setName("");
-        o.setPhone1("");
-        o.setPhone2("");
-        o.setPostalCode("");
-        o.setWebsite("");
-
-        return o;
-    }
-
     public Integer getIdOrganization() {
         return idOrganization;
     }

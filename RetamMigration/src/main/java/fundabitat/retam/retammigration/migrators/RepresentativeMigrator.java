@@ -47,14 +47,13 @@ public class RepresentativeMigrator extends AbstractMigrator<Representante> {
     }
 
     private String longestName(Representante r) {
-        String name = getLongest("", r.getRepresentante());
-        name = getLongest(name, r.getRepresentanteInstitucion());
-        return getLongest(name, r.getRepresentanteInstitucion());
+        return getLongest(r.getRepresentante(), 
+                r.getRepresentanteInstitucion(), r.getNombreProfesional());
     }
 
     private String longestCharge(Representante r) {
-        String charge = getLongest("", r.getCargoRepresentante());
-        return getLongest(charge, r.getCargoRepresentanteInst());
+        return getLongest(r.getCargoRepresentante(), 
+                r.getCargoRepresentanteInst());
     }
 
     private Organization findById(List<Organization> orgs, int code) {

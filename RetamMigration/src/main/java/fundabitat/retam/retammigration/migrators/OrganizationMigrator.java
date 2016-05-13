@@ -148,7 +148,7 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
         List<Institucion> orgsIdNonZero = getIDNonZeroOrgs(organizations);
 
         //initialize
-        Organization org = Organization.createEmptyStrOrg();
+        Organization org = new Organization();
         int currentCode = orgsIdNonZero.get(0).getCod_InstitucionEjecutora();
 
         for (Institucion inst : orgsIdNonZero) {
@@ -160,7 +160,7 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
                 checkAddress(org);
                 em.persist(org);
 
-                org = Organization.createEmptyStrOrg();
+                org = new Organization();
                 currentCode = inst.getCod_InstitucionEjecutora();
             }
 
@@ -184,34 +184,23 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
     }
 
     private String longestInstitutionName(String currentName, Institucion i) {
-        currentName = getLongest(currentName, i.getInstitucion());
-        currentName = getLongest(currentName, i.getInstitucionIE());
-        currentName = getLongest(currentName, i.getNombreInstitucion());
-
-        return currentName;
+        return getLongest(currentName, i.getInstitucion(), 
+                i.getInstitucionIE(), i.getNombreInstitucion());
     }
 
     private String longestAddress(String currentAddress, Institucion i) {
-        currentAddress = getLongest(currentAddress, i.getDireccion());
-        currentAddress = getLongest(currentAddress, i.getDireccionInstitucion());
-        currentAddress = getLongest(currentAddress, i.getDireccionProfesional());
-
-        return currentAddress;
+        return getLongest(currentAddress, i.getDireccion(), 
+                i.getDireccionInstitucion(), i.getDireccionProfesional());
     }
 
     private String longestCity(String currentCity, Institucion i) {
-        currentCity = getLongest(currentCity, i.getCiudad());
-        currentCity = getLongest(currentCity, i.getCiudadInstitucion());
-        currentCity = getLongest(currentCity, i.getCiudadProfesional());
-
-        return currentCity;
+        return getLongest(currentCity, i.getCiudad(), 
+                i.getCiudadInstitucion(), i.getCiudadProfesional());
     }
 
     private String longestPhone1(String currentPhone1, Institucion i) {
-        currentPhone1 = getLongest(currentPhone1, i.getTelefono1());
-        currentPhone1 = getLongest(currentPhone1, i.getTlf1Proyecto());
-
-        return currentPhone1;
+        return getLongest(currentPhone1, i.getTelefono1(), 
+                i.getTlf1Proyecto());
     }
 
     private String longestPhone2(String currentPhone2, Institucion i) {
@@ -219,10 +208,8 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
     }
 
     private String longestFax1(String currentFax1, Institucion i) {
-        currentFax1 = getLongest(currentFax1, i.getFaxProyecto());
-        currentFax1 = getLongest(currentFax1, i.getFax1Proyecto());
-
-        return currentFax1;
+        return getLongest(currentFax1, i.getFaxProyecto(), 
+                i.getFax1Proyecto());
     }
 
     private String longestFax2(String currentFax2, Institucion i) {
@@ -230,10 +217,7 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
     }
 
     private String longestMail(String currentMail, Institucion i) {
-        currentMail = getLongest(currentMail, i.getEmail());
-        currentMail = getLongest(currentMail, i.getEmailProyecto());
-
-        return currentMail;
+        return getLongest(currentMail, i.getEmail(), i.getEmailProyecto());
     }
 
     private String longestWebsite(String currentWebsite, Institucion i) {
