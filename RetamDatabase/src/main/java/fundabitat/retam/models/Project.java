@@ -50,7 +50,10 @@ public class Project implements Serializable {
         @JoinColumn(name = "idSubDescriptor", referencedColumnName = "idSubDescriptor")})
     @ManyToMany
     private Collection<SubDescriptor> subDescriptorCollection;
-    @ManyToMany(mappedBy = "projectCollection")
+    @JoinTable(name = "project_descriptor", joinColumns = {
+        @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
+        @JoinColumn(name = "idDescriptor", referencedColumnName = "idDescriptor")})
+    @ManyToMany
     private Collection<Descriptor> descriptorCollection;
     @JoinColumn(name = "idCountry", referencedColumnName = "idCountry")
     @ManyToOne(optional = false)

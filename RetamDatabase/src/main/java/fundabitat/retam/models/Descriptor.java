@@ -37,10 +37,7 @@ public class Descriptor implements Serializable {
     private Integer idDescriptor;
     @Column(name = "name")
     private String name;
-    @JoinTable(name = "project_descriptor", joinColumns = {
-        @JoinColumn(name = "idDescriptor", referencedColumnName = "idDescriptor")}, inverseJoinColumns = {
-        @JoinColumn(name = "idProject", referencedColumnName = "idProject")})
-    @ManyToMany
+    @ManyToMany(mappedBy = "descriptorCollection")
     private Collection<Project> projectCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idDescriptor")
     private Collection<SubDescriptor> subDescriptorCollection;
@@ -98,13 +95,13 @@ public class Descriptor implements Serializable {
             return false;
         }
         Descriptor other = (Descriptor) object;
-        return !((this.idDescriptor == null && other.idDescriptor != null) || 
-                (this.idDescriptor != null && !this.idDescriptor.equals(other.idDescriptor)));
+        return !((this.idDescriptor == null && other.idDescriptor != null)
+                || (this.idDescriptor != null && !this.idDescriptor.equals(other.idDescriptor)));
     }
 
     @Override
     public String toString() {
         return "fundabitat.retam.models.Descriptor[ idDescriptor=" + idDescriptor + " ]";
     }
-    
+
 }
