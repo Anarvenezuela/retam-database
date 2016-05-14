@@ -115,15 +115,6 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
     }
 
     /**
-     * Gets a country from the list of countries.
-     */
-    private Country getCountryByName(List<Country> countries, String name) {
-        return countries.stream().
-                filter(c -> c.getName().equals(name)).
-                findFirst().get();
-    }
-
-    /**
      * Creates an organization using N/A to fill its fields.
      */
     private Organization createIdZeroOrg(int code, String name, Country notAvailable) {
@@ -184,22 +175,22 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
     }
 
     private String longestInstitutionName(String currentName, Institucion i) {
-        return getLongest(currentName, i.getInstitucion(), 
+        return getLongest(currentName, i.getInstitucion(),
                 i.getInstitucionIE(), i.getNombreInstitucion());
     }
 
     private String longestAddress(String currentAddress, Institucion i) {
-        return getLongest(currentAddress, i.getDireccion(), 
+        return getLongest(currentAddress, i.getDireccion(),
                 i.getDireccionInstitucion(), i.getDireccionProfesional());
     }
 
     private String longestCity(String currentCity, Institucion i) {
-        return getLongest(currentCity, i.getCiudad(), 
+        return getLongest(currentCity, i.getCiudad(),
                 i.getCiudadInstitucion(), i.getCiudadProfesional());
     }
 
     private String longestPhone1(String currentPhone1, Institucion i) {
-        return getLongest(currentPhone1, i.getTelefono1(), 
+        return getLongest(currentPhone1, i.getTelefono1(),
                 i.getTlf1Proyecto());
     }
 
@@ -208,7 +199,7 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
     }
 
     private String longestFax1(String currentFax1, Institucion i) {
-        return getLongest(currentFax1, i.getFaxProyecto(), 
+        return getLongest(currentFax1, i.getFaxProyecto(),
                 i.getFax1Proyecto());
     }
 

@@ -8,6 +8,7 @@ package fundabitat.retam.retammigration.migrators;
 import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
+import fundabitat.retam.models.Country;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
@@ -76,7 +77,7 @@ public abstract class AbstractMigrator<E> {
 
     protected String getLongest(String... strs) {
         String current = strs[0];
-        current = (current == null ? "" : current);
+        current = (current == null ? "" : current.trim());
 
         for (int i = 1; i < strs.length; ++i) {
 
@@ -88,6 +89,16 @@ public abstract class AbstractMigrator<E> {
         }
 
         return current;
+    }
+
+    /**
+     * Gets a country from the list of countries.
+     */
+    protected Country getCountryByName(List<Country> countries, String name) {
+
+        return countries.stream().
+                filter(c -> c.getName().equals(name)).
+                findFirst().get();
     }
 
 }
