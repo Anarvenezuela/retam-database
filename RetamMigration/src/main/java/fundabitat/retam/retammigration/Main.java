@@ -6,11 +6,6 @@
 package fundabitat.retam.retammigration;
 
 import fundabitat.retam.persistence.PersistenceManager;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
