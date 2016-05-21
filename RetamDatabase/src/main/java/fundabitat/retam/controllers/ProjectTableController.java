@@ -36,19 +36,13 @@ public class ProjectTableController implements Initializable {
     @FXML
     private TableColumn<Project, String> projectCountry;
 
+    private List<Project> list = null;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        PersistenceManager pManager = PersistenceManager.getInstance();
-        EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
-
-        Query findAllProjects = eManager.createNamedQuery("Project.findAll");
-        List<Project> list = findAllProjects.getResultList();
-
-        final ObservableList<Project> observableList = FXCollections.observableArrayList(list);
 
         projectCode.setCellValueFactory(
                 new PropertyValueFactory<Project, String>("code"));
@@ -57,7 +51,25 @@ public class ProjectTableController implements Initializable {
         projectCountry.setCellValueFactory(
                 new PropertyValueFactory<Project, String>("countryName"));
 
+        loadProjects();
+
+        final ObservableList<Project> observableList = FXCollections.observableArrayList(list);
+
         projectTable.setItems(observableList);
+
+    }
+
+    private void loadProjects() {
+
+        if (list == null) {
+            PersistenceManager pManager = PersistenceManager.getInstance();
+            EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
+
+            Query findAllProjects = eManager.createNamedQuery("Project.findAll");
+            list = findAllProjects.getResultList();
+            eManager.close();
+        }
+
     }
 
 }

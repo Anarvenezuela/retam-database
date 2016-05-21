@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
@@ -20,17 +19,24 @@ public class MainController implements Initializable {
     @FXML
     private AnchorPane content;
 
+    private AnchorPane projectPane;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+        loadPanes();
     }
 
     @FXML
-    void onActionProjectButton(ActionEvent event) {
+    public void onActionProjectButton(ActionEvent event) {
+        content.getChildren().setAll(projectPane);
+    }
+
+    private void loadPanes() {
         try {
-            Node childNode = (Node) FXMLLoader.load(getClass().getResource("/fxml/ProjectTable.fxml"));
-            content.getChildren().setAll(childNode);
+            projectPane = FXMLLoader.load(getClass().getResource("/fxml/ProjectTable.fxml"));
         } catch (IOException ex) {
+            // TODO
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
