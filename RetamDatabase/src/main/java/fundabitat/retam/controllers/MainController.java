@@ -9,17 +9,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
 public class MainController implements Initializable {
 
     @FXML
-    private Button projectButton;
-    @FXML
     private AnchorPane content;
 
     private AnchorPane projectPane;
+    private AnchorPane organizationPane;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -32,9 +30,15 @@ public class MainController implements Initializable {
         content.getChildren().setAll(projectPane);
     }
 
+    @FXML
+    public void onActionOrganizationButton(ActionEvent event) {
+        content.getChildren().setAll(organizationPane);
+    }
+
     private void loadPanes() {
         try {
             projectPane = FXMLLoader.load(getClass().getResource("/fxml/ProjectTable.fxml"));
+            organizationPane = FXMLLoader.load(getClass().getResource("/fxml/OrganizationTable.fxml"));
         } catch (IOException ex) {
             // TODO
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);

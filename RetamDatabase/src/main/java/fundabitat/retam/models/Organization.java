@@ -28,7 +28,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "organization")
 @NamedQueries({
-    @NamedQuery(name = "Organization.findAll", query = "SELECT o FROM Organization o"),
+    @NamedQuery(name = "Organization.findAll", query = "SELECT o FROM Organization o ORDER BY o.code"),
     @NamedQuery(name = "Organization.findByIdOrganization", query = "SELECT o FROM Organization o WHERE o.idOrganization = :idOrganization"),
     @NamedQuery(name = "Organization.findByCode", query = "SELECT o FROM Organization o WHERE o.code = :code"),
     @NamedQuery(name = "Organization.findByName", query = "SELECT o FROM Organization o WHERE o.name = :name")})
@@ -241,6 +241,10 @@ public class Organization implements Serializable {
         if (website.isEmpty()) {
             website = null;
         }
+    }
+
+    public String getCountryName() {
+        return idCountry.getName();
     }
 
     @Override
