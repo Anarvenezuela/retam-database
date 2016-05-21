@@ -1,52 +1,37 @@
 package fundabitat.retam.controllers;
 
-import fundabitat.retam.models.Country;
-import fundabitat.retam.models.Project;
-import fundabitat.retam.persistence.PersistenceManager;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 public class MainController implements Initializable {
 
     @FXML
-    private TableView<Project> projectTable;
+    private Button projectButton;
     @FXML
-    private TableColumn<Project, String> projectCode;
-    @FXML
-    private TableColumn<Project, String> projectName;
-    @FXML
-    private TableColumn<Project, String> projectCountry;
+    private AnchorPane content;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        PersistenceManager pManager = PersistenceManager.getInstance();
-        EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
+    }
 
-        Query findAllProjects = eManager.createNamedQuery("Project.findAll");
-        List<Project> list = findAllProjects.getResultList();
-
-        final ObservableList<Project> observableList = FXCollections.observableArrayList(list);
-
-        projectCode.setCellValueFactory(
-                new PropertyValueFactory<Project, String>("code"));
-        projectName.setCellValueFactory(
-                new PropertyValueFactory<Project, String>("name"));
-        projectCountry.setCellValueFactory(
-                new PropertyValueFactory<Project, String>("countryName"));
-
-        projectTable.setItems(observableList);
+    @FXML
+    void onActionProjectButton(ActionEvent event) {
+        try {
+            Node childNode = (Node) FXMLLoader.load(getClass().getResource("/fxml/ProjectTable.fxml"));
+            content.getChildren().setAll(childNode);
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="463.0" prefWidth="680.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fundabitat.retam.controllers.ProjectTableController">
+    <children>
+        <TableView fx:id="projectTable" focusTraversable="false" maxWidth="-Infinity" prefHeight="521.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="projectCode" editable="false" minWidth="150.0" prefWidth="200.0" text="Código Proyecto" />
+                <TableColumn fx:id="projectName" editable="false" minWidth="150.0" prefWidth="400.0" text="Nombre del Proyecto" />
+                <TableColumn fx:id="projectCountry" editable="false" minWidth="120.0" prefWidth="200.0" text="País" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</AnchorPane>

@@ -1,5 +1,6 @@
 package fundabitat.retam;
 
+import fundabitat.retam.persistence.PersistenceManager;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,9 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+
+        PersistenceManager pManager = PersistenceManager.getInstance();
+
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/MainScene.fxml"));
 
         Scene scene = new Scene(root);
