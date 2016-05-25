@@ -1708,6 +1708,10 @@ is being used to size a border should also be in pixels.
     -fx-padding: 2;
 }
 
+.tab-content-area {
+    -fx-background-color: -fx-background;
+}
+
 /*******************************************************************************
  *                                                                             *
  * ComboBox                                                                    *
@@ -1832,12 +1836,7 @@ is being used to size a border should also be in pixels.
     -fx-background-color: -fx-faint-focus-color, -fx-focus-color, -fx-inner-border, -fx-body-color;
     -fx-background-insets: 0, 0.7, 2, 3;
 }*/
-/* focus purely on the arrow */
-.titled-pane:focused > .title > .arrow-button > .arrow {
-    -fx-background-color: -fx-focus-color, -fx-mark-color;
-    -fx-background-insets: -1, 0;
-    -fx-effect: dropshadow(two-pass-box , -fx-focus-color, 5, 0.2 , 0, 0);
-}
+
 .titled-pane > .title > .arrow-button {
     -fx-background-color: null;
     -fx-background-insets: 0;
@@ -1858,6 +1857,10 @@ is being used to size a border should also be in pixels.
     -fx-border-color: -fx-box-border;
     -fx-border-insets: -1 0 0 0;
     -fx-background-color: linear-gradient(from 0px 0px to 0px 5px, derive(-fx-background, -6%), -fx-background);
+}
+
+.titled-pane:focused > .title {
+    -fx-color: -fx-base;
 }
 
 
