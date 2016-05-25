@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fundabitat.retam.controllers.ProjectInfoController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fundabitat.retam.controllers.ProjectInfoController">
     <children>
         <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <tabs>
@@ -19,7 +19,7 @@
                                         <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Label>
-                                <Label fx:id="codeLabel" focusTraversable="false" layoutX="86.0" layoutY="23.0" prefHeight="18.0" prefWidth="265.0" text="&lt;Code&gt;" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="20.0">
+                                <Label fx:id="projectCodeLabel" focusTraversable="false" layoutX="86.0" layoutY="23.0" prefHeight="18.0" prefWidth="265.0" text="&lt;Code&gt;" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="20.0">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -29,7 +29,7 @@
                                         <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Label>
-                                <Label fx:id="nameLabel" alignment="TOP_LEFT" focusTraversable="false" layoutX="88.0" layoutY="58.0" prefHeight="54.0" prefWidth="490.0" text="&lt;Name&gt;" wrapText="true" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="55.0">
+                                <Label fx:id="projectNameLabel" alignment="TOP_LEFT" focusTraversable="false" layoutX="88.0" layoutY="58.0" prefHeight="54.0" prefWidth="490.0" text="&lt;Name&gt;" wrapText="true" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="55.0">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -39,7 +39,7 @@
                                         <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Label>
-                                <Label fx:id="countryLabel" focusTraversable="false" layoutX="389.0" layoutY="23.0" prefHeight="18.0" prefWidth="200.0" text="&lt;Country&gt;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                <Label fx:id="projectCountryLabel" focusTraversable="false" layoutX="389.0" layoutY="23.0" prefHeight="18.0" prefWidth="200.0" text="&lt;Country&gt;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -48,9 +48,170 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Institucion">
+                <Tab closable="false" text="Institucion">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label focusTraversable="false" layoutX="24.0" layoutY="21.0" text="Código:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="20.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationCodeLabel" focusTraversable="false" layoutX="86.0" layoutY="23.0" prefHeight="18.0" prefWidth="265.0" text="&lt;Code&gt;" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="20.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="23.0" layoutY="58.0" text="Nombre:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="55.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationNameLabel" alignment="TOP_LEFT" focusTraversable="false" layoutX="88.0" layoutY="58.0" prefHeight="54.0" prefWidth="490.0" text="&lt;Name&gt;" wrapText="true" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="55.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="351.0" layoutY="24.0" text="País:" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="20.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationCountryLabel" focusTraversable="false" layoutX="389.0" layoutY="23.0" prefHeight="18.0" prefWidth="200.0" text="&lt;Country&gt;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="25.0" layoutY="125.0" text="Dirección:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="125.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationAddressLabel" alignment="TOP_LEFT" focusTraversable="false" layoutX="115.0" layoutY="123.0" prefHeight="54.0" prefWidth="465.0" text="&lt;Address&gt;" wrapText="true" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="125.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="25.0" layoutY="180.0" text="Ciudad:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="180.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationCityLabel" focusTraversable="false" layoutX="93.0" layoutY="180.0" prefHeight="18.0" prefWidth="265.0" text="&lt;City&gt;" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="180.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="25.0" layoutY="215.0" text="Teléfono 1:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="215.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationPhone1Label" focusTraversable="false" layoutX="120.0" layoutY="215.0" prefHeight="18.0" prefWidth="180.0" text="&lt;Phone 1&gt;" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="215.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="341.0" layoutY="215.0" text="Fax 1:" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="215.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationFax1Label" focusTraversable="false" layoutX="400.0" layoutY="215.0" prefHeight="18.0" prefWidth="230.0" text="&lt;Fax 1&gt;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="215.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="25.0" layoutY="250.0" text="Teléfono 2:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="250.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationPhone2Label" focusTraversable="false" layoutX="120.0" layoutY="250.0" prefHeight="18.0" prefWidth="180.0" text="&lt;Phone 2&gt;" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="250.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="341.0" layoutY="250.0" text="Fax 2:" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="250.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationFax2Label" focusTraversable="false" layoutX="400.0" layoutY="250.0" prefHeight="18.0" prefWidth="230.0" text="&lt;Fax 2&gt;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="250.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="25.0" layoutY="285.0" text="e-mail:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="285.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationEmailLabel" focusTraversable="false" layoutX="85.0" layoutY="285.0" prefHeight="18.0" prefWidth="200.0" text="&lt;e-mail&gt;" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="285.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="293.0" layoutY="285.0" text="Página web:" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="285.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationWebsiteLabel" focusTraversable="false" layoutX="400.0" layoutY="285.0" prefHeight="18.0" prefWidth="230.0" text="&lt;website&gt;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="285.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="25.0" layoutY="320.0" text="Apartado:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="320.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="organizationPostalCodeLabel" focusTraversable="false" layoutX="110.0" layoutY="320.0" prefHeight="18.0" prefWidth="180.0" text="&lt;postal code&gt;" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="320.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab closable="false" text="Representante">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label focusTraversable="false" layoutX="23.0" layoutY="58.0" text="Nombre:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="20.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="representativeNameLabel" alignment="TOP_LEFT" focusTraversable="false" layoutX="88.0" layoutY="58.0" prefHeight="21.0" prefWidth="530.0" text="&lt;Name&gt;" wrapText="true" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="25.0" layoutY="60.0" text="Profesión:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="60.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="representativeProfessionLabel" alignment="TOP_LEFT" focusTraversable="false" layoutX="120.0" layoutY="60.0" prefHeight="20.0" prefWidth="515.0" text="&lt;Profession&gt;" wrapText="true" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label focusTraversable="false" layoutX="22.0" layoutY="97.0" text="Cargo:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="95.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="representativePositionLabel" focusTraversable="false" layoutX="85.0" layoutY="95.0" prefHeight="18.0" prefWidth="265.0" text="&lt;Charge&gt;" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="95.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
                     </content>
                 </Tab>
             </tabs>

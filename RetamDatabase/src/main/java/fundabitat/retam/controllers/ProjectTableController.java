@@ -97,7 +97,8 @@ public class ProjectTableController implements Initializable {
                 stage.setTitle("RETAM - Proyecto: " + project.getName());
                 stage.setScene(scene);
 
-                stage.setMinWidth(600);
+                stage.setMinWidth(650);
+                stage.setMinHeight(550);
 
                 ProjectSceneController ctrl = loader.getController();
                 ctrl.initData(project);
