@@ -49,7 +49,7 @@ public class ProjectMigrator extends AbstractMigrator<Proyecto> {
             List<Representative> representatives) {
 
         Project project = new Project();
-        project.setCode(proyecto.getCod_Proyecto());
+        project.setCode(proyecto.getCod_Proyecto().toUpperCase());
         project.setName(proyecto.getNombreProyecto());
 
         Country projectCountry = getCountryByName(countries, proyecto.getPais());

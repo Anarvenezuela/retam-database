@@ -7,9 +7,10 @@ package fundabitat.retam.retammigration;
 
 import fundabitat.retam.retammigration.migrators.CountryMigrator;
 import fundabitat.retam.retammigration.migrators.AbstractMigrator;
-import fundabitat.retam.retammigration.migrators.DescriptoresMigrator;
+import fundabitat.retam.retammigration.migrators.DescriptorMigrator;
 import fundabitat.retam.retammigration.migrators.OrganizationMigrator;
 import fundabitat.retam.retammigration.migrators.ProjectMigrator;
+import fundabitat.retam.retammigration.migrators.ProjectOrganizationMigrator;
 import fundabitat.retam.retammigration.migrators.RepresentativeMigrator;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -38,6 +39,7 @@ public class MigrationManager {
     public static String representativeFile;
     public static String projectFile;
     public static String descriptorsFile;
+    public static String projectOrgFile;
 
     private MigrationManager() {
     }
@@ -72,7 +74,10 @@ public class MigrationManager {
         migrator = new ProjectMigrator(projectFile);
         migrators.add(migrator);
 
-        migrator = new DescriptoresMigrator(descriptorsFile);
+        migrator = new DescriptorMigrator(descriptorsFile);
+        migrators.add(migrator);
+
+        migrator = new ProjectOrganizationMigrator(projectOrgFile);
         migrators.add(migrator);
 
         return migrators;
@@ -107,5 +112,6 @@ public class MigrationManager {
         representativeFile = PROP.getProperty("representativeFile");
         projectFile = PROP.getProperty("projectFile");
         descriptorsFile = PROP.getProperty("descriptorFile");
+        projectOrgFile = PROP.getProperty("projectOrgFile");
     }
 }

@@ -17,9 +17,9 @@ import javax.persistence.Query;
  *
  * @author marcos
  */
-public class DescriptoresMigrator extends AbstractMigrator<Descriptores> {
+public class DescriptorMigrator extends AbstractMigrator<Descriptores> {
 
-    public DescriptoresMigrator(String filename) {
+    public DescriptorMigrator(String filename) {
         this.filename = filename;
     }
 
@@ -204,7 +204,7 @@ public class DescriptoresMigrator extends AbstractMigrator<Descriptores> {
     }
 
     private Project getProjectByCode(List<Project> projects, String code) {
-        return projects.stream().filter(p -> p.getCode().equals(code))
+        return projects.stream().filter(p -> p.getCode().equals(code.toUpperCase()))
                 .findFirst().get();
     }
 
