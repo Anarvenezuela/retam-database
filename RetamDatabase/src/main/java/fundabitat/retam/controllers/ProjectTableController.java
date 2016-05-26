@@ -5,6 +5,7 @@
  */
 package fundabitat.retam.controllers;
 
+import fundabitat.retam.controllers.projectScene.ProjectSceneController;
 import fundabitat.retam.models.Project;
 import fundabitat.retam.persistence.PersistenceManager;
 import java.io.IOException;

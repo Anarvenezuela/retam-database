@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fundabitat.retam.controllers;
+package fundabitat.retam.controllers.projectScene;
 
 import fundabitat.retam.models.Descriptor;
 import fundabitat.retam.models.Organization;
@@ -76,7 +76,6 @@ public class ProjectInfoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
 
     public void initData(Project p) {

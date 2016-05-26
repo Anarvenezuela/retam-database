@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane  prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="fundabitat.retam.controllers.projectScene.OrganizationsInfoController">
+    <children>
+        <TableView fx:id="organizationTable" focusTraversable="false" maxWidth="-Infinity" prefHeight="521.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="organizationCode" editable="false" minWidth="150.0" prefWidth="200.0" text="Código Institución" />
+                <TableColumn fx:id="organizationName" editable="false" minWidth="150.0" prefWidth="400.0" text="Nombre de la Institución" />
+                <TableColumn fx:id="organizationCountry" editable="false" minWidth="120.0" prefWidth="200.0" text="País" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</AnchorPane>
