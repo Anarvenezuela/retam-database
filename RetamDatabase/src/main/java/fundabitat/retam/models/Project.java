@@ -61,6 +61,11 @@ public class Project implements Serializable {
     @JoinColumn(name = "idRepresentative", referencedColumnName = "idRepresentative")
     @ManyToOne(optional = false)
     private Representative idRepresentative;
+    @JoinTable(name = "project_organization", joinColumns = {
+        @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
+        @JoinColumn(name = "idOrganization", referencedColumnName = "idOrganization")})
+    @ManyToMany
+    private Collection<Organization> organizationCollection;
 
     public Project() {
     }
@@ -156,6 +161,14 @@ public class Project implements Serializable {
     @Override
     public String toString() {
         return "fundabitat.retam.models.Project[ idProject=" + idProject + " ]";
+    }
+
+    public Collection<Organization> getOrganizationCollection() {
+        return organizationCollection;
+    }
+
+    public void setOrganizationCollection(Collection<Organization> organizationCollection) {
+        this.organizationCollection = organizationCollection;
     }
 
 }

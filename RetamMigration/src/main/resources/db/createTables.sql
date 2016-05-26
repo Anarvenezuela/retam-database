@@ -68,11 +68,10 @@ CREATE TABLE project_subDescriptor (
     FOREIGN KEY(idSubDescriptor) REFERENCES subDescriptor(idSubDescriptor)
 );
 
-
-
-
-
-
-
-
-
+CREATE TABLE project_organization (
+    idProject INTEGER NOT NULL,
+    idOrganization INTEGER NOT NULL,
+    PRIMARY KEY (idProject, idOrganization),
+    FOREIGN KEY(idProject) REFERENCES project(idProject),
+    FOREIGN KEY(idOrganization) REFERENCES organization(idOrganization)
+);

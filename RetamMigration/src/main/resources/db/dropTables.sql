@@ -1,3 +1,4 @@
+DROP TABLE project_organization;
 DROP TABLE project_subDescriptor;
 DROP TABLE project_descriptor;
 DROP TABLE project;

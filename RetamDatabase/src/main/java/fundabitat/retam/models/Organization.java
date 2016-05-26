@@ -15,6 +15,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -68,6 +70,8 @@ public class Organization implements Serializable {
     private Country idCountry;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idOrganization")
     private Collection<Representative> representativeCollection;
+    @ManyToMany(mappedBy = "organizationCollection")
+    private Collection<Project> projectCollection;
 
     public Organization() {
     }
@@ -268,6 +272,14 @@ public class Organization implements Serializable {
     @Override
     public String toString() {
         return "fundabitat.retam.models.Organization[ name=" + name + " ]";
+    }
+
+    public Collection<Project> getProjectCollection() {
+        return projectCollection;
+    }
+
+    public void setProjectCollection(Collection<Project> projectCollection) {
+        this.projectCollection = projectCollection;
     }
 
 }
