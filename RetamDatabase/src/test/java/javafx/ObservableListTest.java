@@ -24,7 +24,7 @@ public class ObservableListTest {
     public ObservableListTest() {
     }
 
-    @Test
+    //@Test
     public void containsFirstElementTest() {
 
         List<String> arrayList = new ArrayList();

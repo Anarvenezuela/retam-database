@@ -5,9 +5,6 @@
  */
 package fundabitat.retam.utils;
 
-import java.util.concurrent.Callable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.ListCell;
@@ -61,7 +58,7 @@ public class ListViewCellUtil {
      * @param <E> the type of the ListView
      * @param listView the ListView itself
      * @param displayFunc The function used to display the object
-     * @param multipleSelect
+     * @param multipleSelect true if the list needs multiple selection
      */
     public static <E> void setupCell(final ListView<E> listView,
             final Function<E, String> displayFunc, final boolean multipleSelect) {
