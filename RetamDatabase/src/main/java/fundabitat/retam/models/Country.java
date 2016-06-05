@@ -23,14 +23,22 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "country")
 @NamedQueries({
-    @NamedQuery(name = "Country.findAll", query = "SELECT c FROM Country c"),
-    @NamedQuery(name = "Country.findByIdCountry", query = "SELECT c FROM Country c WHERE c.idCountry = :idCountry"),
-    @NamedQuery(name = "Country.findByName", query = "SELECT c FROM Country c WHERE c.name = :name")})
+    @NamedQuery(name = "Country.findAll",
+            query = "SELECT c FROM Country c"),
+    @NamedQuery(name = "Country.findByIdCountry",
+            query = "SELECT c FROM Country c WHERE c.idCountry = :idCountry"),
+    @NamedQuery(name = "Country.findByName",
+            query = "SELECT c FROM Country c WHERE c.name = :name"),
+    @NamedQuery(name = "Country.findProjectCountries",
+            query = "SELECT DISTINCT c "
+            + "FROM Country c, Project p "
+            + "WHERE c.idCountry = p.idCountry.idCountry "
+            + "ORDER BY c.name")})
 
 public class Country implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     private Integer idCountry;
     @Column(name = "name")
@@ -42,7 +50,7 @@ public class Country implements Serializable {
 
     public Country() {
     }
-    
+
     public Country(Integer idCountry) {
         this.idCountry = idCountry;
     }
@@ -93,13 +101,13 @@ public class Country implements Serializable {
             return false;
         }
         Country other = (Country) object;
-        return !((this.idCountry == null && other.idCountry != null) || 
-                (this.idCountry != null && !this.idCountry.equals(other.idCountry)));
+        return !((this.idCountry == null && other.idCountry != null)
+                || (this.idCountry != null && !this.idCountry.equals(other.idCountry)));
     }
 
     @Override
     public String toString() {
         return "fundabitat.retam.models.Country[ idCountry=" + idCountry + " ]";
     }
-    
+
 }

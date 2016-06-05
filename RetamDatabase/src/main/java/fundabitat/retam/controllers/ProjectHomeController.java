@@ -59,7 +59,7 @@ public class ProjectHomeController implements Initializable {
     }
 
     private void setupCountries(EntityManager eManager) {
-        Query findAllCountries = eManager.createNamedQuery("Country.findAll");
+        Query findAllCountries = eManager.createNamedQuery("Country.findProjectCountries");
         countries = findAllCountries.getResultList();
 
         ObservableList<Country> observableCountryList;
@@ -105,62 +105,86 @@ public class ProjectHomeController implements Initializable {
                 change.next();
 
                 if (change.wasAdded()) {
-
-                    // change.getAddedSubList() is buggy as hell.
-                    // Why did I choose JavaFx again?
-                    List<? extends Descriptor> selected = change.getList();
-
-                    // Find the difference of the lists
-                    // Copy the list, we don't want to delete the items
-                    // in the original list
-                    List<Descriptor> clonedList = new ArrayList(selected);
-
-                    clonedList.removeAll(selectedDescriptors);
-
-                    for (Descriptor d : clonedList) {
-                        selectedDescriptors.add(d);
-
-                        TitledPane tp = new TitledPane();
-                        tp.setText(d.getName());
-
-                        ObservableList<SubDescriptor> items = FXCollections.observableArrayList();
-
-                        for (SubDescriptor sub : d.getSubDescriptorCollection()) {
-                            items.add(sub);
-                        }
-
-                        ListView<SubDescriptor> listView = new ListView(items);
-
-                        ListViewCellUtil.setupCell(listView, new Function<SubDescriptor, String>() {
-                            @Override
-                            public String apply(SubDescriptor input) {
-                                return input.getName();
-                            }
-                        }, true);
-
-                        tp.setContent(listView);
-                        subDescriptorAccordion.getPanes().add(tp);
-                        subDescriptorAccordion.setExpandedPane(tp);
-                    }
-
+                    handleDescriptorAdd(change);
                 } else {
-
-                    List<? extends Descriptor> removed = change.getRemoved();
-
-                    for (Descriptor d : removed) {
-                        selectedDescriptors.remove(d);
-                        ObservableList<TitledPane> tpList = subDescriptorAccordion.getPanes();
-
-                        for (TitledPane tp : tpList) {
-                            if (tp.getText().equals(d.getName())) {
-                                tpList.remove(tp);
-                                break;
-                            }
-                        }
-                    }
+                    handleDescriptorRemove(change);
                 }
             }
         });
+    }
+
+    private void handleDescriptorAdd(ListChangeListener.Change<? extends Descriptor> change) {
+        // change.getAddedSubList() is buggy as hell.
+        // Why did I choose JavaFx again?
+        List<? extends Descriptor> selected = change.getList();
+
+        // Find the difference of the lists
+        // Copy the list, we don't want to delete the items
+        // in the original list
+        List<Descriptor> clonedList = new ArrayList(selected);
+
+        clonedList.removeAll(selectedDescriptors);
+
+        for (Descriptor d : clonedList) {
+            selectedDescriptors.add(d);
+
+            TitledPane tp = createSubdescriptorTitledPane(d);
+            subDescriptorAccordion.getPanes().add(tp);
+            subDescriptorAccordion.setExpandedPane(tp);
+        }
+    }
+
+    private TitledPane createSubdescriptorTitledPane(Descriptor d) {
+
+        TitledPane tp = new TitledPane();
+        tp.setText(d.getName());
+
+        ListView<SubDescriptor> listView = createSubdescriptorListView(d);
+
+        tp.setContent(listView);
+        return tp;
+    }
+
+    private ListView<SubDescriptor> createSubdescriptorListView(Descriptor d) {
+
+        ObservableList<SubDescriptor> items = FXCollections.observableArrayList();
+
+        for (SubDescriptor sub : d.getSubDescriptorCollection()) {
+            items.add(sub);
+        }
+
+        ListView<SubDescriptor> listView = new ListView(items);
+
+        ListViewCellUtil.setupCell(listView, new Function<SubDescriptor, String>() {
+            @Override
+            public String apply(SubDescriptor input) {
+                return input.getName();
+            }
+        }, true);
+
+        return listView;
+    }
+
+    private void handleDescriptorRemove(ListChangeListener.Change<? extends Descriptor> change) {
+        List<? extends Descriptor> removed = change.getRemoved();
+
+        for (Descriptor d : removed) {
+            selectedDescriptors.remove(d);
+            ObservableList<TitledPane> tpList = subDescriptorAccordion.getPanes();
+
+            removeSubdescriptorTitledPane(tpList, d);
+        }
+    }
+
+    private void removeSubdescriptorTitledPane(ObservableList<TitledPane> tpList, Descriptor d) {
+
+        for (TitledPane tp : tpList) {
+
+            if (tp.getText().equals(d.getName())) {
+                tpList.remove(tp);
+                break;
+            }
+        }
     }
 
 }
