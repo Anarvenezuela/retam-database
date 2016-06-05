@@ -7,6 +7,7 @@ package fundabitat.retam.controllers;
 
 import fundabitat.retam.models.Country;
 import fundabitat.retam.models.Descriptor;
+import fundabitat.retam.models.SubDescriptor;
 import fundabitat.retam.persistence.PersistenceManager;
 import fundabitat.retam.utils.Function;
 import fundabitat.retam.utils.ListViewCellUtil;
@@ -19,6 +20,7 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TitledPane;
 import javax.persistence.EntityManager;
@@ -36,7 +38,7 @@ public class ProjectHomeController implements Initializable {
     @FXML
     private ListView<Descriptor> descriptorList;
     @FXML
-    private TitledPane subDescriptorPane;
+    private Accordion subDescriptorAccordion;
 
     private List<Country> countries;
     private List<Descriptor> descriptors;
@@ -116,8 +118,29 @@ public class ProjectHomeController implements Initializable {
                     clonedList.removeAll(selectedDescriptors);
 
                     for (Descriptor d : clonedList) {
-                        System.out.println("added: " + d.getName());
                         selectedDescriptors.add(d);
+
+                        TitledPane tp = new TitledPane();
+                        tp.setText(d.getName());
+
+                        ObservableList<SubDescriptor> items = FXCollections.observableArrayList();
+
+                        for (SubDescriptor sub : d.getSubDescriptorCollection()) {
+                            items.add(sub);
+                        }
+
+                        ListView<SubDescriptor> listView = new ListView(items);
+
+                        ListViewCellUtil.setupCell(listView, new Function<SubDescriptor, String>() {
+                            @Override
+                            public String apply(SubDescriptor input) {
+                                return input.getName();
+                            }
+                        }, true);
+
+                        tp.setContent(listView);
+                        subDescriptorAccordion.getPanes().add(tp);
+                        subDescriptorAccordion.setExpandedPane(tp);
                     }
 
                 } else {
@@ -125,12 +148,17 @@ public class ProjectHomeController implements Initializable {
                     List<? extends Descriptor> removed = change.getRemoved();
 
                     for (Descriptor d : removed) {
-                        System.out.println("removed: " + d.getName());
                         selectedDescriptors.remove(d);
+                        ObservableList<TitledPane> tpList = subDescriptorAccordion.getPanes();
+
+                        for (TitledPane tp : tpList) {
+                            if (tp.getText().equals(d.getName())) {
+                                tpList.remove(tp);
+                                break;
+                            }
+                        }
                     }
-
                 }
-
             }
         });
     }

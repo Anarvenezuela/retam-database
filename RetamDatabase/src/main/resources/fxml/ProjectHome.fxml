@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -57,9 +58,17 @@
                         </TitledPane>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                <AnchorPane GridPane.columnIndex="2">
                     <children>
-                        <TitledPane fx:id="subDescriptorPane" animated="false" collapsible="false" prefHeight="200.0" prefWidth="200.0" text="Subdescriptores" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Accordion fx:id="subDescriptorAccordion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <panes>
+                                <TitledPane animated="false" collapsible="false" expanded="false" text="Subdescriptores">
+                                    <content>
+                                        <ListView />
+                                    </content>
+                                </TitledPane>
+                            </panes>
+                        </Accordion>
                     </children>
                 </AnchorPane>
             </children>
