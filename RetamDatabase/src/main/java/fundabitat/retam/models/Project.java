@@ -28,10 +28,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "project")
 @NamedQueries({
-    @NamedQuery(name = "Project.findAll", query = "SELECT p FROM Project p"),
-    @NamedQuery(name = "Project.findByIdProject", query = "SELECT p FROM Project p WHERE p.idProject = :idProject"),
-    @NamedQuery(name = "Project.findByCode", query = "SELECT p FROM Project p WHERE p.code = :code"),
-    @NamedQuery(name = "Project.findByName", query = "SELECT p FROM Project p WHERE p.name = :name")})
+    @NamedQuery(name = "Project.findAll",
+            query = "SELECT p FROM Project p"),
+    @NamedQuery(name = "Project.findByIdProject",
+            query = "SELECT p FROM Project p WHERE p.idProject = :idProject"),
+    @NamedQuery(name = "Project.findByCode",
+            query = "SELECT p FROM Project p WHERE p.code = :code"),
+    @NamedQuery(name = "Project.findByName",
+            query = "SELECT p FROM Project p WHERE p.name = :name"),
+    @NamedQuery(name = "Project.filterProjectsByDescs",
+            query = "SELECT DISTINCT p "
+            + "FROM Project p "
+            + "JOIN p.descriptorCollection d "
+            + "WHERE d.idDescriptor IN :descs"),
+    @NamedQuery(name = "Project.filterProjects",
+            query = "SELECT DISTINCT p "
+            + "FROM Project p "
+            + "JOIN p.descriptorCollection d "
+            + "JOIN p.subDescriptorCollection s "
+            + "WHERE d.idDescriptor IN :descs AND s.idSubDescriptor IN :subs")})
 public class Project implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -7,10 +7,12 @@ package fundabitat.retam.controllers;
 
 import fundabitat.retam.models.Country;
 import fundabitat.retam.models.Descriptor;
+import fundabitat.retam.models.Project;
 import fundabitat.retam.models.SubDescriptor;
 import fundabitat.retam.persistence.PersistenceManager;
 import fundabitat.retam.utils.Function;
 import fundabitat.retam.utils.ListViewCellUtil;
+import fundabitat.retam.utils.ListViewUtil;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
@@ -56,6 +59,7 @@ public class ProjectHomeController implements Initializable {
         EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
         setupCountries(eManager);
         setupDescriptors(eManager);
+        eManager.close();
     }
 
     private void setupCountries(EntityManager eManager) {
@@ -187,4 +191,72 @@ public class ProjectHomeController implements Initializable {
         }
     }
 
+    private List<Integer> getSelectedDescriptorsIds() {
+
+        List<Integer> ids = ListViewUtil.mapSelected(descriptorList, new Function<Descriptor, Integer>() {
+            @Override
+            public Integer apply(Descriptor input) {
+                return input.getIdDescriptor();
+            }
+        });
+
+        return ids;
+    }
+
+    private List<Integer> getSelectedSubDescIds() {
+
+        ObservableList<TitledPane> tpList = subDescriptorAccordion.getPanes();
+        List<Integer> ids = new ArrayList();
+
+        for (TitledPane tp : tpList) {
+
+            // Do not take into account the panel used as title
+            if (!tp.isCollapsible()) {
+                continue;
+            }
+
+            ListView<SubDescriptor> listView = (ListView) tp.getContent();
+
+            List<Integer> listViewIds;
+            listViewIds = ListViewUtil.mapSelected(listView, new Function<SubDescriptor, Integer>() {
+                @Override
+                public Integer apply(SubDescriptor input) {
+                    return input.getIdSubDescriptor();
+                }
+            });
+
+            ids.addAll(listViewIds);
+        }
+
+        return ids;
+    }
+
+    @FXML
+    public void onActionSearchButton(ActionEvent event) {
+        List<Integer> descIds = getSelectedDescriptorsIds();
+        List<Integer> subDescIds = getSelectedSubDescIds();
+
+        PersistenceManager pManager = PersistenceManager.getInstance();
+        EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
+
+        Query filterProject;
+
+        if (subDescIds.isEmpty()) {
+            filterProject = eManager.createNamedQuery("Project.filterProjectsByDescs")
+                    .setParameter("descs", descIds);
+        } else {
+
+            filterProject = eManager.createNamedQuery("Project.filterProjects")
+                    .setParameter("descs", descIds)
+                    .setParameter("subs", subDescIds);
+        }
+
+        List<Project> projects = filterProject.getResultList();
+
+        for (Project p : projects) {
+            System.out.println(p.getName());
+        }
+
+        eManager.close();
+    }
 }
