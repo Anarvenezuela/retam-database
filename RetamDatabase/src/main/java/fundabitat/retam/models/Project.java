@@ -36,17 +36,14 @@ import javax.persistence.Table;
             query = "SELECT p FROM Project p WHERE p.code = :code"),
     @NamedQuery(name = "Project.findByName",
             query = "SELECT p FROM Project p WHERE p.name = :name"),
-    @NamedQuery(name = "Project.filterProjectsByDescs",
-            query = "SELECT DISTINCT p "
-            + "FROM Project p "
-            + "JOIN p.descriptorCollection d "
-            + "WHERE d.idDescriptor IN :descs"),
     @NamedQuery(name = "Project.filterProjects",
             query = "SELECT DISTINCT p "
             + "FROM Project p "
             + "JOIN p.descriptorCollection d "
             + "JOIN p.subDescriptorCollection s "
-            + "WHERE d.idDescriptor IN :descs AND s.idSubDescriptor IN :subs")})
+            + "WHERE d.idDescriptor IN :descs AND s.idSubDescriptor IN :subs "
+            + "AND p.idCountry IN :countries")})
+
 public class Project implements Serializable {
 
     private static final long serialVersionUID = 1L;

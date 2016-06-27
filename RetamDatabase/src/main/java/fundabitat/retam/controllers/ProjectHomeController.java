@@ -11,6 +11,7 @@ import fundabitat.retam.models.Project;
 import fundabitat.retam.models.SubDescriptor;
 import fundabitat.retam.persistence.PersistenceManager;
 import fundabitat.retam.utils.Function;
+import fundabitat.retam.utils.ListUtil;
 import fundabitat.retam.utils.ListViewCellUtil;
 import fundabitat.retam.utils.ListViewUtil;
 import java.net.URL;
@@ -45,6 +46,7 @@ public class ProjectHomeController implements Initializable {
 
     private List<Country> countries;
     private List<Descriptor> descriptors;
+    private List<SubDescriptor> subDescriptors;
 
     // Used to keep the previous selected values because JavaFx is just too buggy.
     private List<Descriptor> selectedDescriptors = new ArrayList();
@@ -59,9 +61,14 @@ public class ProjectHomeController implements Initializable {
         EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
         setupCountries(eManager);
         setupDescriptors(eManager);
+        setupSubDescriptors(eManager);
         eManager.close();
     }
 
+    /**
+     * Sets up the countries' panel. Enables the multiselection hack and sets
+     * the display text
+     */
     private void setupCountries(EntityManager eManager) {
         Query findAllCountries = eManager.createNamedQuery("Country.findProjectCountries");
         countries = findAllCountries.getResultList();
@@ -79,6 +86,10 @@ public class ProjectHomeController implements Initializable {
         }, true);
     }
 
+    /**
+     * Sets up the descriptor panel. Enables the multiselection hack, sets the
+     * display text and adds the action to do on select.
+     */
     private void setupDescriptors(EntityManager eManager) {
         Query findAllDescriptors = eManager.createNamedQuery("Descriptor.findAll");
         descriptors = findAllDescriptors.getResultList();
@@ -98,6 +109,21 @@ public class ProjectHomeController implements Initializable {
         setupDescriptorSelectionAction();
     }
 
+    /**
+     * Gets the list of subdescriptor to be used in the search.
+     *
+     * @param eManager
+     */
+    private void setupSubDescriptors(EntityManager eManager) {
+        Query findAllDescriptors = eManager.createNamedQuery("SubDescriptor.findAll");
+        subDescriptors = findAllDescriptors.getResultList();
+    }
+
+    /**
+     * Adds the action to do when selecting a descriptor. When a descriptor is
+     * selected, a new panel with its subdescriptors should be added to the
+     * subdescriptors pane. Selection can add or remove items.
+     */
     private void setupDescriptorSelectionAction() {
 
         descriptorList.getSelectionModel().getSelectedItems().addListener(
@@ -117,6 +143,13 @@ public class ProjectHomeController implements Initializable {
         });
     }
 
+    /**
+     * Handles the selection of a descriptor. Calculate the difference between
+     * the old list and the new one to get the added element. Then it adds the
+     * panel
+     *
+     * @param change the change made by the user
+     */
     private void handleDescriptorAdd(ListChangeListener.Change<? extends Descriptor> change) {
         // change.getAddedSubList() is buggy as hell.
         // Why did I choose JavaFx again?
@@ -138,6 +171,13 @@ public class ProjectHomeController implements Initializable {
         }
     }
 
+    /**
+     * Creates a subdescriptor pane for the selected descriptor. It contains a
+     * ListView with the subdescriptors.
+     *
+     * @param d the selected descriptor
+     * @return the titled pane
+     */
     private TitledPane createSubdescriptorTitledPane(Descriptor d) {
 
         TitledPane tp = new TitledPane();
@@ -149,6 +189,9 @@ public class ProjectHomeController implements Initializable {
         return tp;
     }
 
+    /**
+     * Creates the ListView of subdescriptors.
+     */
     private ListView<SubDescriptor> createSubdescriptorListView(Descriptor d) {
 
         ObservableList<SubDescriptor> items = FXCollections.observableArrayList();
@@ -169,6 +212,9 @@ public class ProjectHomeController implements Initializable {
         return listView;
     }
 
+    /**
+     * Handles the deselection of a descriptor. Removes the corresponding pane.
+     */
     private void handleDescriptorRemove(ListChangeListener.Change<? extends Descriptor> change) {
         List<? extends Descriptor> removed = change.getRemoved();
 
@@ -180,10 +226,15 @@ public class ProjectHomeController implements Initializable {
         }
     }
 
+    /**
+     * Removes the pane of subdescriptors
+     *
+     * @param tpList the list of panes
+     * @param d the descriptor to remove
+     */
     private void removeSubdescriptorTitledPane(ObservableList<TitledPane> tpList, Descriptor d) {
 
         for (TitledPane tp : tpList) {
-
             if (tp.getText().equals(d.getName())) {
                 tpList.remove(tp);
                 break;
@@ -191,6 +242,24 @@ public class ProjectHomeController implements Initializable {
         }
     }
 
+    /**
+     * Gets a list of the ids the selected countries.
+     */
+    private List<Integer> getSelectedCountriesIds() {
+
+        List<Integer> ids = ListViewUtil.mapSelected(countryList, new Function<Country, Integer>() {
+            @Override
+            public Integer apply(Country input) {
+                return input.getIdCountry();
+            }
+        });
+
+        return ids;
+    }
+
+    /**
+     * Gets a list of the ids the selected descriptors.
+     */
     private List<Integer> getSelectedDescriptorsIds() {
 
         List<Integer> ids = ListViewUtil.mapSelected(descriptorList, new Function<Descriptor, Integer>() {
@@ -203,6 +272,9 @@ public class ProjectHomeController implements Initializable {
         return ids;
     }
 
+    /**
+     * Gets a list of the ids the selected subdescriptors.
+     */
     private List<Integer> getSelectedSubDescIds() {
 
         ObservableList<TitledPane> tpList = subDescriptorAccordion.getPanes();
@@ -231,25 +303,43 @@ public class ProjectHomeController implements Initializable {
         return ids;
     }
 
+    /**
+     * Action triggered when a search is clicked.
+     */
     @FXML
     public void onActionSearchButton(ActionEvent event) {
         List<Integer> descIds = getSelectedDescriptorsIds();
         List<Integer> subDescIds = getSelectedSubDescIds();
+        List<Integer> countriesIds = getSelectedCountriesIds();
+
+        countriesIds = emptyItemSearch(countriesIds, countries, new Function<Country, Integer>() {
+            @Override
+            public Integer apply(Country input) {
+                return input.getIdCountry();
+            }
+        });
+
+        descIds = emptyItemSearch(descIds, descriptors, new Function<Descriptor, Integer>() {
+            @Override
+            public Integer apply(Descriptor input) {
+                return input.getIdDescriptor();
+            }
+        });
+
+        subDescIds = emptyItemSearch(subDescIds, subDescriptors, new Function<SubDescriptor, Integer>() {
+            @Override
+            public Integer apply(SubDescriptor input) {
+                return input.getIdSubDescriptor();
+            }
+        });
 
         PersistenceManager pManager = PersistenceManager.getInstance();
         EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
 
-        Query filterProject;
-
-        if (subDescIds.isEmpty()) {
-            filterProject = eManager.createNamedQuery("Project.filterProjectsByDescs")
-                    .setParameter("descs", descIds);
-        } else {
-
-            filterProject = eManager.createNamedQuery("Project.filterProjects")
-                    .setParameter("descs", descIds)
-                    .setParameter("subs", subDescIds);
-        }
+        Query filterProject = eManager.createNamedQuery("Project.filterProjects")
+                .setParameter("descs", descIds)
+                .setParameter("subs", subDescIds)
+                .setParameter("countries", countriesIds);
 
         List<Project> projects = filterProject.getResultList();
 
@@ -258,5 +348,16 @@ public class ProjectHomeController implements Initializable {
         }
 
         eManager.close();
+    }
+
+    /**
+     * Handles the empty selection. When no item is selected it should search
+     * for any item.
+     */
+    private <E> List<Integer> emptyItemSearch(List<Integer> selectedIds, List<E> elems, Function<E, Integer> f) {
+        if (selectedIds.isEmpty()) {
+            selectedIds = ListUtil.map(elems, f);
+        }
+        return selectedIds;
     }
 }
