@@ -5,9 +5,10 @@
  */
 package fundabitat.retam.controllers;
 
+import fundabitat.retam.controllers.interfaces.ChildrenControllerInterface;
+import fundabitat.retam.controllers.interfaces.ParentControllerInterface;
 import fundabitat.retam.controllers.projectScene.ProjectSceneController;
 import fundabitat.retam.models.Project;
-import fundabitat.retam.persistence.PersistenceManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,15 +28,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
 /**
  * FXML Controller class
  *
  * @author marcos
  */
-public class ProjectTableController implements Initializable {
+public class ProjectTableController implements Initializable, ChildrenControllerInterface {
 
     @FXML
     private TableView<Project> projectTable;
@@ -45,7 +45,7 @@ public class ProjectTableController implements Initializable {
     @FXML
     private TableColumn<Project, String> projectCountry;
 
-    private List<Project> list = null;
+    private ParentControllerInterface parentCtrl;
 
     /**
      * Initializes the controller class.
@@ -59,26 +59,16 @@ public class ProjectTableController implements Initializable {
                 new PropertyValueFactory<Project, String>("name"));
         projectCountry.setCellValueFactory(
                 new PropertyValueFactory<Project, String>("countryName"));
-
-        loadProjects();
-
-        final ObservableList<Project> observableList = FXCollections.observableArrayList(list);
-
-        projectTable.setItems(observableList);
-
     }
 
-    private void loadProjects() {
+    public void initProjects(List<Project> list) {
+        final ObservableList<Project> observableList = FXCollections.observableArrayList(list);
+        projectTable.setItems(observableList);
+    }
 
-        if (list == null) {
-            PersistenceManager pManager = PersistenceManager.getInstance();
-            EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
-
-            Query findAllProjects = eManager.createNamedQuery("Project.findAll");
-            list = findAllProjects.getResultList();
-            eManager.close();
-        }
-
+    @Override
+    public void addParentController(ParentControllerInterface ctrl) {
+        parentCtrl = ctrl;
     }
 
     @FXML
@@ -109,7 +99,10 @@ public class ProjectTableController implements Initializable {
                 Logger.getLogger(ProjectTableController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
     }
 
+    @FXML
+    public void onActionBackButton(ActionEvent event) {
+        parentCtrl.popPane();
+    }
 }

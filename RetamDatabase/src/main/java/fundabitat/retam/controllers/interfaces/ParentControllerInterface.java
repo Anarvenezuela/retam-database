@@ -15,6 +15,6 @@ public interface ParentControllerInterface {
 
     public void pushPane(Node node);
 
-    public void popPane(Node node);
+    public void popPane();
 
 }

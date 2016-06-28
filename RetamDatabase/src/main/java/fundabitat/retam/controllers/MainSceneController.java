@@ -45,6 +45,7 @@ public class MainSceneController implements Initializable, ParentControllerInter
         try {
             homePane = (AnchorPane) homeLoader.load();
             ChildrenControllerInterface homeCtrl = homeLoader.getController();
+
             homeCtrl.addParentController(this);
 
             stackPane.getChildren().add(homePane);
@@ -55,13 +56,23 @@ public class MainSceneController implements Initializable, ParentControllerInter
 
     @Override
     public void pushPane(Node node) {
-        stackPane.getChildren().add(node);
+        ObservableList<Node> children = stackPane.getChildren();
+
+        if (!children.isEmpty()) {
+            children.get(children.size() - 1).setVisible(false);
+        }
+
+        children.add(node);
     }
 
     @Override
-    public void popPane(Node node) {
+    public void popPane() {
         ObservableList<Node> children = stackPane.getChildren();
         children.remove(children.size() - 1);
+
+        if (!children.isEmpty()) {
+            children.get(children.size() - 1).setVisible(true);
+        }
     }
 
 }

@@ -16,19 +16,24 @@ import fundabitat.retam.utils.Function;
 import fundabitat.retam.utils.ListUtil;
 import fundabitat.retam.utils.ListViewCellUtil;
 import fundabitat.retam.utils.ListViewUtil;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
@@ -352,8 +357,18 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
 
         List<Project> projects = filterProject.getResultList();
 
-        for (Project p : projects) {
-            System.out.println(p.getName());
+        FXMLLoader projectTableLoader = new FXMLLoader(getClass()
+                .getResource("/fxml/ProjectTable.fxml"));
+
+        try {
+            AnchorPane projectTablePane = (AnchorPane) projectTableLoader.load();
+            ProjectTableController projectTableCtrl = projectTableLoader.getController();
+            projectTableCtrl.initProjects(projects);
+            projectTableCtrl.addParentController(parentCtrl);
+            parentCtrl.pushPane(projectTablePane);
+
+        } catch (IOException ex) {
+            Logger.getLogger(MainSceneController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         eManager.close();
