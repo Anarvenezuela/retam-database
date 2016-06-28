@@ -5,6 +5,8 @@
  */
 package fundabitat.retam.controllers;
 
+import fundabitat.retam.controllers.interfaces.ChildrenControllerInterface;
+import fundabitat.retam.controllers.interfaces.ParentControllerInterface;
 import fundabitat.retam.models.Country;
 import fundabitat.retam.models.Descriptor;
 import fundabitat.retam.models.Project;
@@ -35,7 +37,7 @@ import javax.persistence.Query;
  *
  * @author marcos
  */
-public class ProjectHomeController implements Initializable {
+public class ProjectHomeController implements Initializable, ChildrenControllerInterface {
 
     @FXML
     private ListView<Country> countryList;
@@ -43,6 +45,8 @@ public class ProjectHomeController implements Initializable {
     private ListView<Descriptor> descriptorList;
     @FXML
     private Accordion subDescriptorAccordion;
+
+    private ParentControllerInterface parentCtrl;
 
     private List<Country> countries;
     private List<Descriptor> descriptors;
@@ -63,6 +67,11 @@ public class ProjectHomeController implements Initializable {
         setupDescriptors(eManager);
         setupSubDescriptors(eManager);
         eManager.close();
+    }
+
+    @Override
+    public void addParentController(ParentControllerInterface ctrl) {
+        parentCtrl = ctrl;
     }
 
     /**
