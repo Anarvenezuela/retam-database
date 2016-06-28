@@ -318,7 +318,7 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
     }
 
     /**
-     * Action triggered when a search is clicked.
+     * Action triggered when search is clicked.
      */
     @FXML
     public void onActionSearchButton(ActionEvent event) {
@@ -340,22 +340,72 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
             }
         });
 
-        subDescIds = emptyItemSearch(subDescIds, subDescriptors, new Function<SubDescriptor, Integer>() {
-            @Override
-            public Integer apply(SubDescriptor input) {
-                return input.getIdSubDescriptor();
-            }
-        });
+        PersistenceManager pManager = PersistenceManager.getInstance();
+        EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
+
+        Query filterProject = handleEmptySubdescSelection(subDescIds, eManager, descIds, countriesIds);
+
+        List<Project> projects = filterProject.getResultList();
+
+        createResultPane(projects);
+
+        eManager.close();
+    }
+
+    /**
+     * Handles empty selection of subdescriptors. When no subdescriptor is
+     * selected the app should search projects without taking into account the
+     * subdescriptors. Note that this is different from searching using all the
+     * subdescriptors since there are project without subdescriptors.
+     */
+    private Query handleEmptySubdescSelection(List<Integer> subDescIds,
+            EntityManager eManager, List<Integer> descIds, List<Integer> countriesIds) {
+        Query filterProject;
+        if (subDescIds.isEmpty()) {
+            filterProject = eManager.createNamedQuery("Project.filterProjectsByDescs")
+                    .setParameter("descs", descIds)
+                    .setParameter("countries", countriesIds);
+
+        } else {
+
+            filterProject = eManager.createNamedQuery("Project.filterProjects")
+                    .setParameter("descs", descIds)
+                    .setParameter("subs", subDescIds)
+                    .setParameter("countries", countriesIds);
+        }
+        return filterProject;
+    }
+
+    /**
+     * Handles the empty selection. When no item is selected it should search
+     * for any item.
+     */
+    private <E> List<Integer> emptyItemSearch(List<Integer> selectedIds, List<E> elems, Function<E, Integer> f) {
+        if (selectedIds.isEmpty()) {
+            selectedIds = ListUtil.map(elems, f);
+        }
+        return selectedIds;
+    }
+
+    /**
+     * Action triggered when list all is clicked.
+     */
+    @FXML
+    public void onActionListAllButton(ActionEvent event) {
 
         PersistenceManager pManager = PersistenceManager.getInstance();
         EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
 
-        Query filterProject = eManager.createNamedQuery("Project.filterProjects")
-                .setParameter("descs", descIds)
-                .setParameter("subs", subDescIds)
-                .setParameter("countries", countriesIds);
+        Query filterProject = eManager.createNamedQuery("Project.findAll");
 
         List<Project> projects = filterProject.getResultList();
+
+        createResultPane(projects);
+
+        eManager.close();
+    }
+
+    private void createResultPane(List<Project> projects) {
 
         FXMLLoader projectTableLoader = new FXMLLoader(getClass()
                 .getResource("/fxml/ProjectTable.fxml"));
@@ -370,18 +420,5 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
         } catch (IOException ex) {
             Logger.getLogger(MainSceneController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        eManager.close();
-    }
-
-    /**
-     * Handles the empty selection. When no item is selected it should search
-     * for any item.
-     */
-    private <E> List<Integer> emptyItemSearch(List<Integer> selectedIds, List<E> elems, Function<E, Integer> f) {
-        if (selectedIds.isEmpty()) {
-            selectedIds = ListUtil.map(elems, f);
-        }
-        return selectedIds;
     }
 }
