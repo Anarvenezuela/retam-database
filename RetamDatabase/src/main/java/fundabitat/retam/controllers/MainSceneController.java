@@ -40,7 +40,7 @@ public class MainSceneController implements Initializable, ParentControllerInter
     public void initialize(URL url, ResourceBundle rb) {
 
         homeLoader = new FXMLLoader(getClass()
-                .getResource("/fxml/ProjectHome.fxml"));
+                .getResource("/fxml/Home.fxml"));
 
         try {
             homePane = (AnchorPane) homeLoader.load();
