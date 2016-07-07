@@ -58,7 +58,7 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
     private List<SubDescriptor> subDescriptors;
 
     // Used to keep the previous selected values because JavaFx is just too buggy.
-    private List<Descriptor> selectedDescriptors = new ArrayList();
+    private final List<Descriptor> selectedDescriptors = new ArrayList();
 
     /**
      * Initializes the controller class.
@@ -420,5 +420,10 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
         } catch (IOException ex) {
             Logger.getLogger(MainSceneController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    public void onBackBtnClick(ActionEvent event) {
+        parentCtrl.popPane();
     }
 }

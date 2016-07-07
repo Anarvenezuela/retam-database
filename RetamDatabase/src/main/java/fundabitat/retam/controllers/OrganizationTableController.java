@@ -5,6 +5,8 @@
  */
 package fundabitat.retam.controllers;
 
+import fundabitat.retam.controllers.interfaces.ChildrenControllerInterface;
+import fundabitat.retam.controllers.interfaces.ParentControllerInterface;
 import fundabitat.retam.models.Organization;
 import fundabitat.retam.persistence.PersistenceManager;
 import java.net.URL;
@@ -25,7 +27,9 @@ import javax.persistence.Query;
  *
  * @author marcos
  */
-public class OrganizationTableController implements Initializable {
+public class OrganizationTableController implements Initializable, ChildrenControllerInterface {
+
+    private ParentControllerInterface parent;
 
     @FXML
     private TableView<Organization> organizationTable;
@@ -69,6 +73,11 @@ public class OrganizationTableController implements Initializable {
             eManager.close();
         }
 
+    }
+
+    @Override
+    public void addParentController(ParentControllerInterface ctrl) {
+        parent = ctrl;
     }
 
 }
