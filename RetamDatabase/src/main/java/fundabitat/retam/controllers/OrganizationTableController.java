@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -78,6 +79,11 @@ public class OrganizationTableController implements Initializable, ChildrenContr
     @Override
     public void addParentController(ParentControllerInterface ctrl) {
         parent = ctrl;
+    }
+
+    @FXML
+    public void onActionBackButton(ActionEvent event) {
+        parent.popPane();
     }
 
 }
