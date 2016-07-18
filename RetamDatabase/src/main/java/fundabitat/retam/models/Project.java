@@ -63,27 +63,38 @@ public class Project implements Serializable {
     @Basic(optional = false)
     @Column(name = "name")
     private String name;
+
     @JoinTable(name = "project_subDescriptor", joinColumns = {
         @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
         @JoinColumn(name = "idSubDescriptor", referencedColumnName = "idSubDescriptor")})
     @ManyToMany
     private Collection<SubDescriptor> subDescriptorCollection;
+
     @JoinTable(name = "project_descriptor", joinColumns = {
         @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
         @JoinColumn(name = "idDescriptor", referencedColumnName = "idDescriptor")})
     @ManyToMany
     private Collection<Descriptor> descriptorCollection;
+
     @JoinColumn(name = "idCountry", referencedColumnName = "idCountry")
     @ManyToOne(optional = false)
     private Country idCountry;
+
     @JoinColumn(name = "idRepresentative", referencedColumnName = "idRepresentative")
     @ManyToOne(optional = false)
     private Representative idRepresentative;
+
     @JoinTable(name = "project_organization", joinColumns = {
         @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
         @JoinColumn(name = "idOrganization", referencedColumnName = "idOrganization")})
     @ManyToMany
     private Collection<Organization> organizationCollection;
+
+    @JoinTable(name = "project_beneficiary", joinColumns = {
+        @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
+        @JoinColumn(name = "idBeneficiary", referencedColumnName = "idBeneficiary")})
+    @ManyToMany
+    private Collection<Beneficiary> beneficiaryCollection;
 
     public Project() {
     }
@@ -187,6 +198,14 @@ public class Project implements Serializable {
 
     public void setOrganizationCollection(Collection<Organization> organizationCollection) {
         this.organizationCollection = organizationCollection;
+    }
+
+    public Collection<Beneficiary> getBeneficiaryCollection() {
+        return beneficiaryCollection;
+    }
+
+    public void setBeneficiaryCollection(Collection<Beneficiary> beneficiaryCollection) {
+        this.beneficiaryCollection = beneficiaryCollection;
     }
 
 }

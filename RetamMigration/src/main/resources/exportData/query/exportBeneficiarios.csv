@@ -1,598 +1,294 @@
-IdBeneficiario|NombreInstitucion|Cod_Proyecto|Cod_Beneficiario
-3095|Comunidades rurales de Santa Cruz|BO148IIP01T00|011
-2923|ORGANIZACION PANAMERICANA DE SALUD|EC105IIP01T02|105
-2510|LINEA RUSTICA S.R.L.|BO111IP01T00|111
-3043|Miembros de la comunidad religiosa cristiana de la Comunidad de San Rafael de Kamoirán|VE128IP01T01|128
-3050|Comunidad Indígena de Apopipó|VE144IP01T01|144
-2504|COMITÉ CENTRAL MENONITA - Agencia de Servicio Voluntario de las Iglesias Menonitas de E.E.U.U. y Canadá|BO0146IIIP09T01|146
-2888|CONPES_CONSEJO NACIONAL DE POLITICA ECONOMICA Y SOCIAL|CO015IIIP01T01|15
-2981|OMS_ORGANIZACION MUNDIAL DE LA SALUD|PE003IIP00ET00|166
-2986|OMS_ORGANIZACION MUNDIAL DE LA SALUD|PE003IIP07T00|166
-2833|Comunidades carentes do Estado do Pará - Cerca de 18.000 não possuiem energia|BR176IIIP02T01|176
-2928|CORPORACION DE GESTION TECNOLOGICA Y CIENTIFICA SOBRE EL AMBIENTE|EC184IIP01T01|184
-3022|CEPAL_COMISION ECONOMICA PARA AMERICA LATINA Y EL CARIBE|SU002III-IVP00T00|2
-3015|PREDES_CENTRO DE ESTUDIOS Y PREVENCION DE DESASTRES|PE205I-II-IVP01T00|205
-3020|GTZ_DEUTSCHE GESELLSCHAFT FUR TECHNISCHE ZUSAMMENARBEIT|PE246IIIP01T01|210
-3023|GTZ_ GESERRSCHFT FUR TECHNISCHE ZUMAMMENARBEIT|SU304IIIP01T01|210
-3017|SALUD SIN LIMITES|PE213I-IIP01T00|213
-2980|IDRC_CENTRO INTERNACIONAL DEL DESARROLLO PARA EL CANADA|PE003IIP00ET00|214
-2989|IDRC_CENTRO INTERNACIONAL DEL DESARROLLO PARA EL CANADA|PE003IIP09T00|214
-2991|IDRC_CENTRO INTERNACIONAL DEL DESARROLLO PARA EL CANADA|PE003IIP10T00|214
-2929|LA AGENCIA CATALANA DE COOPERACION AL DESENVOLUPAMENT|EC218IIP01T01|218
-2930|SUECA SKANSKA|EC220IIP01T01|220
-3026|Servicio Autónomo Programa Nacional  Vivienda Rural|VE105I-IVP01T00|230
-3025|Instituto Altos Estudios de Salud Pública Dr. Arnoldo Gabaldon|VE105I-IVP01T00|231
-2895|Universidad del Valle-CINARA|CO031IIP01T01|231
-2503|EWRWER|B54|2333332
-2891|SECAB_SECRETARIA EJECUTIVA DEL CONVENIO ANDRES BELLO|CO026IIIP03T01|236
-2889|IPSE_INSTITUTO DE PLANIFICACION Y PROMOCION DE SOLUCIONES ENERGETICAS EN ZONAS NO INTERCONECTADAS|CO015IIIP01T01|237
-3021|CARICOM_COMUNIDAD DEL CARIBE|SU002III-IVP00T00|238
-3002|APC_PROGRAMA DE ASISTENCIA FINANCIERA NO REEMBOLSABLE PARA PROYECTOS COMUNITARIOS DE SEGURIDAD HUMANA, EMBAJADA DE JAPON|PE009IIP10T00|239
-3004|FONDO CONTRAVALOR PERU - ALEMANIA|PE009IIP10T00|240
-3003|DGIS_DIRECTORATE - GENERAL FOR INTERNATIONAL COOPERATION|PE009IIP10T00|241
-3006|MUNICIPALIDAD DISTRITAL DE CHIRINOS|PE009IIP10T00|242
-3007|MUNICIPALIDAD DISTRITAL DE NAMORA|PE009IIP10T00|243
-3018|CENTRO ECOLOGICO Y GENERO|PE246II-IIIP02T01|246
-3019|CENTRO ECOLOGICO Y GENERO|PE246IIIP01T01|246
-2932|CONSEJO DE DESARRROLLO DE LAS NACIONALIDADES Y PUEBLOS DEL ECUADOR - CODENPE|EC248IIP02T01|248
-2933|FUNDACION OMAERE|EC248IIP02T01|249
-2934|FUNDACION OMAERE|EC248IIP03T01|249
-3008|CEDEPAS_EL  CENTRO  ECUMENICO DE PROMOCION  Y ACCION SOCIAL|PE025IIP02T01|25
-2936|ORGANIZACION INTERNACIONAL DE MIGRACION OIM|EC250IIP01T01|250
-2937|FUNDACION INDIO-HILFE|EC251IIP01T01|251
-3009|GSAAC_GESTION SOCIAL DEL AGUA Y EL AMBIENTE EN CUENCAS|PE025IIP02T01|252
-3032|Comunidades rurales y Pequeños Municipios|VE124I-II-IIIP0IT00|253
-3087|Comunidades rurales y pequeños municipios|VE168IIP01T01|253
-3088|Comunidades rurales y pequeños municipios|VE168IIIP03T03|253
-2938|MUNICIPIO DE NANGARITZA|EC254IIP01T00|254
-2940|MUNICIPIO DE PAQUISHA|EC256IIP01T01|256
-2890|MINISTERIO DE AMBIENTE Y VIVIENDA Y DESARROLLO TERRITORIAL|CO026IIIP03T01|26
-2893|MINISTERIO DE AMBIENTE Y VIVIENDA Y DESARROLLO TERRITORIAL|CO026IIIP04T01|26
-3033|UNAMAZ|VE124I-II-IIIP0IT00|263
-2633|Cooperativa Minera Aurífera 25 de Julio (La Paz - Bolivia)|BO270IIIP01T01|270
-3024|UNIDERSIDAD DE LOS ANDES|VE029IIP01T01|29
-3014|CEPIS|PE041IIP01T01|3
-2988|CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|PE003IIP09T00|3
-2985|CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|PE003IIP07T00|3
-2983|CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|PE003IIP03T01|3
-2979|CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|PE003IIP00ET00|3
-2974|ASP net_Associated Schools Project Network|GU004IVP00DT00|308
-3011|COMISION AGRARIA|PE032IIP01T01|32
-2768|Región metropolitana de Sâo Pulo|BR027II-IIIP01T01|330
-2769|ASOCIACION INTERAMERICANA DE INGENIERIA SANITARIA Y AMBIENTAL - AIDIS|BR034II-IVP00T00|34
-2502|ASOCIACION INTERAMERICANA DE INGENIERIA SANITARIA Y AMBIENTAL - AIDIS|AR034II-IVP00T00|34
-3051|Comunidades del estado Apure|VE169I-IIP01T01|353
-3089|Núcleo Hortícula Suburbano Vargem Bonita|BR153IIP01T01|354
-3090|Fortaleza|BR153IIP01T01|355
-3091|Núcleo Rural de Tabatinga|BR153IIP01T01|356
-3092|Comunidades Rurales de tabatinga|BR153IIP02T01|357
-3093|región de Capinzal, SC|BR153IIP03T01|358
-3094|Comunidades rurales de Recife|BR153IIP05T01|360
-3096|Uchiza - San Martín|PE040IIIP01T01|367
-3097|Tocache-San Martín|PE040IIIP01T01|368
-3098|Pucallpa - Ucayali|PE040IIIP01T01|369
-3099|Shambillo - Padre Abad - Ucayali|PE040IIIP01T01|370
-3100|Caynarachi - San Martin|PE040IIIP01T01|371
-2975|UNESCO|GU004IVP00DT00|4
-2976|Wowetta as the beneficiary community|GU303IIIP01T01|5
-2984|OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP03T01|56
-2982|OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP00ET00|56
-2987|OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP07T00|56
-2992|OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP10T00|56
-2990|OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP09T00|56
-2894|SENA_SERVICIO NACIONAL DE APRENDIZAJE|CO026IIIP04T01|61
-2892|SENA_SERVICIO NACIONAL DE APRENDIZAJE|CO026IIIP03T01|61
-2897|SENA_SERVICIO NACIONAL DE APRENDIZAJE|CO061IIIP01T00|61
-2896|IAVH_INSTITUTO ALEXANDER VON HUMBOLDT|CO061IIIP01T00|62
-2922|UNIVERSIDAD EARTH- TIERRA TROPICAL|EC084IIIP01T00|84
-2994|ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|PE009IIIP11T01|9
-3016|ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|PE213I-IIP01T00|9
-3005|ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|PE009IIP10T00|9
-2735|Comunidad de Rancho Nuevo (Bolivia)|BO50P36T1|B0120
-2720|Comunidad de Rancho Nuevo (Bolivia)|BO50P36|B0120
-2524|CIPCA - Centro de Investigación para el Campesino|BO12T1|B079
-2527|Nelson|BO12T1|B083
-2544|Iglesia Menonita Boliviana (IMB)|BO146II-IIIP05T01|BO001
-2550|Iglesia Menonita Boliviana|BO146IIP00AT01|BO001
-2624|El Municipio cruceño. Talleres para estudiantes, docentes y Juntas Vecinales para poder retransmitir información.|BO152IIP01T00|BO001
-2542|Centro de Investigación para el Campesino (CIPCA)|BO146II-IIIP05T01|BO002
-2549|CIPCA - Centro de Investigación para el Campesino|BO146IIP00AT01|BO002
-2547|Unión Nacional de pequeños ganaderos (UNAPEGA)|BO146II-IIIP05T01|BO003
-2553|UNAPEGA - Unión Nacional de Pequeños Ganaderos|BO146IIP00AT01|BO003
-2546|Red latino americana de comercialización comunitaria (RELACC)|BO146II-IIIP05T01|BO004
-2552|RELACC - Red Latinoamericana de Comercialización Comunitaria|BO146IIP00AT01|BO004
-2543|Centro de promoción al campesino (CEPAC)|BO146II-IIIP05T01|BO005
-2548|CEPAC - Centro de Promoción al Campesino|BO146IIP00AT01|BO005
-2551|Iglesia Metodista|BO146IIP00AT01|BO006
-2545|Iglesia Metodista|BO146II-IIIP05T01|BO006
-2625|Los habitantes del área rural del departamento de CRE (Santa Cruz, Bolivia)|BO172IIIP01T01|BO007
-2511|MANO DE OBRA (INDIGENAS)|BO111IP01T00|BO010
-2512|SANTA CRUZ DE LA SIERRA (POBLACION URBANA)|BO111IP01T00|BO011
-2516|Barrios periféricos de la ciudad de Santa Cruz de la Sierra y algunas zonas rurales.|BO113I-IIP01T00|BO011
-2554|SANTA CRUZ DE LA SIERRA (POBLACIÓN URBANA)|BO147IIP01T00|BO011
-2626|Barrios periféricos de la ciudad de Santa Cruz de la Sierra y algunas zonas rurales.|BO175II-IIIP06T01|BO011
-2621|Santa Cruz de la Sierra (población urbana)|BO150IIP01T01|BO011
-2629|Santa Cruz de la Sierra (población urbana)|BO176IIIP01T01|BO011
-2564|Recicladores/as artesanales en Santa Cruz (Bolivia)|BO147IIP06T01|BO012
-2558|Federación de clubes de madres|BO147IIP02T01|BO013
-2563|Mujeres de la Micro-empresa "El Trébol", Barrio Las Américas (Santa Cruz, Bolivia)|BO147IIP06T01|BO014
-2555|Asociación de mujeres de Distritos de S.C.|BO147IIP02T01|BO014
-2559|Grupos eclesiales de base|BO147IIP02T01|BO015
-2560|Juntas vecinales|BO147IIP02T01|BO016
-2562|JUNTAS VECINALES|BO147IIP03T01|BO016
-2556|Colegios fiscales|BO147IIP02T01|BO017
-2561|Municipios (El Torno y la Guardia)|BO147IIP02T01|BO018
-2557|Comunidades rurales de Bolivia|BO147IIP02T01|BO019
-2505|Comunidades de Bolivia|BO056IIP02T00|BO019
-2566|Comunidad de Azurduy (Chuquisaca, Bolivia)|BO148IIP02T01|BO020
-2567|Comunidad de San Pedro de Terebinto (Bolivia)|BO148IIP03T01|BO021
-2570|Comunidad de la Colonia Villa Antofagasta (Bolivia)|BO148IIP04T02|BO022
-2611|Comunidad de Villa Antofagasta (Bolivia)|BO148IIP30T01|BO022
-2605|Comunidad de Junta Pirai (Bolivia)|BO148IIP30T01|BO023
-2569|Comunidad de Junta Pirai (Bolivia)|BO148IIP04T02|BO023
-2584|Comunidad Colonia Pirai (Departamento de Santa Cruz, Bolivia)|BO148IIP11T01|BO023
-2577|Comunidad del 24 de Septiembre (Bolivia)|BO148IIP04T02|BO024
-2606|Comunidad de Los Angeles (Bolivia)|BO148IIP30T01|BO025
-2571|Comunidad de los Angeles (Bolivia)|BO148IIP04T02|BO025
-2568|Comunidad de Bartolina Sisa (Bolivia)|BO148IIP04T02|BO026
-2604|Comunidad de Bartolina Sisa (Bolivia)|BO148IIP30T01|BO026
-2576|Comunidad del  6 de Agosto (Bolivia)|BO148IIP04T02|BO027
-2615|Comunidad del 6 de Agosto (Bolivia)|BO148IIP30T01|BO027
-2575|Comunidad de Villa Arancibia (Bolivia)|BO148IIP04T02|BO028
-2612|Comunidad de Villa Arancibia (Bolivia)|BO148IIP30T01|BO028
-2578|Comunidades de los Núcleos 21,42 y 48 (Bolivia)|BO148IIP04T02|BO029
-2616|Comunidades de los Núcleos 21, 42 y 48 (Bolivia)|BO148IIP30T01|BO029
-2609|Comunidad de San Martín (Bolivia)|BO148IIP30T01|BO030
-2573|Comunidad de San Martín (Bolivia)|BO148IIP04T02|BO030
-2572|Comunidad de San Juan de la Melea (Bolivia)|BO148IIP04T02|BO031
-2574|Comunidad de Sombrerito (Bolivia)|BO148IIP04T02|BO032
-2579|Comunidad de Cañaveral II (Bolivia)|BO148IIP05T01|BO033
-2580|Comunidad de Santa Fe de Yapacani (Bolivia)|BO148IIP06T01|BO034
-2581|Comunidad de El Cuatro (Paurito, Bolivia)|BO148IIP07T01|BO035
-2582|Comunidad de Illataku - Cochabamba (Bolivia)|BO148IIP08T01|BO036
-2565|Comunidad de Illataku - Cochabamba (Bolivia)|BO148I-IIP09T01|BO036
-2583|Parroquia de Villa Santa Cruz (Bolivia)|BO148IIP10T01|BO037
-2585|Comunidades y barrios de Santa Cruz|BO148IIP12T01|BO038
-2590|Comunidades y barrios de Santa Cruz (Bolivia)|BO148IIP18T01|BO038
-2601|Comunidades de Santa Cruz (Bolivia)|BO148IIP27T01|BO038
-2586|Cooperativa Sr. de Malta Valle Grande (Santa Cruz, Bolivia)|BO148IIP14T01|BO039
-2587|6 familias de la Comunidad de Urubo (Santa Cruz, Bolivia)|BO148IIP15T01|BO040
-2588|Familias de la Comunidad de Equipetrol (Santa Cruz, Bolivia)|BO148IIP16T01|BO041
-2589|Familias de la Comunidad de Colonia Berlín (Santa Cruz, Bolivia)|BO148IIP17T01|BO042
-2591|11 familias de  la Urbanización El Trigal (Santa Cruz, Bolivia)|BO148IIP19T01|BO043
-2592|Comunidad de Villa Rosario (Santa Cruz, Bolivia)|BO148IIP22T01|BO044
-2593|Comunidades de Paredones (Santa Cruz, Bolivia)|BO148IIP24T00|BO045
-2594|Comunidad de Quiñales (Santa Cruz, Bolivia)|BO148IIP25T00|BO046
-2595|Comunidad de Verdecillo (Santa Cruz, Bolivia)|BO148IIP25T00|BO047
-2596|Comunidad de Campo Rosa (Santa Cruz, Bolivia)|BO148IIP26T00|BO048
-2597|Comunidad de San José (Santa Cruz, Bolivia)|BO148IIP26T00|BO049
-2599|Comunidad de Santa Rita (Santa Cruz, Bolivia)|BO148IIP26T00|BO050
-2600|Comunidad de Taruma (Santa Cruz, Bolivia)|BO148IIP26T00|BO051
-2598|Comunidad de San Luis (Santa Cruz, Bolivia)|BO148IIP26T00|BO052
-2602|Comunidad de Valle Grande (Bolivia)|BO148IIP28T00|BO053
-2603|Cooperativa de Agua de Padilla (Departamento de Chuquisaca, Bolivia)|BO148IIP29T00|BO054
-2607|Comunidad de Rancho Nuevo (Bolivia)|BO148IIP30T01|BO055
-2614|Comunidad del 24 de Marzo (Bolivia)|BO148IIP30T01|BO056
-2610|Comunidad de Tucumancillo (Bolivia)|BO148IIP30T01|BO057
-2618|Cooperativa El Carmen Ltda. (Bolivia)|BO148IIP30T01|BO058
-2617|Cooperativa Agropecuaria Valle Grande (Bolivia)|BO148IIP30T01|BO059
-2613|Comunidad de Villa Barrientos (Bolivia)|BO148IIP30T01|BO060
-2608|Comunidad de San Juan (Bolivia)|BO148IIP30T01|BO061
-2619|Comunidades de San Julian (Bolivia)|BO148IIP33T00|BO062
-2620|Comunidad de Sajlina (Culpina, Departamento de Chuqisaca - Bolivia)|BO148IIP36T00|BO063
-2627|Zona de San Julian (Brecha Casarabe), provincia Ñuflo de Chavez.|BO175IIIP01T01|BO064
-2628|Comunidad de Cotoca (Provincia Andrés Ibáñez, Bolivia)|BO175IIP05T00|BO065
-2622|80.OOO niños y 30.000 jóvenes de colegios nocturnos de Santa Cruz de la Sierra|BO151IIP01T00|BO066
-2623|El Municipio cruceño|BO152IIP01T00|BO067
-2514|Comunidades de Bolivia|BO112IIP03T06|BO068
-2515|Comunidades de Bolivia|BO112IIP04T00|BO068
-2645|Asociación de mujeres de Distritos de S.C.|BO43P3|BO100
-2649|Grupos eclesiales de base|BO43P3|BO101
-2650|Juntas vecinales|BO43P3|BO102
-2646|Colegios fiscales|BO43P3|BO103
-2651|Municipios (El Torno y la Guardia)|BO43P3|BO104
-2506|Constructora Escala del Oriente|BO107IP00T00|BO107
-2507|Constructora Hossen S.A.|BO108IP00T00|BO108
-2508|Constructora Casco Viejo|BO109IP00T00|BO109
-2509|UNIDAD FORESTAL|BO110IIIP00T01|BO110
-2714|Comunidades de Santa Cruz (Bolivia)|BO50P33|BO110
-2692|Comunidades y barrios de Santa Cruz|BO50P2|BO110
-2701|Comunidades y barrios de Santa Cruz (Bolivia)|BO50P25T1|BO110
-2747|Comunidades de San Julian (Bolivia)|BO50P6|BO111
-2513|EMAS - Escuela Móvil de Aguas y Saneamiento Básico|BO112IIP01T06|BO112
-2715|Comunidad de Valle Grande (Bolivia)|BO50P34|BO113
-2748|Comunidad de Sajlina (Culpina, Departamento de Chuqisaca - Bolivia)|BO50P9|BO115
-2652|Comunidad de Azurduy (Chuquisaca, Bolivia)|BO50P10|BO116
-2653|Comunidad de Azurduy (Chuquisaca, Bolivia)|BO50P10T1|BO116
-2716|Cooperativa de Agua de Padilla (Departamento de Chuquisaca, Bolivia)|BO50P35|BO117
-2654|Comunidad de San Pedro de Terebinto (Bolivia)|BO50P11|BO118
-2655|Comunidad de San Pedro de Terebinto (Bolivia)|BO50P11T1|BO118
-2718|Comunidad de Junta Pirai (Bolivia)|BO50P36|BO121
-2657|Comunidad de Junta Pirai (Bolivia)|BO50P12|BO121
-2668|Comunidad de Junta Pirai (Bolivia)|BO50P12T1-T6|BO121
-2690|Comunidad Colonia Pirai (Departamento de Santa Cruz, Bolivia)|BO50P19|BO121
-2691|Comunidad Colonia Pirai (Departamento de Santa Cruz, Bolivia)|BO50P19T1|BO121
-2733|Comunidad de Junta Pirai (Bolivia)|BO50P36T1|BO121
-2742|Comunidad del 24 de Marzo (Bolivia)|BO50P36T1|BO122
-2727|Comunidad del 24 de Marzo (Bolivia)|BO50P36|BO122
-2719|Comunidad de Los Angeles (Bolivia)|BO50P36|BO123
-2670|Comunidad de los Angeles (Bolivia)|BO50P12T1-T6|BO123
-2659|Comunidad de los Angeles (Bolivia)|BO50P12|BO123
-2734|Comunidad de Los Angeles (Bolivia)|BO50P36T1|BO123
-2732|Comunidad de Bartolina Sisa (Bolivia)|BO50P36T1|BO124
-2667|Comunidad de Bartolina Sisa (Bolivia)|BO50P12T1-T6|BO124
-2717|Comunidad de Bartolina Sisa (Bolivia)|BO50P36|BO124
-2656|Comunidad de Bartolina Sisa (Bolivia)|BO50P12|BO124
-2725|Comunidad de Villa Arancibia (Bolivia)|BO50P36|BO125
-2663|Comunidad de Villa Arancibia (Bolivia)|BO50P12|BO125
-2674|Comunidad de Villa Arancibia (Bolivia)|BO50P12T1-T6|BO125
-2740|Comunidad de Villa Arancibia (Bolivia)|BO50P36T1|BO125
-2743|Comunidad del 6 de Agosto (Bolivia)|BO50P36T1|BO126
-2675|Comunidad del  6 de Agosto (Bolivia)|BO50P12T1-T6|BO126
-2664|Comunidad del  6 de Agosto (Bolivia)|BO50P12|BO126
-2728|Comunidad del 6 de Agosto (Bolivia)|BO50P36|BO126
-2669|Comunidad de la Colonia Villa Antofagasta (Bolivia)|BO50P12T1-T6|BO127
-2658|Comunidad de la Colonia Villa Antofagasta (Bolivia)|BO50P12|BO127
-2724|Comunidad de Villa Antofagasta (Bolivia)|BO50P36|BO127
-2739|Comunidad de Villa Antofagasta (Bolivia)|BO50P36T1|BO127
-2738|Comunidad de Tucumancillo (Bolivia)|BO50P36T1|BO128
-2723|Comunidad de Tucumancillo (Bolivia)|BO50P36|BO128
-2745|Cooperativa Agropecuaria Valle Grande (Bolivia)|BO50P36T1|BO129
-2730|Cooperativa Agropecuaria Valle Grande (Bolivia)|BO50P36|BO129
-2731|Cooperativa El Carmen Ltda. (Bolivia)|BO50P36|BO130
-2746|Cooperativa El Carmen Ltda. (Bolivia)|BO50P36T1|BO130
-2744|Comunidades de los Núcleos 21, 42 y 48 (Bolivia)|BO50P36T1|BO131
-2729|Comunidades de los Núcleos 21, 42 y 48 (Bolivia)|BO50P36|BO131
-2666|Comunidades de los Núcleos 21,42 y 48 (Bolivia)|BO50P12|BO131
-2677|Comunidades de los Núcleos 21,42 y 48 (Bolivia)|BO50P12T1-T6|BO131
-2672|Comunidad de San Martín (Bolivia)|BO50P12T1-T6|BO132
-2661|Comunidad de San Martín (Bolivia)|BO50P12|BO132
-2722|Comunidad de San Martín (Bolivia)|BO50P36|BO132
-2737|Comunidad de San Martín (Bolivia)|BO50P36T1|BO132
-2736|Comunidad de San Juan (Bolivia)|BO50P36T1|BO133
-2721|Comunidad de San Juan (Bolivia)|BO50P36|BO133
-2726|Comunidad de Villa Barrientos (Bolivia)|BO50P36|BO134
-2741|Comunidad de Villa Barrientos (Bolivia)|BO50P36T1|BO134
-2665|Comunidad del 24 de Septiembre (Bolivia)|BO50P12|BO135
-2676|Comunidad del 24 de Septiembre (Bolivia)|BO50P12T1-T6|BO135
-2671|Comunidad de San Juan de la Melea (Bolivia)|BO50P12T1-T6|BO136
-2660|Comunidad de San Juan de la Melea (Bolivia)|BO50P12|BO136
-2662|Comunidad de Sombrerito (Bolivia)|BO50P12|BO137
-2673|Comunidad de Sombrerito (Bolivia)|BO50P12T1-T6|BO137
-2678|Comunidad de Cañaveral II (Bolivia)|BO50P13|BO138
-2679|Comunidad de Cañaveral II (Bolivia)|BO50P13T1|BO138
-2680|Comunidad de Santa Fe de Yapacani (Bolivia)|BO50P14|BO139
-2681|Comunidad de Santa Fe de Yapacani (Bolivia)|BO50P14T1|BO139
-2682|Comunidad de El Cuatro (Paurito, Bolivia)|BO50P15|BO140
-2683|Comunidad de El Cuatro (Paurito, Bolivia)|BO50P15T1|BO140
-2684|Comunidad de Illataku - Cochabamba (Bolivia)|BO50P16|BO141
-2685|Comunidad de Illataku - Cochabamba (Bolivia)|BO50P16T1|BO141
-2686|Comunidad de Illataku - Cochabamba (Bolivia)|BO50P17|BO141
-2687|Comunidad de Illataku - Cochabamba (Bolivia)|BO50P17T1|BO141
-2688|Parroquia de Villa Santa Cruz (Bolivia)|BO50P18|BO142
-2689|Parroquia de Villa Santa Cruz (Bolivia)|BO50P18T1|BO142
-2693|Cooperativa Sr. de Malta Valle Grande (Santa Cruz, Bolivia)|BO50P21|BO143
-2694|Cooperativa Sr. de Malta Valle Grande (Santa Cruz, Bolivia)|BO50P21T1|BO143
-2695|6 familias de la Comunidad de Urubo (Santa Cruz, Bolivia)|BO50P22|BO144
-2696|6 familias de la Comunidad de Urubo (Santa Cruz, Bolivia)|BO50P22T1|BO144
-2697|Familias de la Comunidad de Equipetrol (Santa Cruz, Bolivia)|BO50P23|BO145
-2698|Familias de la Comunidad de Equipetrol (Santa Cruz, Bolivia)|BO50P23T1|BO145
-2699|Familias de la Comunidad de Colonia Berlín (Santa Cruz, Bolivia)|BO50P24|BO146
-2700|Familias de la Comunidad de Colonia Berlín (Santa Cruz, Bolivia)|BO50P24T1|BO146
-2702|11 familias de  la Urbanización El Trigal (Santa Cruz, Bolivia)|BO50P26|BO147
-2703|11 familias de  la Urbanización El Trigal (Santa Cruz, Bolivia)|BO50P26T1|BO147
-2704|Comunidad de Villa Rosario (Santa Cruz, Bolivia)|BO50P29|BO148
-2705|Comunidad de Villa Rosario (Santa Cruz, Bolivia)|BO50P29T1|BO148
-2706|Comunidades de Paredones (Santa Cruz, Bolivia)|BO50P30|BO149
-2707|Comunidad de Quiñales (Santa Cruz, Bolivia)|BO50P31|BO150
-2708|Comunidad de Verdecillo (Santa Cruz, Bolivia)|BO50P31|BO151
-2709|Comunidad de Campo Rosa (Santa Cruz, Bolivia)|BO50P32|BO152
-2711|Comunidad de San Luis (Santa Cruz, Bolivia)|BO50P32|BO153
-2710|Comunidad de San José (Santa Cruz, Bolivia)|BO50P32|BO154
-2712|Comunidad de Santa Rita (Santa Cruz, Bolivia)|BO50P32|BO155
-2713|Comunidad de Taruma (Santa Cruz, Bolivia)|BO50P32|BO156
-2752|Comunidad de Cotoca (Provincia Andrés Ibáñez, Bolivia)|BO55P4|BO165
-2642|Recicladores/as artesanales en Santa Cruz (Bolivia)|BO43P2|BO166
-2644|Recicladores/as artesanales en Santa Cruz (Bolivia)|BO43P2T1|BO166
-2632|Cooperativa Minera Aurífera 25 de Julio (La Paz - Bolivia)|BO19P4T1|BO169
-2634|LINEA RUSTICA SRL|BO36P1|BO36T1
-2637|LINEA RUSTICA SRL|BO36T1|BO36T1
-2756|80.OOO niños y 30.000 jóvenes de colegios nocturnos de Santa Cruz de la Sierra|BO59P1|BO68
-2763|Barrios periféricos de la ciudad de Santa Cruz de la Sierra y algunas zonas rurales.|BO77P1|BO72
-2764|Barrios periféricos de la ciudad de Santa Cruz de la Sierra y algunas zonas rurales.|BO77P1T1|BO72
-2753|Santa Cruz de la Sierra (población urbana)|BO57P1T1|BO72
-2754|Santa Cruz de la Sierra (población urbana)|BO57T1|BO72
-2755|Santa Cruz de la Sierra (población urbana)|BO58P1T1|BO72
-2750|Barrios periféricos de la ciudad de Santa Cruz de la Sierra y algunas zonas rurales.|BO55P1T1|BO72
-2639|SANTA CRUZ DE LA SIERRA (POBLACION URBANA)|BO36T1|BO72
-2640|SANTA CRUZ DE LA SIERRA (POBLACIÓN URBANA)|BO43P1|BO72
-2641|Mujeres de la Micro-empresa "El Trébol", Barrio Las Américas (Santa Cruz, Bolivia)|BO43P2|BO72
-2636|SANTA CRUZ DE LA SIERRA (POBLACION URBANA)|BO36P1|BO72
-2643|Mujeres de la Micro-empresa "El Trébol", Barrio Las Américas (Santa Cruz, Bolivia)|BO43P2T1|BO72
-2638|MANO DE OBRA (INDIGENAS)|BO36T1|BO75
-2635|MANO DE OBRA (INDIGENAS)|BO36P1|BO75
-2522|Unión Nacional de pequeños ganaderos (UNAPEGA)|BO12P1|BO77
-2529|UNAPEGA - Unión Nacional de Pequeños Ganaderos|BO12T1|BO77
-2535|Unión Nacional de pequeños ganaderos (UNAPEGA)|BO12T2|BO77
-2541|Unión Nacional de pequeños ganaderos (UNAPEGA)|BO12T3|BO77
-2536|Centro de Investigación para el Campesino (CIPCA)|BO12T3|BO78
-2517|Centro de Investigación para el Campesino (CIPCA)|BO12P1|BO78
-2751|Zona de San Julian (Brecha Casarabe), provincia Ñuflo de Chavez.|BO55P1T2|BO78
-2765|Zona de San Julian (Brecha Casarabe), provincia Ñuflo de Chavez.|BO77P2T1|BO78
-2766|Sectores populares rurales y urbanos de Bolivia|BO8P1|BO78
-2767|Sectores populares rurales y urbanos de Bolivia|BO8P1T1|BO78
-2757|El Municipio cruceño|BO59P2|BO78
-2530|Centro de Investigación para el Campesino (CIPCA)|BO12T2|BO79
-2534|Red latino americana de comercialización comunitaria (RELACC)|BO12T2|BO80
-2528|RELACC - Red Latinoamericana de Comercialización Comunitaria|BO12T1|BO80
-2521|Red latino americana de comercialización comunitaria (RELACC)|BO12P1|BO80
-2540|Red latino americana de comercialización comunitaria (RELACC)|BO12T3|BO80
-2539|Iglesia Metodista|BO12T3|BO81
-2526|Iglesia Metodista|BO12T1|BO81
-2533|Iglesia Metodista|BO12T2|BO81
-2520|Iglesia Metodista|BO12P1|BO81
-2519|Iglesia Menonita Boliviana (IMB)|BO12P1|BO82
-2532|Iglesia Menonita Boliviana (IMB)|BO12T2|BO82
-2538|Iglesia Menonita Boliviana (IMB)|BO12T3|BO82
-2525|Iglesia Menonita Boliviana|BO12T1|BO82
-2758|El Municipio cruceño. Talleres para estudiantes, docentes y Juntas Vecinales para poder retransmitir información.|BO59P2|BO83
-2523|CEPAC - Centro de Promoción al Campesino|BO12T1|BO9
-2537|Centro de promoción al campesino (CEPAC)|BO12T3|BO9
-2531|Centro de promoción al campesino (CEPAC)|BO12T2|BO9
-2518|Centro de promoción al campesino (CEPAC)|BO12P1|BO9
-2630|Los habitantes del área rural del departamento de CRE (Santa Cruz, Bolivia)|BO19P1|BO91
-2631|Los habitantes del área rural del departamento de CRE (Santa Cruz, Bolivia)|BO19P1T1|BO91
-2759|Comunidades de Bolivia|BO63P2T1|BO93
-2760|Comunidades de Bolivia|BO63P2T1-T6|BO93
-2761|Comunidades de Bolivia|BO63P2T1T2T3T4T5T6|BO93
-2762|Comunidades de Bolivia|BO63P3|BO93
-2749|Comunidades rurales de Bolivia|BO52P1T1-T5|BO93
-2647|Comunidades rurales de Bolivia|BO43P3|BO93
-2978|Comunidades de Bolivia|ML2P1|BO93
-2648|Federación de clubes de madres|BO43P3|BO99
-2785|Comunidade de Braço Verde (Belém, Pará, Brasil)|BR155IIP01T01|BR001
-2787|Prefeitura Municipal de Altamira - Sede do Municipio|BR155IIP01T01|BR002
-2783|Comunidade da Cidade Nova (Pará, Brasil)|BR155IIP01T01|BR003
-2786|Comunidade de Nova Olinda (Pará, Brasil)|BR155IIP01T01|BR004
-2784|Comunidade da Porta do Urumajó (Pará, Brasil)|BR155IIP01T01|BR005
-2789|Clinica Santa Cecília (Belém, Pará, Brasil)|BR156IIP01T01|BR006
-2788|Assembléia Paraense (Belém, Pará, Brasil)|BR156IIP01T01|BR007
-2790|Comunidades do Estado do Pará|BR157IIP01T01|BR008
-2820|Não definido (Município Irituia, Pará, Brasil)|BR176IIIP01T01|BR009
-2819|Não definido (Município Curuça, Pará, Brasil)|BR176IIIP01T01|BR010
-2827|Não definido (Município Santo Antônio do Tauá, Pará, Brasil)|BR176IIIP01T01|BR011
-2822|Não definido (Município Mojú, Pará, Brasil)|BR176IIIP01T01|BR012
-2829|Não definido (Município São Miguel do Guamá, Pará, Brasil)|BR176IIIP01T01|BR013
-2817|Não definido (Município Augusto Corrêa, Pará, Brasil)|BR176IIIP01T01|BR014
-2830|Não definido (Município Vigia, Pará, Brasil)|BR176IIIP01T01|BR015
-2828|Não definido (Município São Caetano de Odivelas, Pará, Brasil)|BR176IIIP01T01|BR016
-2824|Não definido (Município Muaná, Pará, Brasil)|BR176IIIP01T01|BR017
-2818|Não definido (Município Cachoeira do Arari, Pará, Brasil)|BR176IIIP01T01|BR018
-2825|Não definido (Município Ponta de Pedras, Pará, Brasil)|BR176IIIP01T01|BR019
-2793|Comunidade Anilzinho (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR020
-2795|Comunidade Boa Vista (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR021
-2813|Comunidade Vaginha (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR022
-2794|Comunidade Baixinha (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR023
-2809|Comunidade Prainha (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR024
-2803|Comunidade Matacurá (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR025
-2812|Comunidade Taboca (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR026
-2802|Comunidade Maçaranduba (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR027
-2798|Comunidade Flexal (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR028
-2801|Comunidade Limãozinho (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR029
-2807|Comunidade Novo Tesouro (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR030
-2796|Comunidade D. Pedro II (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR031
-2797|Comunidade Dr. Datis (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR032
-2792|Comunidade  Frei Othamar (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR033
-2799|Comunidade Jacarecapa (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR034
-2800|Comunidade Jaquari (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR035
-2804|Comunidade Miri (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR036
-2806|Comunidade N.S. de Nazaré (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR037
-2805|Comunidade N. Alternativa (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR038
-2808|Comunidade Pe. Manoel (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR039
-2810|Comunidade Raimundo (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR040
-2811|Comunidade São Diogo (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR041
-2814|Comunidade Vai quem quer (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR042
-2831|Posto Indígena Alto Rio Guamá (Capitão Poço, Pará, Brasil)|BR176IIIP01T01|BR043
-2832|Posto Indígena Canindé (Município Paragominas, Pará, Brasil)|BR176IIIP01T01|BR044
-2826|Não definido (Município Santarém, Pará, Brasil)|BR176IIIP01T01|BR045
-2821|Não definido (Município Itaituba, Pará, Brasil)|BR176IIIP01T01|BR046
-2815|Não definido (Município Abaetetuba, Pará, Brasil)|BR176IIIP01T01|BR047
-2816|Não definido (Município Alenquer, Pará, Brasil)|BR176IIIP01T01|BR048
-2823|Não definido (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR049
-2791|Comunidade de Maurícia no Município de Santa Bárbara - Pará  (Brasil)|BR158IIP01T01|BR050
-2771|População Urbana de Belém|BR114IP01T01|BR051
-2772|População Urbana de Macapa|BR114IP01T01|BR052
-2770|População Urbana de Ananindeua|BR114IP01T01|BR053
-2782|Prefeitura Municipal de Altamira - Sede do Municipio|BR11P1T1|BR103
-2777|Prefeitura Municipal de Altamira - Sede do Municipio|BR11P1|BR103
-2780|Comunidade de Braço Verde (Belém, Pará, Brasil)|BR11P1T1|BR105
-2775|Comunidade de Braço Verde (Belém, Pará, Brasil)|BR11P1|BR105
-2773|Comunidade da Cidade Nova (Pará, Brasil)|BR11P1|BR106
-2778|Comunidade da Cidade Nova (Pará, Brasil)|BR11P1T1|BR106
-2781|Comunidade de Nova Olinda (Pará, Brasil)|BR11P1T1|BR107
-2776|Comunidade de Nova Olinda (Pará, Brasil)|BR11P1|BR107
-2774|Comunidade da Porta do Urumajó (Pará, Brasil)|BR11P1|BR108
-2779|Comunidade da Porta do Urumajó (Pará, Brasil)|BR11P1T1|BR108
-2836|Comunidades do Estado do Pará|BR25P1|BR41
-2837|Comunidades do Estado do Pará|BR25P1T1|BR41
-2879|Comunidades carentes do Estado do Pará - Cerca de 18.000 não possuiem energia|BR2P2|BR41
-2880|Comunidades carentes do Estado do Pará - Cerca de 18.000 não possuiem energia|BR2P2T1|BR41
-2839|Comunidade Anilzinho (Município Baião, Pará, Brasil)|BR2P1|BR42
-2841|Comunidade Boa Vista (Município Baião, Pará, Brasil)|BR2P1|BR43
-2859|Comunidade Vaginha (Município Baião, Pará, Brasil)|BR2P1|BR44
-2840|Comunidade Baixinha (Município Baião, Pará, Brasil)|BR2P1|BR45
-2855|Comunidade Prainha (Município Baião, Pará, Brasil)|BR2P1|BR46
-2849|Comunidade Matacurá (Município Baião, Pará, Brasil)|BR2P1|BR47
-2858|Comunidade Taboca (Município Baião, Pará, Brasil)|BR2P1|BR48
-2848|Comunidade Maçaranduba (Município Baião, Pará, Brasil)|BR2P1|BR49
-2844|Comunidade Flexal (Município Baião, Pará, Brasil)|BR2P1|BR50
-2847|Comunidade Limãozinho (Município Baião, Pará, Brasil)|BR2P1|BR51
-2853|Comunidade Novo Tesouro (Município Baião, Pará, Brasil)|BR2P1|BR52
-2842|Comunidade D. Pedro II (Município Monte Alegre, Pará, Brasil)|BR2P1|BR53
-2843|Comunidade Dr. Datis (Município Monte Alegre, Pará, Brasil)|BR2P1|BR54
-2838|Comunidade  Frei Othamar (Município Monte Alegre, Pará, Brasil)|BR2P1|BR55
-2845|Comunidade Jacarecapa (Município Monte Alegre, Pará, Brasil)|BR2P1|BR56
-2846|Comunidade Jaquari (Município Monte Alegre, Pará, Brasil)|BR2P1|BR57
-2850|Comunidade Miri (Município Monte Alegre, Pará, Brasil)|BR2P1|BR58
-2852|Comunidade N.S. de Nazaré (Município Monte Alegre, Pará, Brasil)|BR2P1|BR59
-2851|Comunidade N. Alternativa (Município Monte Alegre, Pará, Brasil)|BR2P1|BR60
-2854|Comunidade Pe. Manoel (Município Monte Alegre, Pará, Brasil)|BR2P1|BR61
-2856|Comunidade Raimundo (Município Monte Alegre, Pará, Brasil)|BR2P1|BR62
-2857|Comunidade São Diogo (Município Monte Alegre, Pará, Brasil)|BR2P1|BR63
-2860|Comunidade Vai quem quer (Município Monte Alegre, Pará, Brasil)|BR2P1|BR64
-2877|Posto Indígena Alto Rio Guamá (Capitão Poço, Pará, Brasil)|BR2P1|BR65
-2878|Posto Indígena Canindé (Município Paragominas, Pará, Brasil)|BR2P1|BR66
-2872|Não definido (Município Santarém, Pará, Brasil)|BR2P1|BR67
-2867|Não definido (Município Itaituba, Pará, Brasil)|BR2P1|BR68
-2861|Não definido (Município Abaetetuba, Pará, Brasil)|BR2P1|BR69
-2862|Não definido (Município Alenquer, Pará, Brasil)|BR2P1|BR70
-2869|Não definido (Município Monte Alegre, Pará, Brasil)|BR2P1|BR71
-2866|Não definido (Município Irituia, Pará, Brasil)|BR2P1|BR72
-2865|Não definido (Município Curuça, Pará, Brasil)|BR2P1|BR73
-2873|Não definido (Município Santo Antônio do Tauá, Pará, Brasil)|BR2P1|BR74
-2868|Não definido (Município Mojú, Pará, Brasil)|BR2P1|BR75
-2875|Não definido (Município São Miguel do Guamá, Pará, Brasil)|BR2P1|BR76
-2863|Não definido (Município Augusto Corrêa, Pará, Brasil)|BR2P1|BR77
-2876|Não definido (Município Vigia, Pará, Brasil)|BR2P1|BR78
-2874|Não definido (Município São Caetano de Odivelas, Pará, Brasil)|BR2P1|BR79
-2870|Não definido (Município Muaná, Pará, Brasil)|BR2P1|BR80
-2864|Não definido (Município Cachoeira do Arari, Pará, Brasil)|BR2P1|BR81
-2871|Não definido (Município Ponta de Pedras, Pará, Brasil)|BR2P1|BR82
-2835|Clinica Santa Cecília (Belém, Pará, Brasil)|BR23P1T1|BR83
-2834|Assembléia Paraense (Belém, Pará, Brasil)|BR23P1T1|BR84
-2884|População Urbana de Belém|BR85P1T1|BR88
-2885|População Urbana de Macapa|BR85P1T1|BR89
-2883|População Urbana de Ananindeua|BR85P1T1|BR90
-2886|Comunidade de Praia Grande (Brasil)|BR9P1|BR94
-2887|Comunidade de Praia Grande (Brasil)|BR9P1T1|BR94
-2881|Comunidade de Maurícia no Município de Santa Bárbara - Pará  (Brasil)|BR39P1|BR98
-2882|Comunidade de Maurícia no Município de Santa Bárbara - Pará  (Brasil)|BR39P1T1|BR98
-2899|Directamente 90 campesinos que trabajan en la propagación de especies e indirectamente 300 campesinos de diferentes comunidades|CO117I-II-IIIP01T01|CO000
-2898|Directamente    60    Huitotos,    representantes    de    8   comunidades   e indirectamente 17 comunidades afiliadas a ORUCAPU (Organización Huitoto del Cauquetá y Putumayo)|CO116IP01T00|CO002
-2900|MITÚ_ 120 afiliadas a la organización y 1590 mujeres mayores de 15 años de Mitú.|CO118IP01T01|CO003
-2901|6 Ebanistas y 3 subcontratistas de Leticia-Amazonas|CO119IP01T00|CO004
-2902|40 jóvenes indígenas de diferentes etnias y 8 profesores e indirectamente 300 indígenas capacitados en 7 cursos (Centro AGAPE, Leticia-Colombia)|CO120IP01T00|CO004
-2903|30 asociados a la Cooperativa y 50 productores agropecuarios en el municipio de Calamar (Guaviare-Colombia)|CO160IIP01T00|CO005
-2904|4915  personas  del  casco  urbano  de  San  José  y  los  habitantes  de las veredas de Santa Rosa y Nuevo Tolima, donde se habían ubicado botaderos de basura a cielo abierto (San José, Guaviare-Colombia)|CO161IIP01T00|CO006
-2905|12 afiliadas a la asociación de mujeres y sus familias (Barrio La Primavera, Inírida, Guainía - Colombia)|CO162IIP01T00|CO007
-2906|Asociación de lavanderas del Municipio de Puerto Caicedo|CO163IIP01T00|CO008
-2907|18    líderes    de   la  Comunidad   de   San   Martín  de Amacayacu   capacitados   como Ecoguías y 70 familias de la comunidad, y 200 visitantes, beneficiados indirectamente|CO165IIP01T00|CO009
-2908|174 afiliados a la Junta de acción comunal de Barrancominas, y cerca de 4.460 personas entre indígenas y colonos, usuarios de la lancha tienda y las tiendas comunitarias (Comuninad de Barrancominas, Guainía - Colombia)|CO183IIIP01T00|CO010
-3061|Veredas de Pueblo Viejo y Pialapí, Grupo Awá Kwaiker (Departamento de  Nariño, Municipio Ricaurte, Colombia)|VE1P1T1T2|CO24
-3064|Veredas de Pueblo Viejo y Pialapí, Grupo Awá Kwaiker (Departamento de  Nariño, Municipio Ricaurte, Colombia)|VE1P1T1T2T3|CO24
-3058|Veredas de Pueblo Viejo y Pialapí, Grupo Awá Kwaiker (Departamento de  Nariño, Municipio Ricaurte, Colombia)|VE1P1T1|CO24
-2916|30 asociados a la Cooperativa y 50 productores agropecuarios en el municipio de Calamar (Guaviare-Colombia)|CO40P1|CO27
-2909|90 personas residentes cercanos al antiguo matadero en el       casco  urbano  del  municipio  de  Calamar  y  el  gremio  de  matarifes existente en la zona.|CO27P1|CO28
-2910|Vereda El Encanto (Municipio del Retorno, Guaviare - Colombia)|CO29P1|CO30
-2911|Directamente    60    Huitotos,    representantes    de    8   comunidades   e indirectamente 17 comunidades afiliadas a ORUCAPU (Organización Huitoto del Cauquetá y Putumayo)|CO31P1|CO31
-2912|Directamente 90 campesinos que trabajan en la propagación de especies e indirectamente 300 campesinos de diferentes comunidades|CO32P1|CO33
-2913|120 afiliadas a la organización y 1590 mujeres mayores de 15 años de Mitú.|CO34P1|CO35
-2914|6 Ebanistas y 3 subcontratistas de Leticia-Amazonas|CO36P1|CO37
-2915|40 jóvenes indígenas de diferentes etnias y 8 profesores e indirectamente 300 indígenas capacitados en 7 cursos (Centro AGAPE, Leticia-Colombia)|CO38P1|CO39
-2917|4915  personas  del  casco  urbano  de  San  José  y  los  habitantes  de las veredas de Santa Rosa y Nuevo Tolima, donde se habían ubicado botaderos de basura a cielo abierto (San José, Guaviare-Colombia)|CO41P1|CO42
-2918|12 afiliadas a la asociación de mujeres y sus familias (Barrio La Primavera, Inírida, Guainía - Colombia)|CO43P1|CO44
-2919|13 familias de asociadas (Puerto Caicedo, Colombia)|CO45P1|CO46
-2920|18    líderes    de   la  Comunidad   de   San   Martín  de Amacayacu   capacitados   como Ecoguías y 70 familias de la comunidad, y 200 visitantes, beneficiados indirectamente|CO48P1|CO49
-2921|174 afiliados a la Junta de acción comunal de Barrancominas, y cerca de 4.460 personas entre indígenas y colonos, usuarios de la lancha tienda y las tiendas comunitarias (Comuninad de Barrancominas, Guainía - Colombia)|CO50P1|CO51
-2927|Ecuador|EC149IIP03T01|EC
-2931|Ecuador|EC248IIP01T01|EC
-2941|Ecuador|EC310IIP01T01|EC
-2972|Ecuador|EC316IIIP01T00|EC
-2970|Shuar|EC314IIIP01T00|EC
-2925|BARRIO SANTA ROSA|EC149IIP01T02|EC001
-2924|BARRIO  SANTA CECILIA|EC149IIP01T02|EC002
-2926|GOBIERNO DE YANZATZA|EC149IIP02T03|EC003
-2935|COMUNIDAD DE TSUNKINTSA|EC248IIP04T01|EC004
-3030|UTEPA -Unidad Técnica Ecuatoriana del Plan Awá|VE124I-II-IIIP01T02|EC008
-3057|UTEPA -Unidad Técnica Ecuatoriana del Plan Awá|VE1P1T1|EC1
-3060|UTEPA -Unidad Técnica Ecuatoriana del Plan Awá|VE1P1T1T2|EC1
-3063|UTEPA -Unidad Técnica Ecuatoriana del Plan Awá|VE1P1T1T2T3|EC1
-2944|Secoyas|EC311IIIP01T00|EC25
-2947|Secoyas|EC311IIIP02T00|EC25
-2945|Sionas|EC311IIIP01T00|EC26
-2942|Cofanes|EC311IIIP01T00|EC27
-2943|Kitchwas|EC311IIIP01T00|EC28
-2948|Kitchwa|EC311IIIP03T00|EC28
-2946|Kitchwas|EC311IIIP02T00|EC28
-2958|Morona Santiago|EC313IIIP01T01|EC29
-2973|Morona Santiago|EC316IIIP02T00|EC29
-2962|Pastaza|EC313IIIP01T01|EC30
-2949|Bajo Huino|EC313IIIP01T01|EC31
-2967|Tierras Orientales|EC313IIIP01T01|EC32
-2951|Chayuk (San Luis)|EC313IIIP01T01|EC33
-2957|Montalvo|EC313IIIP01T01|EC34
-2964|Playas de Cuyabeno|EC313IIIP01T01|EC35
-2969|Yaap|EC313IIIP01T01|EC36
-2959|Mushullakta|EC313IIIP01T01|EC37
-2961|Parotoyacu|EC313IIIP01T01|EC38
-2954|El Descanso|EC313IIIP01T01|EC39
-2955|El Edén|EC313IIIP01T01|EC40
-2952|Cofán Duvuno|EC313IIIP01T01|EC41
-2968|Tsunt Suim|EC313IIIP01T01|EC42
-2963|Pilche|EC313IIIP01T01|EC43
-2956|Loma Linda|EC313IIIP01T01|EC44
-2966|San José de Payamino|EC313IIIP01T01|EC45
-2965|San Francisco (Wawaim)|EC313IIIP01T01|EC46
-2960|Otto Arosemena 1|EC313IIIP01T01|EC47
-2950|Chapintsa|EC313IIIP01T01|EC48
-2953|Colmito Yacu|EC313IIIP01T01|EC49
-2971|Yumisin|EC314IIIP02T00|EC50
-2939|Kapawi|EC255IIIP03T01|EC51
-2977|Comunidades de Bolivia|ML056IIP02T00|ML001
-2998|DISTRITO MOYOBAMBA - PROV. MOYOBAMBA|PE009IIP04T00|PE001
-3000|DISTRITO SORITOR - PROV. MOYOBAMBA|PE009IIP04T00|PE002
-2996|DISTRITO JEPELACIO - PROV. MOYOBAMBA|PE009IIP04T00|PE003
-2997|DISTRITO JERILLO - PROV. MOYOBAMBA|PE009IIP04T00|PE004
-2999|DISTRITO RIOJA - PROV. RIOJA|PE009IIP04T00|PE005
-2995|DISTRITO AWAJUN - PROV. RIOJA|PE009IIP04T00|PE006
-3001|DISTRITO YURACYACU - PROV. RIOJA|PE009IIP04T00|PE007
-2993|Zona Agropecuaria del distrito de Villa El Salvador (ZA-VES)|PE003IIP11T00|PE008
-3010|Comunidad de Yanacocha, San Isidro|PE028IIP03T01|PE009
-3028|Población venezolana en general|VE123IP01T01|VE001
-3027|Vicariato Apostólico de Puerto Ayacucho, Estado Amazonas (Venezuela)|VE123IIIP04T01|VE002
-3029|7 comunidades Jiwi (Guahibo) de Puente Samariapo, Boca del Río Sipapo (Estado Amazonas, Municipio Autana, Venezuela)|VE124I-II-IIIP01T02|VE003
-3034|Comunidades urbanas y rurales del Sur de los Estados Anzoátegui y Monagas|VE126IP01T00|VE004
-3035|Comunidades rurales del Sur de los Estados Anzoátegui y Monagas (Venezuela)|VE126IP02T00|VE004
-3040|Barrio Las Acacias (Municipio Atures, Estado Amazonas, Venezuela)|VE127IIP02T00|VE005
-3041|El Caicet (Municipio Atures, Estado Amazonas, Venezuela)|VE127IIP02T00|VE006
-3038|Barrio Carinaguita (Municipio Atures, Estado Amazonas, Venezuela)|VE127IIP02T00|VE007
-3039|Barrio José Antonio Páez (Municipio Atures, Estado Amazonas, Venezuela)|VE127IIP02T00|VE008
-3037|Comunidades Indígenas del Estado Amazonas|VE127I-IIP01T00|VE009
-3036|Barrios del Estado Amazonas|VE127I-IIP01T00|VE010
-3042|Comunidades Indígenas Sector Norte Puerto Ayacucho (Estado Amazonas)|VE127IIP03T00|VE011
-3044|Asentamientos rurales del Municipio Gran Sabana (Estado Bolívar, Venezuela)|VE130I-IIP01T00|VE012
-3045|Población de Upata (Estado Bolívar)|VE132IP01T00|VE013
-3031|Veredas de Pueblo Viejo y Pialapí, Grupo Awá Kwaiker (Departamento de  Nariño, Municipio Ricaurte, Colombia)|VE124I-II-IIIP01T02|VE013
-3046|Comunidades del  Municipio Caroní (Estado Bolívar, Venezuela)|VE133IP01T00|VE014
-3047|Comunidad Indígena "Coromoto" (Edo. Amazonas, Venezuela)|VE135IP01T00|VE015
-3048|Comunidades urbanas y rurales de San Félix (Estado Bolívar, Venezuela)|VE137IP01T00|VE016
-3049|Familias de los sectores populares del Municipio Heres|VE140IP01T00|VE017
-3065|Comunidades urbanas y rurales del Sur de los Estados Anzoátegui y Monagas|VE22P1|VE22
-3066|Comunidades urbanas y rurales del Sur de los Estados Anzoátegui y Monagas|VE22P1T1|VE22
-3067|Comunidades rurales del Sur de los Estados Anzoátegui y Monagas (Venezuela)|VE22P2|VE22
-3054|Vicariato Apostólico de Puerto Ayacucho, Estado Amazonas (Venezuela)|VE18P5|VE23
-3055|Vicariato Apostólico de Puerto Ayacucho, Estado Amazonas (Venezuela)|VE18P5T1|VE23
-3075|Miembros de la comunidad religiosa cristiana de la Comunidad de San Rafael de Kamoirán|VE26P1|VE26
-3076|Miembros de la comunidad religiosa cristiana de la Comunidad de San Rafael de Kamoirán|VE26P1T1|VE26
-3062|7 comunidades Jiwi (Guahibo) de Puente Samariapo, Boca del Río Sipapo (Estado Amazonas, Municipio Autana, Venezuela)|VE1P1T1T2T3|VE31
-3056|7 comunidades Jiwi (Guahibo) de Puente Samariapo, Boca del Río Sipapo (Estado Amazonas, Municipio Autana, Venezuela)|VE1P1T1|VE31
-3059|7 comunidades Jiwi (Guahibo) de Puente Samariapo, Boca del Río Sipapo (Estado Amazonas, Municipio Autana, Venezuela)|VE1P1T1T2|VE31
-3077|Asentamientos rurales del Municipio Gran Sabana (Estado Bolívar, Venezuela)|VE34P1|VE34
-3078|Asentamientos rurales del Municipio Gran Sabana (Estado Bolívar, Venezuela)|VE34P1T1|VE34
-3079|Población de Upata (Estado Bolívar)|VE36P1|VE36
-3080|Población de Upata (Estado Bolívar)|VE36P1T1|VE36
-3081|Comunidades del  Municipio Caroní (Estado Bolívar, Venezuela)|VE37P1|VE37
-3082|Comunidad Indígena "Coromoto" (Edo. Amazonas, Venezuela)|VE39P1|VE39
-3083|Comunidades urbanas y rurales de San Félix (Estado Bolívar, Venezuela)|VE44P1T1|VE44
-3084|Familias de los sectores populares del Municipio Heres|VE48P1|VE49
-3052|Población venezolana en general|VE18P1|VE58
-3053|Población venezolana en general|VE18P1T1|VE58
-3085|Comunidad Indígena de Apopipó|VE59P1|VE59
-3086|Comunidad Indígena de Apopipó|VE59P1T1|VE59
-3070|Barrio Las Acacias (Municipio Atures, Estado Amazonas, Venezuela)|VE25P1|VE61
-3071|El Caicet (Municipio Atures, Estado Amazonas, Venezuela)|VE25P1|VE62
-3068|Barrio Carinaguita (Municipio Atures, Estado Amazonas, Venezuela)|VE25P1|VE63
-3069|Barrio José Antonio Páez (Municipio Atures, Estado Amazonas, Venezuela)|VE25P1|VE64
-3073|Comunidades Indígenas del Estado Amazonas|VE25P2|VE68
-3072|Barrios del Estado Amazonas|VE25P2|VE69
-3074|Comunidades Indígenas Sector Norte Puerto Ayacucho (Estado Amazonas)|VE25P3|VE70
+NombreInstitucion|Cod_Proyecto|Cod_Beneficiario
+Comunidades rurales de Santa Cruz|BO148IIP01T00|011
+ORGANIZACION PANAMERICANA DE SALUD|EC105IIP01T02|105
+LINEA RUSTICA S.R.L.|BO111IP01T00|111
+Miembros de la comunidad religiosa cristiana de la Comunidad de San Rafael de Kamoirán|VE128IP01T01|128
+Comunidad Indígena de Apopipó|VE144IP01T01|144
+COMITÉ CENTRAL MENONITA - Agencia de Servicio Voluntario de las Iglesias Menonitas de E.E.U.U. y Canadá|BO0146IIIP09T01|146
+CONPES_CONSEJO NACIONAL DE POLITICA ECONOMICA Y SOCIAL|CO015IIIP01T01|15
+OMS_ORGANIZACION MUNDIAL DE LA SALUD|PE003IIP07T00|166
+Comunidades carentes do Estado do Pará - Cerca de 18.000 não possuiem energia|BR176IIIP02T01|176
+CORPORACION DE GESTION TECNOLOGICA Y CIENTIFICA SOBRE EL AMBIENTE|EC184IIP01T01|184
+CEPAL_COMISION ECONOMICA PARA AMERICA LATINA Y EL CARIBE|SU002III-IVP00T00|2
+PREDES_CENTRO DE ESTUDIOS Y PREVENCION DE DESASTRES|PE205I-II-IVP01T00|205
+SALUD SIN LIMITES|PE213I-IIP01T00|213
+IDRC_CENTRO INTERNACIONAL DEL DESARROLLO PARA EL CANADA|PE003IIP09T00|214
+IDRC_CENTRO INTERNACIONAL DEL DESARROLLO PARA EL CANADA|PE003IIP10T00|214
+LA AGENCIA CATALANA DE COOPERACION AL DESENVOLUPAMENT|EC218IIP01T01|218
+SUECA SKANSKA|EC220IIP01T01|220
+Servicio Autónomo Programa Nacional  Vivienda Rural|VE105I-IVP01T00|230
+Instituto Altos Estudios de Salud Pública Dr. Arnoldo Gabaldon|VE105I-IVP01T00|231
+Universidad del Valle-CINARA|CO031IIP01T01|231
+SECAB_SECRETARIA EJECUTIVA DEL CONVENIO ANDRES BELLO|CO026IIIP03T01|236
+IPSE_INSTITUTO DE PLANIFICACION Y PROMOCION DE SOLUCIONES ENERGETICAS EN ZONAS NO INTERCONECTADAS|CO015IIIP01T01|237
+CARICOM_COMUNIDAD DEL CARIBE|SU002III-IVP00T00|238
+APC_PROGRAMA DE ASISTENCIA FINANCIERA NO REEMBOLSABLE PARA PROYECTOS COMUNITARIOS DE SEGURIDAD HUMANA, EMBAJADA DE JAPON|PE009IIP10T00|239
+FONDO CONTRAVALOR PERU - ALEMANIA|PE009IIP10T00|240
+DGIS_DIRECTORATE - GENERAL FOR INTERNATIONAL COOPERATION|PE009IIP10T00|241
+MUNICIPALIDAD DISTRITAL DE CHIRINOS|PE009IIP10T00|242
+MUNICIPALIDAD DISTRITAL DE NAMORA|PE009IIP10T00|243
+CENTRO ECOLOGICO Y GENERO|PE246II-IIIP02T01|246
+CONSEJO DE DESARRROLLO DE LAS NACIONALIDADES Y PUEBLOS DEL ECUADOR - CODENPE|EC248IIP02T01|248
+FUNDACION OMAERE|EC248IIP02T01|249
+ORGANIZACION INTERNACIONAL DE MIGRACION OIM|EC250IIP01T01|250
+FUNDACION INDIO-HILFE|EC251IIP01T01|251
+Comunidades rurales y Pequeños Municipios|VE124I-II-IIIP0IT00|253
+Comunidades rurales y pequeños municipios|VE168IIP01T01|253
+MUNICIPIO DE NANGARITZA|EC254IIP01T00|254
+MUNICIPIO DE PAQUISHA|EC256IIP01T01|256
+MINISTERIO DE AMBIENTE Y VIVIENDA Y DESARROLLO TERRITORIAL|CO026IIIP03T01|26
+UNAMAZ|VE124I-II-IIIP0IT00|263
+UNIDERSIDAD DE LOS ANDES|VE029IIP01T01|29
+CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|PE003IIP09T00|3
+CEPIS|PE041IIP01T01|3
+CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|PE003IIP03T01|3
+CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|PE003IIP07T00|3
+ASP net_Associated Schools Project Network|GU004IVP00DT00|308
+Región metropolitana de Sâo Pulo|BR027II-IIIP01T01|330
+ASOCIACION INTERAMERICANA DE INGENIERIA SANITARIA Y AMBIENTAL - AIDIS|BR034II-IVP00T00|34
+Comunidades del estado Apure|VE169I-IIP01T01|353
+Núcleo Hortícula Suburbano Vargem Bonita|BR153IIP01T01|354
+Fortaleza|BR153IIP01T01|355
+Núcleo Rural de Tabatinga|BR153IIP01T01|356
+Comunidades Rurales de tabatinga|BR153IIP02T01|357
+región de Capinzal, SC|BR153IIP03T01|358
+Comunidades rurales de Recife|BR153IIP05T01|360
+Uchiza - San Martín|PE040IIIP01T01|367
+Tocache-San Martín|PE040IIIP01T01|368
+Pucallpa - Ucayali|PE040IIIP01T01|369
+Shambillo - Padre Abad - Ucayali|PE040IIIP01T01|370
+Caynarachi - San Martin|PE040IIIP01T01|371
+UNESCO|GU004IVP00DT00|4
+Wowetta as the beneficiary community|GU303IIIP01T01|5
+OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP03T01|56
+OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP09T00|56
+OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP07T00|56
+OPS_ORGANIZACION PANAMERICANA DE LA SALUD|PE003IIP10T00|56
+SENA_SERVICIO NACIONAL DE APRENDIZAJE|CO026IIIP03T01|61
+UNIVERSIDAD EARTH- TIERRA TROPICAL|EC084IIIP01T00|84
+ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|PE009IIIP11T01|9
+ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|PE213I-IIP01T00|9
+ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|PE009IIP10T00|9
+El Municipio cruceño. Talleres para estudiantes, docentes y Juntas Vecinales para poder retransmitir información.|BO152IIP01T00|BO001
+Iglesia Menonita Boliviana (IMB)|BO146II-IIIP05T01|BO001
+Iglesia Menonita Boliviana|BO146IIP00AT01|BO001
+CIPCA - Centro de Investigación para el Campesino|BO146IIP00AT01|BO002
+Centro de Investigación para el Campesino (CIPCA)|BO146II-IIIP05T01|BO002
+UNAPEGA - Unión Nacional de Pequeños Ganaderos|BO146IIP00AT01|BO003
+Unión Nacional de pequeños ganaderos (UNAPEGA)|BO146II-IIIP05T01|BO003
+RELACC - Red Latinoamericana de Comercialización Comunitaria|BO146IIP00AT01|BO004
+Red latino americana de comercialización comunitaria (RELACC)|BO146II-IIIP05T01|BO004
+Centro de promoción al campesino (CEPAC)|BO146II-IIIP05T01|BO005
+CEPAC - Centro de Promoción al Campesino|BO146IIP00AT01|BO005
+Iglesia Metodista|BO146IIP00AT01|BO006
+Iglesia Metodista|BO146II-IIIP05T01|BO006
+Los habitantes del área rural del departamento de CRE (Santa Cruz, Bolivia)|BO172IIIP01T01|BO007
+MANO DE OBRA (INDIGENAS)|BO111IP01T00|BO010
+SANTA CRUZ DE LA SIERRA (POBLACION URBANA)|BO111IP01T00|BO011
+Barrios periféricos de la ciudad de Santa Cruz de la Sierra y algunas zonas rurales.|BO113I-IIP01T00|BO011
+SANTA CRUZ DE LA SIERRA (POBLACIÓN URBANA)|BO147IIP01T00|BO011
+Barrios periféricos de la ciudad de Santa Cruz de la Sierra y algunas zonas rurales.|BO175II-IIIP06T01|BO011
+Santa Cruz de la Sierra (población urbana)|BO150IIP01T01|BO011
+Santa Cruz de la Sierra (población urbana)|BO176IIIP01T01|BO011
+Recicladores/as artesanales en Santa Cruz (Bolivia)|BO147IIP06T01|BO012
+Mujeres de la Micro-empresa "El Trébol", Barrio Las Américas (Santa Cruz, Bolivia)|BO147IIP06T01|BO014
+JUNTAS VECINALES|BO147IIP03T01|BO016
+Comunidades de Bolivia|BO056IIP02T00|BO019
+Comunidad de Azurduy (Chuquisaca, Bolivia)|BO148IIP02T01|BO020
+Comunidad de San Pedro de Terebinto (Bolivia)|BO148IIP03T01|BO021
+Comunidad de la Colonia Villa Antofagasta (Bolivia)|BO148IIP04T02|BO022
+Comunidad de Villa Antofagasta (Bolivia)|BO148IIP30T01|BO022
+Comunidad Colonia Pirai (Departamento de Santa Cruz, Bolivia)|BO148IIP11T01|BO023
+Comunidad de Junta Pirai (Bolivia)|BO148IIP30T01|BO023
+Comunidad de Junta Pirai (Bolivia)|BO148IIP04T02|BO023
+Comunidad del 24 de Septiembre (Bolivia)|BO148IIP04T02|BO024
+Comunidad de los Angeles (Bolivia)|BO148IIP04T02|BO025
+Comunidad de Los Angeles (Bolivia)|BO148IIP30T01|BO025
+Comunidad de Bartolina Sisa (Bolivia)|BO148IIP04T02|BO026
+Comunidad de Bartolina Sisa (Bolivia)|BO148IIP30T01|BO026
+Comunidad del 6 de Agosto (Bolivia)|BO148IIP30T01|BO027
+Comunidad del  6 de Agosto (Bolivia)|BO148IIP04T02|BO027
+Comunidad de Villa Arancibia (Bolivia)|BO148IIP04T02|BO028
+Comunidad de Villa Arancibia (Bolivia)|BO148IIP30T01|BO028
+Comunidades de los Núcleos 21, 42 y 48 (Bolivia)|BO148IIP30T01|BO029
+Comunidades de los Núcleos 21,42 y 48 (Bolivia)|BO148IIP04T02|BO029
+Comunidad de San Martín (Bolivia)|BO148IIP04T02|BO030
+Comunidad de San Martín (Bolivia)|BO148IIP30T01|BO030
+Comunidad de San Juan de la Melea (Bolivia)|BO148IIP04T02|BO031
+Comunidad de Sombrerito (Bolivia)|BO148IIP04T02|BO032
+Comunidad de Cañaveral II (Bolivia)|BO148IIP05T01|BO033
+Comunidad de Santa Fe de Yapacani (Bolivia)|BO148IIP06T01|BO034
+Comunidad de El Cuatro (Paurito, Bolivia)|BO148IIP07T01|BO035
+Comunidad de Illataku - Cochabamba (Bolivia)|BO148IIP08T01|BO036
+Comunidad de Illataku - Cochabamba (Bolivia)|BO148I-IIP09T01|BO036
+Parroquia de Villa Santa Cruz (Bolivia)|BO148IIP10T01|BO037
+Comunidades y barrios de Santa Cruz (Bolivia)|BO148IIP18T01|BO038
+Comunidades de Santa Cruz (Bolivia)|BO148IIP27T01|BO038
+Comunidades y barrios de Santa Cruz|BO148IIP12T01|BO038
+Cooperativa Sr. de Malta Valle Grande (Santa Cruz, Bolivia)|BO148IIP14T01|BO039
+6 familias de la Comunidad de Urubo (Santa Cruz, Bolivia)|BO148IIP15T01|BO040
+Familias de la Comunidad de Equipetrol (Santa Cruz, Bolivia)|BO148IIP16T01|BO041
+Familias de la Comunidad de Colonia Berlín (Santa Cruz, Bolivia)|BO148IIP17T01|BO042
+11 familias de  la Urbanización El Trigal (Santa Cruz, Bolivia)|BO148IIP19T01|BO043
+Comunidad de Villa Rosario (Santa Cruz, Bolivia)|BO148IIP22T01|BO044
+Comunidad de Quiñales (Santa Cruz, Bolivia)|BO148IIP25T00|BO046
+Comunidad de Verdecillo (Santa Cruz, Bolivia)|BO148IIP25T00|BO047
+Comunidad de Campo Rosa (Santa Cruz, Bolivia)|BO148IIP26T00|BO048
+Comunidad de San José (Santa Cruz, Bolivia)|BO148IIP26T00|BO049
+Comunidad de Santa Rita (Santa Cruz, Bolivia)|BO148IIP26T00|BO050
+Comunidad de Taruma (Santa Cruz, Bolivia)|BO148IIP26T00|BO051
+Comunidad de San Luis (Santa Cruz, Bolivia)|BO148IIP26T00|BO052
+Comunidad de Valle Grande (Bolivia)|BO148IIP28T00|BO053
+Cooperativa de Agua de Padilla (Departamento de Chuquisaca, Bolivia)|BO148IIP29T00|BO054
+Comunidad de Rancho Nuevo (Bolivia)|BO148IIP30T01|BO055
+Comunidad del 24 de Marzo (Bolivia)|BO148IIP30T01|BO056
+Comunidad de Tucumancillo (Bolivia)|BO148IIP30T01|BO057
+Cooperativa El Carmen Ltda. (Bolivia)|BO148IIP30T01|BO058
+Cooperativa Agropecuaria Valle Grande (Bolivia)|BO148IIP30T01|BO059
+Comunidad de Villa Barrientos (Bolivia)|BO148IIP30T01|BO060
+Comunidad de San Juan (Bolivia)|BO148IIP30T01|BO061
+Comunidades de San Julian (Bolivia)|BO148IIP33T00|BO062
+Comunidad de Sajlina (Culpina, Departamento de Chuqisaca - Bolivia)|BO148IIP36T00|BO063
+Zona de San Julian (Brecha Casarabe), provincia Ñuflo de Chavez.|BO175IIIP01T01|BO064
+80.OOO niños y 30.000 jóvenes de colegios nocturnos de Santa Cruz de la Sierra|BO151IIP01T00|BO066
+El Municipio cruceño|BO152IIP01T00|BO067
+Comunidades de Bolivia|BO112IIP03T06|BO068
+Comunidades de Bolivia|BO112IIP04T00|BO068
+Constructora Escala del Oriente|BO107IP00T00|BO107
+Constructora Hossen S.A.|BO108IP00T00|BO108
+Constructora Casco Viejo|BO109IP00T00|BO109
+UNIDAD FORESTAL|BO110IIIP00T01|BO110
+EMAS - Escuela Móvil de Aguas y Saneamiento Básico|BO112IIP01T06|BO112
+Comunidad de Junta Pirai (Bolivia)|BO50P12T1-T6|BO121
+Comunidad de los Angeles (Bolivia)|BO50P12T1-T6|BO123
+Comunidad de Bartolina Sisa (Bolivia)|BO50P12T1-T6|BO124
+Comunidad de Villa Arancibia (Bolivia)|BO50P12T1-T6|BO125
+Comunidad del  6 de Agosto (Bolivia)|BO50P12T1-T6|BO126
+Comunidad de la Colonia Villa Antofagasta (Bolivia)|BO50P12T1-T6|BO127
+Comunidades de los Núcleos 21,42 y 48 (Bolivia)|BO50P12T1-T6|BO131
+Comunidad de San Martín (Bolivia)|BO50P12T1-T6|BO132
+Comunidad del 24 de Septiembre (Bolivia)|BO50P12T1-T6|BO135
+Comunidad de San Juan de la Melea (Bolivia)|BO50P12T1-T6|BO136
+Comunidad de Sombrerito (Bolivia)|BO50P12T1-T6|BO137
+Comunidade de Braço Verde (Belém, Pará, Brasil)|BR155IIP01T01|BR001
+Prefeitura Municipal de Altamira - Sede do Municipio|BR155IIP01T01|BR002
+Comunidade da Cidade Nova (Pará, Brasil)|BR155IIP01T01|BR003
+Comunidade de Nova Olinda (Pará, Brasil)|BR155IIP01T01|BR004
+Comunidade da Porta do Urumajó (Pará, Brasil)|BR155IIP01T01|BR005
+Clinica Santa Cecília (Belém, Pará, Brasil)|BR156IIP01T01|BR006
+Assembléia Paraense (Belém, Pará, Brasil)|BR156IIP01T01|BR007
+Comunidades do Estado do Pará|BR157IIP01T01|BR008
+Não definido (Município Irituia, Pará, Brasil)|BR176IIIP01T01|BR009
+Não definido (Município Curuça, Pará, Brasil)|BR176IIIP01T01|BR010
+Não definido (Município Santo Antônio do Tauá, Pará, Brasil)|BR176IIIP01T01|BR011
+Não definido (Município Mojú, Pará, Brasil)|BR176IIIP01T01|BR012
+Não definido (Município São Miguel do Guamá, Pará, Brasil)|BR176IIIP01T01|BR013
+Não definido (Município Augusto Corrêa, Pará, Brasil)|BR176IIIP01T01|BR014
+Não definido (Município Vigia, Pará, Brasil)|BR176IIIP01T01|BR015
+Não definido (Município São Caetano de Odivelas, Pará, Brasil)|BR176IIIP01T01|BR016
+Não definido (Município Muaná, Pará, Brasil)|BR176IIIP01T01|BR017
+Não definido (Município Cachoeira do Arari, Pará, Brasil)|BR176IIIP01T01|BR018
+Não definido (Município Ponta de Pedras, Pará, Brasil)|BR176IIIP01T01|BR019
+Comunidade Anilzinho (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR020
+Comunidade Boa Vista (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR021
+Comunidade Vaginha (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR022
+Comunidade Baixinha (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR023
+Comunidade Prainha (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR024
+Comunidade Matacurá (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR025
+Comunidade Taboca (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR026
+Comunidade Maçaranduba (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR027
+Comunidade Flexal (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR028
+Comunidade Limãozinho (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR029
+Comunidade Novo Tesouro (Município Baião, Pará, Brasil)|BR176IIIP01T01|BR030
+Comunidade D. Pedro II (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR031
+Comunidade Dr. Datis (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR032
+Comunidade  Frei Othamar (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR033
+Comunidade Jacarecapa (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR034
+Comunidade Jaquari (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR035
+Comunidade Miri (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR036
+Comunidade N.S. de Nazaré (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR037
+Comunidade N. Alternativa (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR038
+Comunidade Pe. Manoel (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR039
+Comunidade Raimundo (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR040
+Comunidade São Diogo (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR041
+Comunidade Vai quem quer (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR042
+Posto Indígena Alto Rio Guamá (Capitão Poço, Pará, Brasil)|BR176IIIP01T01|BR043
+Posto Indígena Canindé (Município Paragominas, Pará, Brasil)|BR176IIIP01T01|BR044
+Não definido (Município Santarém, Pará, Brasil)|BR176IIIP01T01|BR045
+Não definido (Município Itaituba, Pará, Brasil)|BR176IIIP01T01|BR046
+Não definido (Município Abaetetuba, Pará, Brasil)|BR176IIIP01T01|BR047
+Não definido (Município Alenquer, Pará, Brasil)|BR176IIIP01T01|BR048
+Não definido (Município Monte Alegre, Pará, Brasil)|BR176IIIP01T01|BR049
+Comunidade de Maurícia no Município de Santa Bárbara - Pará  (Brasil)|BR158IIP01T01|BR050
+População Urbana de Belém|BR114IP01T01|BR051
+População Urbana de Macapa|BR114IP01T01|BR052
+População Urbana de Ananindeua|BR114IP01T01|BR053
+MITÚ_ 120 afiliadas a la organización y 1590 mujeres mayores de 15 años de Mitú.|CO118IP01T01|CO003
+40 jóvenes indígenas de diferentes etnias y 8 profesores e indirectamente 300 indígenas capacitados en 7 cursos (Centro AGAPE, Leticia-Colombia)|CO120IP01T00|CO004
+30 asociados a la Cooperativa y 50 productores agropecuarios en el municipio de Calamar (Guaviare-Colombia)|CO160IIP01T00|CO005
+174 afiliados a la Junta de acción comunal de Barrancominas, y cerca de 4.460 personas entre indígenas y colonos, usuarios de la lancha tienda y las tiendas comunitarias (Comuninad de Barrancominas, Guainía - Colombia)|CO183IIIP01T00|CO010
+Ecuador|EC248IIP01T01|EC
+Ecuador|EC149IIP03T01|EC
+Ecuador|EC310IIP01T01|EC
+Shuar|EC314IIIP01T00|EC
+Ecuador|EC316IIIP01T00|EC
+BARRIO SANTA ROSA|EC149IIP01T02|EC001
+BARRIO  SANTA CECILIA|EC149IIP01T02|EC002
+GOBIERNO DE YANZATZA|EC149IIP02T03|EC003
+COMUNIDAD DE TSUNKINTSA|EC248IIP04T01|EC004
+UTEPA -Unidad Técnica Ecuatoriana del Plan Awá|VE124I-II-IIIP01T02|EC008
+Secoyas|EC311IIIP01T00|EC25
+Sionas|EC311IIIP01T00|EC26
+Cofanes|EC311IIIP01T00|EC27
+Kitchwas|EC311IIIP01T00|EC28
+Kitchwa|EC311IIIP03T00|EC28
+Morona Santiago|EC313IIIP01T01|EC29
+Pastaza|EC313IIIP01T01|EC30
+Bajo Huino|EC313IIIP01T01|EC31
+Tierras Orientales|EC313IIIP01T01|EC32
+Chayuk (San Luis)|EC313IIIP01T01|EC33
+Montalvo|EC313IIIP01T01|EC34
+Playas de Cuyabeno|EC313IIIP01T01|EC35
+Yaap|EC313IIIP01T01|EC36
+Mushullakta|EC313IIIP01T01|EC37
+Parotoyacu|EC313IIIP01T01|EC38
+El Descanso|EC313IIIP01T01|EC39
+El Edén|EC313IIIP01T01|EC40
+Cofán Duvuno|EC313IIIP01T01|EC41
+Tsunt Suim|EC313IIIP01T01|EC42
+Pilche|EC313IIIP01T01|EC43
+Loma Linda|EC313IIIP01T01|EC44
+San José de Payamino|EC313IIIP01T01|EC45
+San Francisco (Wawaim)|EC313IIIP01T01|EC46
+Otto Arosemena 1|EC313IIIP01T01|EC47
+Chapintsa|EC313IIIP01T01|EC48
+Colmito Yacu|EC313IIIP01T01|EC49
+Yumisin|EC314IIIP02T00|EC50
+DISTRITO MOYOBAMBA - PROV. MOYOBAMBA|PE009IIP04T00|PE001
+DISTRITO SORITOR - PROV. MOYOBAMBA|PE009IIP04T00|PE002
+DISTRITO JEPELACIO - PROV. MOYOBAMBA|PE009IIP04T00|PE003
+DISTRITO JERILLO - PROV. MOYOBAMBA|PE009IIP04T00|PE004
+DISTRITO RIOJA - PROV. RIOJA|PE009IIP04T00|PE005
+DISTRITO AWAJUN - PROV. RIOJA|PE009IIP04T00|PE006
+DISTRITO YURACYACU - PROV. RIOJA|PE009IIP04T00|PE007
+Zona Agropecuaria del distrito de Villa El Salvador (ZA-VES)|PE003IIP11T00|PE008
+Comunidad de Yanacocha, San Isidro|PE028IIP03T01|PE009
+Población venezolana en general|VE123IP01T01|VE001
+Vicariato Apostólico de Puerto Ayacucho, Estado Amazonas (Venezuela)|VE123IIIP04T01|VE002
+7 comunidades Jiwi (Guahibo) de Puente Samariapo, Boca del Río Sipapo (Estado Amazonas, Municipio Autana, Venezuela)|VE124I-II-IIIP01T02|VE003
+Comunidades urbanas y rurales del Sur de los Estados Anzoátegui y Monagas|VE126IP01T00|VE004
+Comunidades rurales del Sur de los Estados Anzoátegui y Monagas (Venezuela)|VE126IP02T00|VE004
+Barrio Las Acacias (Municipio Atures, Estado Amazonas, Venezuela)|VE127IIP02T00|VE005
+El Caicet (Municipio Atures, Estado Amazonas, Venezuela)|VE127IIP02T00|VE006
+Barrio Carinaguita (Municipio Atures, Estado Amazonas, Venezuela)|VE127IIP02T00|VE007
+Barrio José Antonio Páez (Municipio Atures, Estado Amazonas, Venezuela)|VE127IIP02T00|VE008
+Comunidades Indígenas del Estado Amazonas|VE127I-IIP01T00|VE009
+Barrios del Estado Amazonas|VE127I-IIP01T00|VE010
+Comunidades Indígenas Sector Norte Puerto Ayacucho (Estado Amazonas)|VE127IIP03T00|VE011
+Asentamientos rurales del Municipio Gran Sabana (Estado Bolívar, Venezuela)|VE130I-IIP01T00|VE012
+Población de Upata (Estado Bolívar)|VE132IP01T00|VE013
+Veredas de Pueblo Viejo y Pialapí, Grupo Awá Kwaiker (Departamento de  Nariño, Municipio Ricaurte, Colombia)|VE124I-II-IIIP01T02|VE013
+Comunidades del  Municipio Caroní (Estado Bolívar, Venezuela)|VE133IP01T00|VE014
+Comunidad Indígena "Coromoto" (Edo. Amazonas, Venezuela)|VE135IP01T00|VE015
+Comunidades urbanas y rurales de San Félix (Estado Bolívar, Venezuela)|VE137IP01T00|VE016
+Familias de los sectores populares del Municipio Heres|VE140IP01T00|VE017

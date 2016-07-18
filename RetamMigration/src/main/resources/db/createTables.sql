@@ -77,12 +77,15 @@ CREATE TABLE project_organization (
 );
 
 CREATE TABLE beneficiary (
-    idBenificiary INTEGER NOT NULL,
-    code TEXT NOT NULL,
+    idBeneficiary INTEGER PRIMARY KEY,
+    code TEXT UNIQUE,
     name TEXT NOT NULL
 );
 
 CREATE TABLE project_beneficiary (
     idProject INTEGER NOT NULL,
-    idBenificiary INTEGER NOT NULL
+    idBeneficiary INTEGER NOT NULL,
+    PRIMARY KEY (idProject, idBeneficiary),
+    FOREIGN KEY(idProject) REFERENCES project(idProject),
+    FOREIGN KEY(idBeneficiary) REFERENCES beneficiary(idBeneficiary)
 );
