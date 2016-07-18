@@ -1,3 +1,6 @@
+DELETE FROM project_beneficiary;
+DELETE FROM beneficiary;
+DELETE FROM project_organization;
 DELETE FROM project_subDescriptor;
 DELETE FROM project_descriptor;
 DELETE FROM project;

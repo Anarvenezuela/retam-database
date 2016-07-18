@@ -1,3 +1,5 @@
+DROP TABLE project_beneficiary;
+DROP TABLE beneficiary;
 DROP TABLE project_organization;
 DROP TABLE project_subDescriptor;
 DROP TABLE project_descriptor;

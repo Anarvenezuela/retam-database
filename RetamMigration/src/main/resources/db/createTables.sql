@@ -75,3 +75,14 @@ CREATE TABLE project_organization (
     FOREIGN KEY(idProject) REFERENCES project(idProject),
     FOREIGN KEY(idOrganization) REFERENCES organization(idOrganization)
 );
+
+CREATE TABLE beneficiary (
+    idBenificiary INTEGER NOT NULL,
+    code TEXT NOT NULL,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE project_beneficiary (
+    idProject INTEGER NOT NULL,
+    idBenificiary INTEGER NOT NULL
+);
