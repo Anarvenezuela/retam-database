@@ -35,6 +35,9 @@ public class ProjectSceneController implements Initializable {
     private FXMLLoader orgsInfoLoader;
     private AnchorPane orgsInfoPane;
 
+    private FXMLLoader benefInfoLoader;
+    private AnchorPane benefInfoPane;
+
     /**
      * Initializes the controller class.
      */
@@ -58,6 +61,10 @@ public class ProjectSceneController implements Initializable {
 
         orgsInfoLoader = new FXMLLoader(getClass()
                 .getResource("/fxml/projectScene/OrganizationsInfo.fxml"));
+
+        benefInfoLoader = new FXMLLoader(getClass()
+                .getResource("/fxml/projectScene/BeneficiaryInfo.fxml"));
+
         try {
             projectInfoPane = (AnchorPane) projectInfoLoader.load();
             ProjectInfoController projectInfoCtrl = projectInfoLoader.getController();
@@ -66,6 +73,10 @@ public class ProjectSceneController implements Initializable {
             orgsInfoPane = (AnchorPane) orgsInfoLoader.load();
             OrganizationsInfoController orgInfoCtrl = orgsInfoLoader.getController();
             orgInfoCtrl.initData(project);
+
+            benefInfoPane = (AnchorPane) benefInfoLoader.load();
+            BeneficiaryInfoController benefInfoCtrl = benefInfoLoader.getController();
+            benefInfoCtrl.initData(project);
 
         } catch (IOException ex) {
             Logger.getLogger(ProjectSceneController.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,6 +91,11 @@ public class ProjectSceneController implements Initializable {
     @FXML
     public void onActionOrganizationButton(ActionEvent event) {
         content.getChildren().setAll(orgsInfoPane);
+    }
+
+    @FXML
+    public void onActionBeneficiaryButton(ActionEvent event) {
+        content.getChildren().setAll(benefInfoPane);
     }
 
 }
