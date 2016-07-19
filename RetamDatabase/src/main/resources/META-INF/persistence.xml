@@ -10,6 +10,8 @@
     <class>fundabitat.retam.models.Country</class>
     <class>fundabitat.retam.models.Beneficiary</class>
     <class>fundabitat.retam.models.ProjectBeneficiary</class>
+    <class>fundabitat.retam.models.Participation</class>
+    <class>fundabitat.retam.models.ProjectOrganizationParticipation</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:/home/marcos/NetBeansProjects/retam-database/RetamMigration/src/main/resources/db/database.db"/>
       <property name="javax.persistence.jdbc.user" value=""/>
