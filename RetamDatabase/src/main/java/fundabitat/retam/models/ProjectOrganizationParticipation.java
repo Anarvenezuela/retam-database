@@ -8,6 +8,9 @@ package fundabitat.retam.models;
 import java.io.Serializable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -27,6 +30,21 @@ public class ProjectOrganizationParticipation implements Serializable {
     @EmbeddedId
     protected ProjectOrganizationParticipationPK projectOrganizationParticipationPK;
 
+    @MapsId("idProject")
+    @ManyToOne
+    @JoinColumn(name = "idProject", referencedColumnName = "idProject")
+    private Project project;
+
+    @MapsId("idOrganization")
+    @ManyToOne
+    @JoinColumn(name = "idOrganization", referencedColumnName = "idOrganization")
+    private Organization organization;
+
+    @MapsId("idParticipation")
+    @ManyToOne
+    @JoinColumn(name = "idParticipation", referencedColumnName = "idParticipation")
+    private Participation participation;
+
     public ProjectOrganizationParticipation() {
     }
 
@@ -40,6 +58,30 @@ public class ProjectOrganizationParticipation implements Serializable {
 
     public void setProjectOrganizationParticipationPK(ProjectOrganizationParticipationPK projectOrganizationParticipationPK) {
         this.projectOrganizationParticipationPK = projectOrganizationParticipationPK;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
+    public Participation getParticipation() {
+        return participation;
+    }
+
+    public void setParticipation(Participation participation) {
+        this.participation = participation;
     }
 
     @Override

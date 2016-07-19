@@ -15,7 +15,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -72,6 +71,8 @@ public class Organization implements Serializable {
     private Collection<Representative> representativeCollection;
     @ManyToMany(mappedBy = "organizationCollection")
     private Collection<Project> projectCollection;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection;
 
     public Organization() {
     }
@@ -280,6 +281,14 @@ public class Organization implements Serializable {
 
     public void setProjectCollection(Collection<Project> projectCollection) {
         this.projectCollection = projectCollection;
+    }
+
+    public Collection<ProjectOrganizationParticipation> getProjectOrganizationParticipationCollection() {
+        return projectOrganizationParticipationCollection;
+    }
+
+    public void setProjectOrganizationParticipationCollection(Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection) {
+        this.projectOrganizationParticipationCollection = projectOrganizationParticipationCollection;
     }
 
 }

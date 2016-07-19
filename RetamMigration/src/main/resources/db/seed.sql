@@ -27,3 +27,13 @@ INSERT INTO subDescriptor(name, idDescriptor) VALUES
     ('Geotérmica', 3),
     ('Biomasa', 3),
     ('III-Sistemas de Información', 3);
+
+INSERT INTO participation(code, name) VALUES
+    ('A', 'Investigación y/o desarrollo de tecnologías'),
+    ('B', 'Planificación'),
+    ('C', 'Apoyo técnico'),
+    ('D', 'Capacitación'),
+    ('E', 'Infraestructura'),
+    ('F', 'Extensión'),
+    ('G', 'Difusión'),
+    ('H', 'Créditos');

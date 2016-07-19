@@ -43,7 +43,7 @@ public class Participation implements Serializable {
     @Basic(optional = false)
     @Column(name = "name")
     private String name;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idParticipation")
+    @OneToMany(cascade = CascadeType.ALL)
     private Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection;
 
     public Participation() {

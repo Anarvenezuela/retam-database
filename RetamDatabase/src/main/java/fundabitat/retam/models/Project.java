@@ -8,6 +8,7 @@ package fundabitat.retam.models;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +20,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -95,6 +97,9 @@ public class Project implements Serializable {
         @JoinColumn(name = "idBeneficiary", referencedColumnName = "idBeneficiary")})
     @ManyToMany
     private Collection<Beneficiary> beneficiaryCollection;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection;
 
     public Project() {
     }
@@ -206,6 +211,14 @@ public class Project implements Serializable {
 
     public void setBeneficiaryCollection(Collection<Beneficiary> beneficiaryCollection) {
         this.beneficiaryCollection = beneficiaryCollection;
+    }
+
+    public Collection<ProjectOrganizationParticipation> getProjectOrganizationParticipationCollection() {
+        return projectOrganizationParticipationCollection;
+    }
+
+    public void setProjectOrganizationParticipationCollection(Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection) {
+        this.projectOrganizationParticipationCollection = projectOrganizationParticipationCollection;
     }
 
 }
