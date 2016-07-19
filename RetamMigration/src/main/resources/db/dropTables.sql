@@ -1,3 +1,5 @@
+DROP TABLE project_organization_participation;
+DROP TABLE participation;
 DROP TABLE project_beneficiary;
 DROP TABLE beneficiary;
 DROP TABLE project_organization;

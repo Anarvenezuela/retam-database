@@ -78,7 +78,7 @@ CREATE TABLE project_organization (
 
 CREATE TABLE beneficiary (
     idBeneficiary INTEGER PRIMARY KEY,
-    code TEXT UNIQUE,
+    code TEXT NOT NULL UNIQUE,
     name TEXT NOT NULL
 );
 
@@ -88,4 +88,20 @@ CREATE TABLE project_beneficiary (
     PRIMARY KEY (idProject, idBeneficiary),
     FOREIGN KEY(idProject) REFERENCES project(idProject),
     FOREIGN KEY(idBeneficiary) REFERENCES beneficiary(idBeneficiary)
+);
+
+CREATE TABLE participation (
+    idParticipation INTEGER PRIMARY KEY,
+    code TEXT NOT NULL UNIQUE,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE project_organization_participation (
+    idProject INTEGER NOT NULL,
+    idOrganization INTEGER NOT NULL,
+    idParticipation INTEGER NOT NULL,
+    PRIMARY KEY (idProject, idOrganization, idParticipation),
+    FOREIGN KEY(idProject) REFERENCES project(idProject),
+    FOREIGN KEY(idOrganization) REFERENCES organization(idOrganization),
+    FOREIGN KEY(idParticipation) REFERENCES participation(idParticipation)
 );
