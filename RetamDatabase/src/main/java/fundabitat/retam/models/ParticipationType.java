@@ -24,19 +24,19 @@ import javax.persistence.Table;
  * @author marcos
  */
 @Entity
-@Table(name = "participation")
+@Table(name = "participation_type")
 @NamedQueries({
-    @NamedQuery(name = "Participation.findAll", query = "SELECT p FROM Participation p"),
-    @NamedQuery(name = "Participation.findByIdParticipation", query = "SELECT p FROM Participation p WHERE p.idParticipation = :idParticipation"),
-    @NamedQuery(name = "Participation.findByCode", query = "SELECT p FROM Participation p WHERE p.code = :code"),
-    @NamedQuery(name = "Participation.findByName", query = "SELECT p FROM Participation p WHERE p.name = :name")})
-public class Participation implements Serializable {
+    @NamedQuery(name = "ParticipationType.findAll", query = "SELECT p FROM ParticipationType p"),
+    @NamedQuery(name = "ParticipationType.findByIdParticipation", query = "SELECT p FROM ParticipationType p WHERE p.idParticipationType = :idParticipationType"),
+    @NamedQuery(name = "ParticipationType.findByCode", query = "SELECT p FROM ParticipationType p WHERE p.code = :code"),
+    @NamedQuery(name = "ParticipationType.findByName", query = "SELECT p FROM ParticipationType p WHERE p.name = :name")})
+public class ParticipationType implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    @Column(name = "idParticipation")
-    private Integer idParticipation;
+    @Column(name = "idParticipationType")
+    private Integer idParticipationType;
     @Basic(optional = false)
     @Column(name = "code")
     private String code;
@@ -46,15 +46,15 @@ public class Participation implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection;
 
-    public Participation() {
+    public ParticipationType() {
     }
 
-    public Integer getIdParticipation() {
-        return idParticipation;
+    public Integer getIdParticipationType() {
+        return idParticipationType;
     }
 
-    public void setIdParticipation(Integer idParticipation) {
-        this.idParticipation = idParticipation;
+    public void setIdParticipationType(Integer idParticipationType) {
+        this.idParticipationType = idParticipationType;
     }
 
     public String getCode() {
@@ -84,18 +84,18 @@ public class Participation implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idParticipation != null ? idParticipation.hashCode() : 0);
+        hash += (idParticipationType != null ? idParticipationType.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Participation)) {
+        if (!(object instanceof ParticipationType)) {
             return false;
         }
-        Participation other = (Participation) object;
-        if ((this.idParticipation == null && other.idParticipation != null) || (this.idParticipation != null && !this.idParticipation.equals(other.idParticipation))) {
+        ParticipationType other = (ParticipationType) object;
+        if ((this.idParticipationType == null && other.idParticipationType != null) || (this.idParticipationType != null && !this.idParticipationType.equals(other.idParticipationType))) {
             return false;
         }
         return true;
@@ -103,7 +103,7 @@ public class Participation implements Serializable {
 
     @Override
     public String toString() {
-        return "fundabitat.retam.models.Participation[ idParticipation=" + idParticipation + " ]";
+        return "fundabitat.retam.models.Participation[ idParticipationType=" + idParticipationType + " ]";
     }
 
 }

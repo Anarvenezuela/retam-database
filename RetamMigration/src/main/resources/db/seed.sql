@@ -28,7 +28,7 @@ INSERT INTO subDescriptor(name, idDescriptor) VALUES
     ('Biomasa', 3),
     ('III-Sistemas de Información', 3);
 
-INSERT INTO participation(code, name) VALUES
+INSERT INTO participation_type(code, name) VALUES
     ('A', 'Investigación y/o desarrollo de tecnologías'),
     ('B', 'Planificación'),
     ('C', 'Apoyo técnico'),

@@ -1,5 +1,5 @@
 DELETE FROM project_organization_participation;
-DELETE FROM participation;
+DELETE FROM participation_type;
 DELETE FROM project_beneficiary;
 DELETE FROM beneficiary;
 DELETE FROM project_organization;

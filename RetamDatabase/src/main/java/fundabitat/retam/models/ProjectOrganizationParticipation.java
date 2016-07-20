@@ -40,10 +40,10 @@ public class ProjectOrganizationParticipation implements Serializable {
     @JoinColumn(name = "idOrganization", referencedColumnName = "idOrganization")
     private Organization organization;
 
-    @MapsId("idParticipation")
+    @MapsId("idParticipationType")
     @ManyToOne
-    @JoinColumn(name = "idParticipation", referencedColumnName = "idParticipation")
-    private Participation participation;
+    @JoinColumn(name = "idParticipationType", referencedColumnName = "idParticipationType")
+    private ParticipationType participation;
 
     public ProjectOrganizationParticipation() {
     }
@@ -52,14 +52,14 @@ public class ProjectOrganizationParticipation implements Serializable {
         this.projectOrganizationParticipationPK = projectOrganizationParticipationPK;
     }
 
-    public ProjectOrganizationParticipation(Project project, Organization organization, Participation participation) {
+    public ProjectOrganizationParticipation(Project project, Organization organization, ParticipationType participation) {
         this.project = project;
         this.organization = organization;
         this.participation = participation;
         this.projectOrganizationParticipationPK
                 = new ProjectOrganizationParticipationPK(project.getIdProject(),
                         organization.getIdOrganization(),
-                        participation.getIdParticipation());
+                        participation.getIdParticipationType());
     }
 
     public ProjectOrganizationParticipationPK getProjectOrganizationParticipationPK() {
@@ -86,11 +86,11 @@ public class ProjectOrganizationParticipation implements Serializable {
         this.organization = organization;
     }
 
-    public Participation getParticipation() {
+    public ParticipationType getParticipation() {
         return participation;
     }
 
-    public void setParticipation(Participation participation) {
+    public void setParticipation(ParticipationType participation) {
         this.participation = participation;
     }
 

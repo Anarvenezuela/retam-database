@@ -90,8 +90,8 @@ CREATE TABLE project_beneficiary (
     FOREIGN KEY(idBeneficiary) REFERENCES beneficiary(idBeneficiary)
 );
 
-CREATE TABLE participation (
-    idParticipation INTEGER PRIMARY KEY,
+CREATE TABLE participation_type (
+    idParticipationType INTEGER PRIMARY KEY,
     code TEXT NOT NULL UNIQUE,
     name TEXT NOT NULL
 );
@@ -99,9 +99,9 @@ CREATE TABLE participation (
 CREATE TABLE project_organization_participation (
     idProject INTEGER NOT NULL,
     idOrganization INTEGER NOT NULL,
-    idParticipation INTEGER NOT NULL,
-    PRIMARY KEY (idProject, idOrganization, idParticipation),
+    idParticipationType INTEGER NOT NULL,
+    PRIMARY KEY (idProject, idOrganization, idParticipationType),
     FOREIGN KEY(idProject) REFERENCES project(idProject),
     FOREIGN KEY(idOrganization) REFERENCES organization(idOrganization),
-    FOREIGN KEY(idParticipation) REFERENCES participation(idParticipation)
+    FOREIGN KEY(idParticipationType) REFERENCES participation_type(idParticipationType)
 );

@@ -7,7 +7,7 @@ package fundabitat.retam.retammigration.migrators;
 
 import fundabitat.retam.models.Country;
 import fundabitat.retam.models.Organization;
-import fundabitat.retam.models.Participation;
+import fundabitat.retam.models.ParticipationType;
 import fundabitat.retam.models.Project;
 import fundabitat.retam.models.ProjectOrganizationParticipation;
 import fundabitat.retam.retammigration.oldmodels.OtrasParticipantes;
@@ -35,8 +35,8 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
         Query findOrganizations = em.createNamedQuery("Organization.findAll");
         List<Organization> orgs = findOrganizations.getResultList();
 
-        Query findParticipation = em.createNamedQuery("Participation.findAll");
-        List<Participation> participations = findParticipation.getResultList();
+        Query findParticipation = em.createNamedQuery("ParticipationType.findAll");
+        List<ParticipationType> participations = findParticipation.getResultList();
 
         Query findCountries = em.createNamedQuery("Country.findAll");
         List<Country> countries = findCountries.getResultList();
@@ -46,7 +46,7 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
 
     private void processOtrasPart(List<OtrasParticipantes> elements,
             List<Project> projects, List<Organization> orgs,
-            List<Country> countries, List<Participation> participations) {
+            List<Country> countries, List<ParticipationType> participations) {
 
         for (OtrasParticipantes o : elements) {
             Project project = getProject(projects, o.getCodigo());
@@ -61,10 +61,10 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
                 orgs.add(org);
             }
 
-            List<Participation> partTypes = getPartTypes(participations,
+            List<ParticipationType> partTypes = getPartTypes(participations,
                     o.getListParticipationType());
 
-            for (Participation p : partTypes) {
+            for (ParticipationType p : partTypes) {
                 ProjectOrganizationParticipation part = new ProjectOrganizationParticipation(project, org, p);
                 em.persist(part);
             }
@@ -88,7 +88,7 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
                 .findFirst().get();
     }
 
-    private List<Participation> getPartTypes(List<Participation> partTypes, List<String> codes) {
+    private List<ParticipationType> getPartTypes(List<ParticipationType> partTypes, List<String> codes) {
         return partTypes.stream()
                 .filter(p -> codes.contains(p.getCode()))
                 .collect(Collectors.toList());

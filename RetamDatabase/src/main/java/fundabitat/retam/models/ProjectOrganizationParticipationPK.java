@@ -23,16 +23,16 @@ public class ProjectOrganizationParticipationPK implements Serializable {
     @Column(name = "idOrganization")
     private Integer idOrganization;
 
-    @Column(name = "idParticipation")
-    private Integer idParticipation;
+    @Column(name = "idParticipationType")
+    private Integer idParticipationType;
 
     public ProjectOrganizationParticipationPK() {
     }
 
-    public ProjectOrganizationParticipationPK(Integer idProject, Integer idOrganization, Integer idParticipation) {
+    public ProjectOrganizationParticipationPK(Integer idProject, Integer idOrganization, Integer idParticipationType) {
         this.idProject = idProject;
         this.idOrganization = idOrganization;
-        this.idParticipation = idParticipation;
+        this.idParticipationType = idParticipationType;
     }
 
     public Integer getIdProject() {
@@ -51,12 +51,12 @@ public class ProjectOrganizationParticipationPK implements Serializable {
         this.idOrganization = idOrganization;
     }
 
-    public Integer getIdParticipation() {
-        return idParticipation;
+    public Integer getIdParticipationType() {
+        return idParticipationType;
     }
 
-    public void setIdParticipation(Integer idParticipation) {
-        this.idParticipation = idParticipation;
+    public void setIdParticipationType(Integer idParticipationType) {
+        this.idParticipationType = idParticipationType;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class ProjectOrganizationParticipationPK implements Serializable {
         int hash = 7;
         hash = 97 * hash + Objects.hashCode(this.idProject);
         hash = 97 * hash + Objects.hashCode(this.idOrganization);
-        hash = 97 * hash + Objects.hashCode(this.idParticipation);
+        hash = 97 * hash + Objects.hashCode(this.idParticipationType);
         return hash;
     }
 
@@ -86,7 +86,7 @@ public class ProjectOrganizationParticipationPK implements Serializable {
         if (!Objects.equals(this.idOrganization, other.idOrganization)) {
             return false;
         }
-        if (!Objects.equals(this.idParticipation, other.idParticipation)) {
+        if (!Objects.equals(this.idParticipationType, other.idParticipationType)) {
             return false;
         }
         return true;
@@ -95,8 +95,8 @@ public class ProjectOrganizationParticipationPK implements Serializable {
     @Override
     public String toString() {
         return "ProjectOrganizationParticipationPK{" + "idProject=" + idProject
-                + ", idOrganization=" + idOrganization + ", idParticipation="
-                + idParticipation + '}';
+                + ", idOrganization=" + idOrganization + ", idParticipationType="
+                + idParticipationType + '}';
     }
 
 }
