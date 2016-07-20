@@ -20,7 +20,7 @@ import javax.persistence.Table;
  * @author marcos
  */
 @Entity
-@Table
+@Table(name = "project_organization_participation")
 @NamedQueries({
     @NamedQuery(name = "ProjectOrganizationParticipation.findAll", query = "SELECT p FROM ProjectOrganizationParticipation p")})
 public class ProjectOrganizationParticipation implements Serializable {
@@ -50,6 +50,16 @@ public class ProjectOrganizationParticipation implements Serializable {
 
     public ProjectOrganizationParticipation(ProjectOrganizationParticipationPK projectOrganizationParticipationPK) {
         this.projectOrganizationParticipationPK = projectOrganizationParticipationPK;
+    }
+
+    public ProjectOrganizationParticipation(Project project, Organization organization, Participation participation) {
+        this.project = project;
+        this.organization = organization;
+        this.participation = participation;
+        this.projectOrganizationParticipationPK
+                = new ProjectOrganizationParticipationPK(project.getIdProject(),
+                        organization.getIdOrganization(),
+                        participation.getIdParticipation());
     }
 
     public ProjectOrganizationParticipationPK getProjectOrganizationParticipationPK() {

@@ -101,4 +101,13 @@ public abstract class AbstractMigrator<E> {
                 findFirst().get();
     }
 
+    /**
+     * Gets "Not available" from the list of countries.
+     *
+     * @param countries List of all countries in the DB.
+     */
+    protected Country getNotAvailableCountry(List<Country> countries) {
+        return getCountryByName(countries, NOT_AVAILABLE);
+    }
+
 }

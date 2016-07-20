@@ -5,14 +5,7 @@
  */
 package fundabitat.retam.retammigration;
 
-import fundabitat.retam.retammigration.migrators.CountryMigrator;
-import fundabitat.retam.retammigration.migrators.AbstractMigrator;
-import fundabitat.retam.retammigration.migrators.BeneficiaryMigrator;
-import fundabitat.retam.retammigration.migrators.DescriptorMigrator;
-import fundabitat.retam.retammigration.migrators.OrganizationMigrator;
-import fundabitat.retam.retammigration.migrators.ProjectMigrator;
-import fundabitat.retam.retammigration.migrators.ProjectOrganizationMigrator;
-import fundabitat.retam.retammigration.migrators.RepresentativeMigrator;
+import fundabitat.retam.retammigration.migrators.*;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -42,6 +35,7 @@ public class MigrationManager {
     public static String descriptorsFile;
     public static String projectOrgFile;
     public static String beneficiaryFile;
+    public static String projectOrgPartFile;
 
     private MigrationManager() {
     }
@@ -85,6 +79,9 @@ public class MigrationManager {
         migrator = new BeneficiaryMigrator(beneficiaryFile);
         migrators.add(migrator);
 
+        migrator = new ProjectOrgPartMigrator(projectOrgPartFile);
+        migrators.add(migrator);
+
         return migrators;
     }
 
@@ -119,5 +116,6 @@ public class MigrationManager {
         descriptorsFile = PROP.getProperty("descriptorFile");
         projectOrgFile = PROP.getProperty("projectOrgFile");
         beneficiaryFile = PROP.getProperty("beneficiaryFile");
+        projectOrgPartFile = PROP.getProperty("projectOrgPartFile");
     }
 }

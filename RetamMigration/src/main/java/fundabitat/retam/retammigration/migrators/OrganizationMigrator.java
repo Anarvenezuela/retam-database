@@ -106,18 +106,9 @@ public class OrganizationMigrator extends AbstractMigrator<Institucion> {
     }
 
     /**
-     * Gets "Not available" from the list of countries.
-     *
-     * @param countries List of all countries in the DB.
-     */
-    private Country getNotAvailableCountry(List<Country> countries) {
-        return getCountryByName(countries, NOT_AVAILABLE);
-    }
-
-    /**
      * Creates an organization using N/A to fill its fields.
      */
-    private Organization createIdZeroOrg(int code, String name, Country notAvailable) {
+    public static Organization createIdZeroOrg(int code, String name, Country notAvailable) {
         Organization o = new Organization();
         o.setCode(code);
         o.setName(name);
