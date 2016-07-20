@@ -99,7 +99,7 @@ public class Project implements Serializable {
     private Collection<Beneficiary> beneficiaryCollection;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection;
+    private Collection<Participation> participationCollection;
 
     public Project() {
     }
@@ -213,12 +213,12 @@ public class Project implements Serializable {
         this.beneficiaryCollection = beneficiaryCollection;
     }
 
-    public Collection<ProjectOrganizationParticipation> getProjectOrganizationParticipationCollection() {
-        return projectOrganizationParticipationCollection;
+    public Collection<Participation> getParticipationCollection() {
+        return participationCollection;
     }
 
-    public void setProjectOrganizationParticipationCollection(Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection) {
-        this.projectOrganizationParticipationCollection = projectOrganizationParticipationCollection;
+    public void setParticipationCollection(Collection<Participation> participationCollection) {
+        this.participationCollection = participationCollection;
     }
 
 }

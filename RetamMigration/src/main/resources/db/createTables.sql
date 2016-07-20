@@ -96,7 +96,7 @@ CREATE TABLE participation_type (
     name TEXT NOT NULL
 );
 
-CREATE TABLE project_organization_participation (
+CREATE TABLE participation (
     idProject INTEGER NOT NULL,
     idOrganization INTEGER NOT NULL,
     idParticipationType INTEGER NOT NULL,

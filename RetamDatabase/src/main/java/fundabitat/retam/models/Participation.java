@@ -20,15 +20,15 @@ import javax.persistence.Table;
  * @author marcos
  */
 @Entity
-@Table(name = "project_organization_participation")
+@Table(name = "participation")
 @NamedQueries({
-    @NamedQuery(name = "ProjectOrganizationParticipation.findAll", query = "SELECT p FROM ProjectOrganizationParticipation p")})
-public class ProjectOrganizationParticipation implements Serializable {
+    @NamedQuery(name = "Participation.findAll", query = "SELECT p FROM Participation p")})
+public class Participation implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @EmbeddedId
-    protected ProjectOrganizationParticipationPK projectOrganizationParticipationPK;
+    protected ParticipationPK participationPK;
 
     @MapsId("idProject")
     @ManyToOne
@@ -45,29 +45,29 @@ public class ProjectOrganizationParticipation implements Serializable {
     @JoinColumn(name = "idParticipationType", referencedColumnName = "idParticipationType")
     private ParticipationType participation;
 
-    public ProjectOrganizationParticipation() {
+    public Participation() {
     }
 
-    public ProjectOrganizationParticipation(ProjectOrganizationParticipationPK projectOrganizationParticipationPK) {
-        this.projectOrganizationParticipationPK = projectOrganizationParticipationPK;
+    public Participation(ParticipationPK participationPK) {
+        this.participationPK = participationPK;
     }
 
-    public ProjectOrganizationParticipation(Project project, Organization organization, ParticipationType participation) {
+    public Participation(Project project, Organization organization, ParticipationType participation) {
         this.project = project;
         this.organization = organization;
         this.participation = participation;
-        this.projectOrganizationParticipationPK
-                = new ProjectOrganizationParticipationPK(project.getIdProject(),
+        this.participationPK
+                = new ParticipationPK(project.getIdProject(),
                         organization.getIdOrganization(),
                         participation.getIdParticipationType());
     }
 
-    public ProjectOrganizationParticipationPK getProjectOrganizationParticipationPK() {
-        return projectOrganizationParticipationPK;
+    public ParticipationPK getParticipationPK() {
+        return participationPK;
     }
 
-    public void setProjectOrganizationParticipationPK(ProjectOrganizationParticipationPK projectOrganizationParticipationPK) {
-        this.projectOrganizationParticipationPK = projectOrganizationParticipationPK;
+    public void setParticipationPK(ParticipationPK participationPK) {
+        this.participationPK = participationPK;
     }
 
     public Project getProject() {
@@ -97,18 +97,18 @@ public class ProjectOrganizationParticipation implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (projectOrganizationParticipationPK != null ? projectOrganizationParticipationPK.hashCode() : 0);
+        hash += (participationPK != null ? participationPK.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ProjectOrganizationParticipation)) {
+        if (!(object instanceof Participation)) {
             return false;
         }
-        ProjectOrganizationParticipation other = (ProjectOrganizationParticipation) object;
-        if ((this.projectOrganizationParticipationPK == null && other.projectOrganizationParticipationPK != null) || (this.projectOrganizationParticipationPK != null && !this.projectOrganizationParticipationPK.equals(other.projectOrganizationParticipationPK))) {
+        Participation other = (Participation) object;
+        if ((this.participationPK == null && other.participationPK != null) || (this.participationPK != null && !this.participationPK.equals(other.participationPK))) {
             return false;
         }
         return true;
@@ -116,9 +116,9 @@ public class ProjectOrganizationParticipation implements Serializable {
 
     @Override
     public String toString() {
-        return "fundabitat.retam.models.ProjectOrganizationParticipation[ "
-                + "projectOrganizationParticipationPK="
-                + projectOrganizationParticipationPK + " ]";
+        return "fundabitat.retam.models.Participation[ "
+                + "participationPK="
+                + participationPK + " ]";
     }
 
 }

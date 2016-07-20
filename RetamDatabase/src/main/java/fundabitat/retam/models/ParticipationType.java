@@ -44,7 +44,7 @@ public class ParticipationType implements Serializable {
     @Column(name = "name")
     private String name;
     @OneToMany(cascade = CascadeType.ALL)
-    private Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection;
+    private Collection<Participation> participationCollection;
 
     public ParticipationType() {
     }
@@ -73,12 +73,12 @@ public class ParticipationType implements Serializable {
         this.name = name;
     }
 
-    public Collection<ProjectOrganizationParticipation> getProjectOrganizationParticipationCollection() {
-        return projectOrganizationParticipationCollection;
+    public Collection<Participation> getParticipationCollection() {
+        return participationCollection;
     }
 
-    public void setProjectOrganizationParticipationCollection(Collection<ProjectOrganizationParticipation> projectOrganizationParticipationCollection) {
-        this.projectOrganizationParticipationCollection = projectOrganizationParticipationCollection;
+    public void setParticipationCollection(Collection<Participation> participationCollection) {
+        this.participationCollection = participationCollection;
     }
 
     @Override

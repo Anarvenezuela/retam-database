@@ -9,7 +9,7 @@ import fundabitat.retam.models.Country;
 import fundabitat.retam.models.Organization;
 import fundabitat.retam.models.ParticipationType;
 import fundabitat.retam.models.Project;
-import fundabitat.retam.models.ProjectOrganizationParticipation;
+import fundabitat.retam.models.Participation;
 import fundabitat.retam.retammigration.oldmodels.OtrasParticipantes;
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -65,7 +65,7 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
                     o.getListParticipationType());
 
             for (ParticipationType p : partTypes) {
-                ProjectOrganizationParticipation part = new ProjectOrganizationParticipation(project, org, p);
+                Participation part = new Participation(project, org, p);
                 em.persist(part);
             }
 

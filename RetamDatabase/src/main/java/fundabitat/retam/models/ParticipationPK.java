@@ -15,7 +15,7 @@ import javax.persistence.Embeddable;
  * @author marcos
  */
 @Embeddable
-public class ProjectOrganizationParticipationPK implements Serializable {
+public class ParticipationPK implements Serializable {
 
     @Column(name = "idProject")
     private Integer idProject;
@@ -26,10 +26,10 @@ public class ProjectOrganizationParticipationPK implements Serializable {
     @Column(name = "idParticipationType")
     private Integer idParticipationType;
 
-    public ProjectOrganizationParticipationPK() {
+    public ParticipationPK() {
     }
 
-    public ProjectOrganizationParticipationPK(Integer idProject, Integer idOrganization, Integer idParticipationType) {
+    public ParticipationPK(Integer idProject, Integer idOrganization, Integer idParticipationType) {
         this.idProject = idProject;
         this.idOrganization = idOrganization;
         this.idParticipationType = idParticipationType;
@@ -79,7 +79,7 @@ public class ProjectOrganizationParticipationPK implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ProjectOrganizationParticipationPK other = (ProjectOrganizationParticipationPK) obj;
+        final ParticipationPK other = (ParticipationPK) obj;
         if (!Objects.equals(this.idProject, other.idProject)) {
             return false;
         }
