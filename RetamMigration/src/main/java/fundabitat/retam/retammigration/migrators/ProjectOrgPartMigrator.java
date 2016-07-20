@@ -52,13 +52,11 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
             Project project = getProject(projects, o.getCodigo());
             Organization org;
 
+            // Check if org exists
             try {
                 org = getOrg(orgs, o.getCodigoOtras());
             } catch (Exception e) {
-                org = OrganizationMigrator.createIdZeroOrg(o.getCodigoOtras(),
-                        o.getNombreInstitucion(), getNotAvailableCountry(countries));
-                em.persist(org);
-                orgs.add(org);
+                org = insertMissingOrg(o, countries, orgs);
             }
 
             List<ParticipationType> partTypes = getPartTypes(participations,
@@ -70,6 +68,14 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
             }
 
         }
+    }
+
+    private Organization insertMissingOrg(OtrasParticipantes o, List<Country> countries, List<Organization> orgs) {
+        Organization org = OrganizationMigrator.createIdZeroOrg(o.getCodigoOtras(),
+                o.getNombreInstitucion(), getNotAvailableCountry(countries));
+        em.persist(org);
+        orgs.add(org);
+        return org;
     }
 
     @Override
