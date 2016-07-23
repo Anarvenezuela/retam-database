@@ -1,3 +1,8 @@
+DELETE FROM project_populat
+DELETE FROM population_segment;
+DELETE FROM population_type;
+DELETE FROM project_initiative;
+DELETE FROM initiative_type;
 DELETE FROM participation;
 DELETE FROM participation_type;
 DELETE FROM project_beneficiary;

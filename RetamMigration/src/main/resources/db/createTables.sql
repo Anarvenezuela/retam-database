@@ -48,6 +48,11 @@ CREATE TABLE project (
     name TEXT NOT NULL,
     idRepresentative INTEGER NOT NULL,
     idCountry INTEGER NOT NULL,
+    generalObjective TEXT,
+    specificObjective TEXT,
+    methodology TEXT,
+    startingDate TEXT, -- Sqlite does not have date
+    duration TEXT,
     FOREIGN KEY(idRepresentative) REFERENCES representative(idRepresentative)
     FOREIGN KEY(idCountry) REFERENCES country(idCountry)
 );
@@ -104,4 +109,37 @@ CREATE TABLE participation (
     FOREIGN KEY(idProject) REFERENCES project(idProject),
     FOREIGN KEY(idOrganization) REFERENCES organization(idOrganization),
     FOREIGN KEY(idParticipationType) REFERENCES participation_type(idParticipationType)
+);
+
+CREATE TABLE initiative_type (
+    idInitiativeType INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE project_initiative (
+    idProject INTEGER NOT NULL,
+    idInitiativeType INTEGER NOT NULL,
+    PRIMARY KEY (idProject, idInitiativeType),
+    FOREIGN KEY(idProject) REFERENCES project(idProject),
+    FOREIGN KEY(idInitiativeType) REFERENCES initiative_type(idInitiativeType)
+);
+
+CREATE TABLE population_type (
+    idPopulationType INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE population_segment (
+    idPopulationSegment INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE project_population (
+    idProject INTEGER NOT NULL,
+    idPopulationType INTEGER NOT NULL,
+    idPopulationSegment INTEGER NOT NULL,
+    PRIMARY KEY (idProject, idPopulationType, idPopulationSegment),
+    FOREIGN KEY(idProject) REFERENCES project(idProject),
+    FOREIGN KEY(idPopulationType) REFERENCES population_type(idPopulationType),
+    FOREIGN KEY(idPopulationSegment) REFERENCES population_segment(idPopulationSegment)
 );
