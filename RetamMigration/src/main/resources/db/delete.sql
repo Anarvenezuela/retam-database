@@ -1,4 +1,4 @@
-DELETE FROM project_populat
+DELETE FROM project_population;
 DELETE FROM population_segment;
 DELETE FROM population_type;
 DELETE FROM project_initiative;

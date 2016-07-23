@@ -65,6 +65,16 @@ public class Project implements Serializable {
     @Basic(optional = false)
     @Column(name = "name")
     private String name;
+    @Column(name = "generalObjective")
+    private String generalObjective;
+    @Column(name = "specificObjective")
+    private String specificObjective;
+    @Column(name = "methodology")
+    private String methodology;
+    @Column(name = "startingDate")
+    private String startingDate;
+    @Column(name = "duration")
+    private String duration;
 
     @JoinTable(name = "project_subDescriptor", joinColumns = {
         @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
@@ -100,6 +110,15 @@ public class Project implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL)
     private Collection<Participation> participationCollection;
+
+    @JoinTable(name = "project_initiative", joinColumns = {
+        @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
+        @JoinColumn(name = "idInitiativeType", referencedColumnName = "idInitiativeType")})
+    @ManyToMany
+    private Collection<InitiativeType> initiativeTypeCollection;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Collection<ProjectPopulation> projectPopulationCollection;
 
     public Project() {
     }
@@ -219,6 +238,62 @@ public class Project implements Serializable {
 
     public void setParticipationCollection(Collection<Participation> participationCollection) {
         this.participationCollection = participationCollection;
+    }
+
+    public String getGeneralObjective() {
+        return generalObjective;
+    }
+
+    public void setGeneralObjective(String generalObjective) {
+        this.generalObjective = generalObjective;
+    }
+
+    public String getSpecificObjective() {
+        return specificObjective;
+    }
+
+    public void setSpecificObjective(String specificObjective) {
+        this.specificObjective = specificObjective;
+    }
+
+    public String getMethodology() {
+        return methodology;
+    }
+
+    public void setMethodology(String methodology) {
+        this.methodology = methodology;
+    }
+
+    public String getStartingDate() {
+        return startingDate;
+    }
+
+    public void setStartingDate(String startingDate) {
+        this.startingDate = startingDate;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public Collection<InitiativeType> getInitiativeTypeCollection() {
+        return initiativeTypeCollection;
+    }
+
+    public void setInitiativeTypeCollection(Collection<InitiativeType> initiativeTypeCollection) {
+        this.initiativeTypeCollection = initiativeTypeCollection;
+    }
+
+    public Collection<ProjectPopulation> getProjectPopulationCollection() {
+        return projectPopulationCollection;
+    }
+
+    public void setProjectPopulationCollection(Collection<ProjectPopulation> projectPopulationCollection) {
+        this.projectPopulationCollection = projectPopulationCollection;
     }
 
 }
