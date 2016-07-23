@@ -120,6 +120,12 @@ public class Project implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private Collection<ProjectPopulation> projectPopulationCollection;
 
+    @JoinTable(name = "population_participation", joinColumns = {
+        @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
+        @JoinColumn(name = "idPopulationParticipationType", referencedColumnName = "idPopulationParticipationType")})
+    @ManyToMany
+    private Collection<PopulationParticipationType> populationParticipationTypeCollection;
+
     public Project() {
     }
 
@@ -296,4 +302,11 @@ public class Project implements Serializable {
         this.projectPopulationCollection = projectPopulationCollection;
     }
 
+    public Collection<PopulationParticipationType> getPopulationParticipationTypeCollection() {
+        return populationParticipationTypeCollection;
+    }
+
+    public void setPopulationParticipationTypeCollection(Collection<PopulationParticipationType> populationParticipationTypeCollection) {
+        this.populationParticipationTypeCollection = populationParticipationTypeCollection;
+    }
 }

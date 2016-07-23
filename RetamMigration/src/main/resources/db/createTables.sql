@@ -143,3 +143,16 @@ CREATE TABLE project_population (
     FOREIGN KEY(idPopulationType) REFERENCES population_type(idPopulationType),
     FOREIGN KEY(idPopulationSegment) REFERENCES population_segment(idPopulationSegment)
 );
+
+CREATE TABLE population_participation_type (
+    idPopulationParticipationType INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE population_participation (
+    idProject INTEGER NOT NULL,
+    idPopulationParticipationType INTEGER NOT NULL,
+    PRIMARY KEY (idProject, idPopulationParticipationType),
+    FOREIGN KEY(idProject) REFERENCES project(idProject),
+    FOREIGN KEY(idPopulationParticipationType) REFERENCES population_participation_type(idPopulationParticipationType)
+)
