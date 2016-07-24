@@ -10,11 +10,13 @@ import fundabitat.retam.models.PopulationParticipationType;
 import fundabitat.retam.models.PopulationSegment;
 import fundabitat.retam.models.PopulationType;
 import fundabitat.retam.models.Project;
+import fundabitat.retam.models.ProjectPopulation;
 import fundabitat.retam.retammigration.oldmodels.Objetivos;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Query;
+import org.javatuples.Pair;
 
 /**
  *
@@ -22,6 +24,10 @@ import javax.persistence.Query;
  */
 public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
 
+    /**
+     * These constants are defined by the old app at the application level. They
+     * are not in the database.
+     */
     private static final String[] INITIATIVE_TYPE_NAMES = {
         "Institución Ejecutora", "Comnidad Beneficiada", "ONG",
         "Agencia Financiadora", "Instituciñón Gubernamental",
@@ -52,11 +58,12 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
         this.filename = filename;
     }
 
+    /**
+     * We are spliting the old 'objetivos' table into 8 different tables (3
+     * different relations).
+     */
     @Override
     protected void process(List<Objetivos> objectives) {
-
-        List<PopulationType> popTypes = seedPopulationTypes();
-        List<PopulationSegment> popSegments = seedPopulationSegments();
 
         Query findProjects = em.createNamedQuery("Project.findAll");
         List<Project> projects = findProjects.getResultList();
@@ -64,6 +71,7 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
         addProjectInfo(objectives, projects);
         addInitiatives(objectives, projects);
         addPopulationParticipation(objectives, projects);
+        addBeneficiaryPopulation(objectives, projects);
     }
 
     @Override
@@ -72,6 +80,10 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
         write(list);
     }
 
+    /**
+     * Complements the project table with info found in the old 'objetivos'
+     * table.
+     */
     private void addProjectInfo(List<Objetivos> objectives, List<Project> projects) {
 
         for (Objetivos o : objectives) {
@@ -88,6 +100,9 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
         }
     }
 
+    /**
+     * Adds information in the initiatives table.
+     */
     private void addInitiatives(List<Objetivos> objectives, List<Project> projects) {
 
         List<InitiativeType> initTypes = seedInititaiveTypes();
@@ -157,6 +172,9 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
         return list;
     }
 
+    /**
+     * Adds information in the population participation tables.
+     */
     private void addPopulationParticipation(List<Objetivos> objectives, List<Project> projects) {
 
         List<PopulationParticipationType> popPartTypes = seedPopulationParticipationTypes();
@@ -208,12 +226,113 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
         return populationParticipationToAdd;
     }
 
+    /**
+     * Adds information in the project population tables.
+     */
+    private void addBeneficiaryPopulation(List<Objetivos> objectives, List<Project> projects) {
+
+        List<PopulationType> popTypes = seedPopulationTypes();
+        List<PopulationSegment> popSegments = seedPopulationSegments();
+
+        for (Objetivos o : objectives) {
+
+            List<Pair<String, String>> benefPopulationToAdd
+                    = checkBeneficiaryPopulation(o);
+
+            for (Pair<String, String> benefPopulationPair : benefPopulationToAdd) {
+
+                PopulationSegment popSegment = getPopulationSegmentByName(
+                        popSegments, benefPopulationPair.getValue0());
+                PopulationType popType = getPopulationTypeByName(
+                        popTypes, benefPopulationPair.getValue1());
+                Project project = getProjectByCode(projects, o.getCodigo());
+
+                ProjectPopulation proPopulation
+                        = new ProjectPopulation(project, popSegment, popType);
+
+                em.persist(proPopulation);
+            }
+
+        }
+    }
+
+    private List<Pair<String, String>> checkBeneficiaryPopulation(Objetivos o) {
+
+        List<Pair<String, String>> benefPopulationToAdd
+                = new ArrayList();
+
+        Pair<String, String> pair;
+
+        if (o.isNinosU()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[0], POPULATION_TYPE_NAMES[0]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        if (o.isNinosR()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[0], POPULATION_TYPE_NAMES[1]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        if (o.isNinosI()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[0], POPULATION_TYPE_NAMES[2]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        if (o.isMujeresU()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[1], POPULATION_TYPE_NAMES[0]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        if (o.isMujeresR()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[1], POPULATION_TYPE_NAMES[1]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        if (o.isMujeresI()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[1], POPULATION_TYPE_NAMES[2]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        if (o.isOtrosSU()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[2], POPULATION_TYPE_NAMES[0]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        if (o.isOtrosSR()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[2], POPULATION_TYPE_NAMES[1]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        if (o.isOtrosSI()) {
+            pair = new Pair(POPULATION_SEGMENT_NAMES[2], POPULATION_TYPE_NAMES[2]);
+            benefPopulationToAdd.add(pair);
+        }
+
+        return benefPopulationToAdd;
+    }
+
     private PopulationParticipationType getPopulationParticipationByName(List<PopulationParticipationType> popPartTypes, String populationPartStr) {
         return popPartTypes.stream()
                 .filter(i -> i.getName().equals(populationPartStr))
                 .findFirst().get();
     }
 
+    private PopulationType getPopulationTypeByName(List<PopulationType> popTypes, String populationTypeStr) {
+        return popTypes.stream()
+                .filter(i -> i.getName().equals(populationTypeStr))
+                .findFirst().get();
+    }
+
+    private PopulationSegment getPopulationSegmentByName(List<PopulationSegment> popSegments, String populationSegmentStr) {
+        return popSegments.stream()
+                .filter(i -> i.getName().equals(populationSegmentStr))
+                .findFirst().get();
+    }
+
+    /**
+     * The seed methods add information in the database that was implicit in the
+     * app, but wans't stored in the database.
+     */
     private List<PopulationParticipationType> seedPopulationParticipationTypes() {
 
         List<PopulationParticipationType> list = new ArrayList();

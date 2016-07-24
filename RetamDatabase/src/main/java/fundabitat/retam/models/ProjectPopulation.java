@@ -20,7 +20,7 @@ import javax.persistence.Table;
  * @author marcos
  */
 @Entity
-@Table
+@Table(name = "project_population")
 @NamedQueries({
     @NamedQuery(name = "ProjectPopulation.findAll", query = "SELECT p FROM ProjectPopulation p")})
 public class ProjectPopulation implements Serializable {
@@ -46,6 +46,15 @@ public class ProjectPopulation implements Serializable {
     private Project idProject;
 
     public ProjectPopulation() {
+    }
+
+    public ProjectPopulation(Project project, PopulationSegment pSegment,
+            PopulationType pType) {
+        this.idProject = project;
+        this.idPopulationSegment = pSegment;
+        this.idPopulationType = pType;
+        this.projectPopulationPK = new ProjectPopulationPK(project.getIdProject(),
+                pType.getIdPopulationType(), pSegment.getIdPopulationSegment());
     }
 
     public ProjectPopulation(ProjectPopulationPK projectPopulationPK) {
