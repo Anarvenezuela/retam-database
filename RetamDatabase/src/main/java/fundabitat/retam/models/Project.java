@@ -309,4 +309,5 @@ public class Project implements Serializable {
     public void setPopulationParticipationTypeCollection(Collection<PopulationParticipationType> populationParticipationTypeCollection) {
         this.populationParticipationTypeCollection = populationParticipationTypeCollection;
     }
+
 }

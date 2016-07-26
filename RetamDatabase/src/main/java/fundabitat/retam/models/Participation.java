@@ -6,6 +6,9 @@
 package fundabitat.retam.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -119,6 +122,32 @@ public class Participation implements Serializable {
         return "fundabitat.retam.models.Participation[ "
                 + "participationPK="
                 + participationPK + " ]";
+    }
+
+    public static List<Organization> getOrgFromCollection(
+            Collection<Participation> participations) {
+
+        List<Organization> list = new ArrayList();
+
+        for (Participation part : participations) {
+            list.add(part.organization);
+        }
+
+        return list;
+    }
+
+    public static List<ParticipationType> getPartTypeByOrgFromCollection(
+            Collection<Participation> participations, Organization org) {
+
+        List<ParticipationType> list = new ArrayList();
+
+        for (Participation part : participations) {
+            if (part.organization.getIdOrganization().equals(org.getIdOrganization())) {
+                list.add(part.participation);
+            }
+        }
+
+        return list;
     }
 
 }

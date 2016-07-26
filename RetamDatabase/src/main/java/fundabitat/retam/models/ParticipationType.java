@@ -10,6 +10,7 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,6 +33,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "ParticipationType.findByName", query = "SELECT p FROM ParticipationType p WHERE p.name = :name")})
 public class ParticipationType implements Serializable {
 
+    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "idParticipationType")
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)

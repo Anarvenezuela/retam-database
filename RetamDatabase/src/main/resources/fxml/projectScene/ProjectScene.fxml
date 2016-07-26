@@ -37,6 +37,24 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button layoutX="172.0" layoutY="12.0" mnemonicParsing="false" onAction="#onActionParticipationButton" prefHeight="70.0" prefWidth="64.0">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/institutionParticipationIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="251.0" layoutY="12.0" mnemonicParsing="false" onAction="#onActionBeneficiaryButton" prefHeight="64.0" prefWidth="64.0">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/objectivesIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             </items>
         </ToolBar>
         <AnchorPane fx:id="content" layoutY="85.0" prefHeight="463.0" prefWidth="680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">

@@ -18,4 +18,5 @@ DROP TABLE organization;
 DROP TABLE subDescriptor;
 DROP TABLE descriptor;
 DROP TABLE country;
+DROP TABLE SEQUENCE;
 
