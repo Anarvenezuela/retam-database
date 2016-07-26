@@ -23,7 +23,7 @@ import javax.persistence.Table;
  * @author marcos
  */
 @Entity
-@Table(name = "participation")
+@Table
 @NamedQueries({
     @NamedQuery(name = "Participation.findAll", query = "SELECT p FROM Participation p")})
 public class Participation implements Serializable {
@@ -33,20 +33,20 @@ public class Participation implements Serializable {
     @EmbeddedId
     protected ParticipationPK participationPK;
 
-    @MapsId("idProject")
-    @ManyToOne
-    @JoinColumn(name = "idProject", referencedColumnName = "idProject")
-    private Project project;
+    @MapsId("idParticipationType")
+    @JoinColumn(name = "idParticipationType", referencedColumnName = "idParticipationType")
+    @ManyToOne(optional = false)
+    private ParticipationType idParticipationType;
 
     @MapsId("idOrganization")
-    @ManyToOne
     @JoinColumn(name = "idOrganization", referencedColumnName = "idOrganization")
-    private Organization organization;
+    @ManyToOne(optional = false)
+    private Organization idOrganization;
 
-    @MapsId("idParticipationType")
-    @ManyToOne
-    @JoinColumn(name = "idParticipationType", referencedColumnName = "idParticipationType")
-    private ParticipationType participation;
+    @MapsId("idProject")
+    @JoinColumn(name = "idProject", referencedColumnName = "idProject")
+    @ManyToOne(optional = false)
+    private Project idProject;
 
     public Participation() {
     }
@@ -55,14 +55,16 @@ public class Participation implements Serializable {
         this.participationPK = participationPK;
     }
 
-    public Participation(Project project, Organization organization, ParticipationType participation) {
-        this.project = project;
-        this.organization = organization;
-        this.participation = participation;
+    public Participation(Project project, Organization organization,
+            ParticipationType participationType) {
+
+        this.idProject = project;
+        this.idOrganization = organization;
+        this.idParticipationType = participationType;
         this.participationPK
                 = new ParticipationPK(project.getIdProject(),
                         organization.getIdOrganization(),
-                        participation.getIdParticipationType());
+                        participationType.getIdParticipationType());
     }
 
     public ParticipationPK getParticipationPK() {
@@ -73,28 +75,28 @@ public class Participation implements Serializable {
         this.participationPK = participationPK;
     }
 
-    public Project getProject() {
-        return project;
+    public ParticipationType getIdParticipationType() {
+        return idParticipationType;
     }
 
-    public void setProject(Project project) {
-        this.project = project;
+    public void setIdParticipationType(ParticipationType idParticipationType) {
+        this.idParticipationType = idParticipationType;
     }
 
-    public Organization getOrganization() {
-        return organization;
+    public Organization getIdOrganization() {
+        return idOrganization;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setIdOrganization(Organization idOrganization) {
+        this.idOrganization = idOrganization;
     }
 
-    public ParticipationType getParticipation() {
-        return participation;
+    public Project getIdProject() {
+        return idProject;
     }
 
-    public void setParticipation(ParticipationType participation) {
-        this.participation = participation;
+    public void setIdProject(Project idProject) {
+        this.idProject = idProject;
     }
 
     @Override
@@ -119,9 +121,7 @@ public class Participation implements Serializable {
 
     @Override
     public String toString() {
-        return "fundabitat.retam.models.Participation[ "
-                + "participationPK="
-                + participationPK + " ]";
+        return "fundabitat.retam.models.Participation[ participationPK=" + participationPK + " ]";
     }
 
     public static List<Organization> getOrgFromCollection(
@@ -130,7 +130,7 @@ public class Participation implements Serializable {
         List<Organization> list = new ArrayList();
 
         for (Participation part : participations) {
-            list.add(part.organization);
+            list.add(part.idOrganization);
         }
 
         return list;
@@ -142,8 +142,8 @@ public class Participation implements Serializable {
         List<ParticipationType> list = new ArrayList();
 
         for (Participation part : participations) {
-            if (part.organization.getIdOrganization().equals(org.getIdOrganization())) {
-                list.add(part.participation);
+            if (part.idOrganization.getIdOrganization().equals(org.getIdOrganization())) {
+                list.add(part.idParticipationType);
             }
         }
 

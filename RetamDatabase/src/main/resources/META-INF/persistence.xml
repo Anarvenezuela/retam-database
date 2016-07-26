@@ -10,14 +10,14 @@
         <class>fundabitat.retam.models.Country</class>
         <class>fundabitat.retam.models.Beneficiary</class>
         <class>fundabitat.retam.models.ProjectBeneficiary</class>
-        <class>fundabitat.retam.models.ParticipationType</class>
-        <class>fundabitat.retam.models.Participation</class>
         <class>fundabitat.retam.models.PopulationSegment</class>
         <class>fundabitat.retam.models.PopulationType</class>
         <class>fundabitat.retam.models.ProjectPopulation</class>
         <class>fundabitat.retam.models.InitiativeType</class>
         <class>fundabitat.retam.models.PopulationParticipationType</class>
         <class>fundabitat.retam.models.PopulationParticipation</class>
+        <class>fundabitat.retam.models.Participation</class>
+        <class>fundabitat.retam.models.ParticipationType</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:/home/marcos/NetBeansProjects/retam-database/RetamMigration/src/main/resources/db/database.db"/>
             <property name="javax.persistence.jdbc.user" value=""/>

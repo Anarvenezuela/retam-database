@@ -72,6 +72,7 @@ public class Organization implements Serializable {
     @ManyToMany(mappedBy = "organizationCollection")
     private Collection<Project> projectCollection;
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idOrganization")
     private Collection<Participation> participationCollection;
 
     public Organization() {

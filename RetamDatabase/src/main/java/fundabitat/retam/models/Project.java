@@ -109,6 +109,7 @@ public class Project implements Serializable {
     private Collection<Beneficiary> beneficiaryCollection;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idProject")
     private Collection<Participation> participationCollection;
 
     @JoinTable(name = "project_initiative", joinColumns = {
@@ -118,6 +119,7 @@ public class Project implements Serializable {
     private Collection<InitiativeType> initiativeTypeCollection;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idProject")
     private Collection<ProjectPopulation> projectPopulationCollection;
 
     @JoinTable(name = "population_participation", joinColumns = {
@@ -238,14 +240,6 @@ public class Project implements Serializable {
         this.beneficiaryCollection = beneficiaryCollection;
     }
 
-    public Collection<Participation> getParticipationCollection() {
-        return participationCollection;
-    }
-
-    public void setParticipationCollection(Collection<Participation> participationCollection) {
-        this.participationCollection = participationCollection;
-    }
-
     public String getGeneralObjective() {
         return generalObjective;
     }
@@ -308,6 +302,14 @@ public class Project implements Serializable {
 
     public void setPopulationParticipationTypeCollection(Collection<PopulationParticipationType> populationParticipationTypeCollection) {
         this.populationParticipationTypeCollection = populationParticipationTypeCollection;
+    }
+
+    public Collection<Participation> getParticipationCollection() {
+        return participationCollection;
+    }
+
+    public void setParticipationCollection(Collection<Participation> participationCollection) {
+        this.participationCollection = participationCollection;
     }
 
 }

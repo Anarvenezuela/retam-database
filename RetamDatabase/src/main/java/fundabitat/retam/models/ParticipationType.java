@@ -15,6 +15,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -28,7 +29,7 @@ import javax.persistence.Table;
 @Table(name = "participation_type")
 @NamedQueries({
     @NamedQuery(name = "ParticipationType.findAll", query = "SELECT p FROM ParticipationType p"),
-    @NamedQuery(name = "ParticipationType.findByIdParticipation", query = "SELECT p FROM ParticipationType p WHERE p.idParticipationType = :idParticipationType"),
+    @NamedQuery(name = "ParticipationType.findByIdParticipationType", query = "SELECT p FROM ParticipationType p WHERE p.idParticipationType = :idParticipationType"),
     @NamedQuery(name = "ParticipationType.findByCode", query = "SELECT p FROM ParticipationType p WHERE p.code = :code"),
     @NamedQuery(name = "ParticipationType.findByName", query = "SELECT p FROM ParticipationType p WHERE p.name = :name")})
 public class ParticipationType implements Serializable {
@@ -46,6 +47,7 @@ public class ParticipationType implements Serializable {
     @Column(name = "name")
     private String name;
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idParticipationType")
     private Collection<Participation> participationCollection;
 
     public ParticipationType() {
