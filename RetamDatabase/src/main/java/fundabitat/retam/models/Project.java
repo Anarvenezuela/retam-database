@@ -50,7 +50,13 @@ import javax.persistence.Table;
             + "JOIN p.descriptorCollection d "
             + "JOIN p.subDescriptorCollection s "
             + "WHERE d.idDescriptor IN :descs AND s.idSubDescriptor IN :subs "
-            + "AND p.idCountry IN :countries")})
+            + "AND p.idCountry IN :countries"),
+    @NamedQuery(name = "Project.getParticipantOrgs",
+            query = "SELECT DISTINCT o "
+            + "FROM Project p "
+            + "JOIN p.participationCollection part "
+            + "JOIN part.idOrganization o "
+            + "WHERE p.idProject = :projectId")})
 
 public class Project implements Serializable {
 

@@ -124,18 +124,6 @@ public class Participation implements Serializable {
         return "fundabitat.retam.models.Participation[ participationPK=" + participationPK + " ]";
     }
 
-    public static List<Organization> getOrgFromCollection(
-            Collection<Participation> participations) {
-
-        List<Organization> list = new ArrayList();
-
-        for (Participation part : participations) {
-            list.add(part.idOrganization);
-        }
-
-        return list;
-    }
-
     public static List<ParticipationType> getPartTypeByOrgFromCollection(
             Collection<Participation> participations, Organization org) {
 

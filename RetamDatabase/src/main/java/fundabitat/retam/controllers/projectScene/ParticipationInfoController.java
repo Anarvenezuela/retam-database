@@ -8,6 +8,7 @@ package fundabitat.retam.controllers.projectScene;
 import fundabitat.retam.models.Organization;
 import fundabitat.retam.models.Participation;
 import fundabitat.retam.models.Project;
+import fundabitat.retam.persistence.PersistenceManager;
 import java.net.URL;
 import java.util.Collection;
 import java.util.List;
@@ -19,6 +20,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  * FXML Controller class
@@ -47,8 +50,19 @@ public class ParticipationInfoController implements Initializable {
 
     public void initData(Project p) {
 
+        PersistenceManager pManager = PersistenceManager.getInstance();
+        EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
+
+        Query findAllCountries;
+
+        findAllCountries = eManager.createNamedQuery("Project.getParticipantOrgs")
+                .setParameter("projectId", p.getIdProject());
+
+        List<Organization> orgs = findAllCountries.getResultList();
+
+        eManager.close();
+
         Collection<Participation> participations = p.getParticipationCollection();
-        list = Participation.getOrgFromCollection(participations);
 
         organizationCode.setCellValueFactory(
                 new PropertyValueFactory<Organization, String>("code"));
@@ -57,7 +71,7 @@ public class ParticipationInfoController implements Initializable {
         organizationCountry.setCellValueFactory(
                 new PropertyValueFactory<Organization, String>("countryName"));
 
-        final ObservableList<Organization> observableList = FXCollections.observableArrayList(list);
+        final ObservableList<Organization> observableList = FXCollections.observableArrayList(orgs);
         organizationTable.setItems(observableList);
     }
 
