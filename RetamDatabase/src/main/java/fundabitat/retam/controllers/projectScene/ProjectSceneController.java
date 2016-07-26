@@ -41,6 +41,9 @@ public class ProjectSceneController implements Initializable {
     private FXMLLoader partInfoLoader;
     private AnchorPane partInfoPane;
 
+    private FXMLLoader objectivesInfoLoader;
+    private AnchorPane objectivesInfoPane;
+
     /**
      * Initializes the controller class.
      */
@@ -71,6 +74,9 @@ public class ProjectSceneController implements Initializable {
         partInfoLoader = new FXMLLoader(getClass()
                 .getResource("/fxml/projectScene/ParticipationInfo.fxml"));
 
+        objectivesInfoLoader = new FXMLLoader(getClass()
+                .getResource("/fxml/projectScene/ObjectivesInfo.fxml"));
+
         try {
             projectInfoPane = (AnchorPane) projectInfoLoader.load();
             ProjectInfoController projectInfoCtrl = projectInfoLoader.getController();
@@ -87,6 +93,10 @@ public class ProjectSceneController implements Initializable {
             partInfoPane = (AnchorPane) partInfoLoader.load();
             ParticipationInfoController partInfoCtrl = partInfoLoader.getController();
             partInfoCtrl.initData(project);
+
+            objectivesInfoPane = (AnchorPane) objectivesInfoLoader.load();
+            ObjectivesInfoController objInfoCtrl = objectivesInfoLoader.getController();
+            objInfoCtrl.initData(project);
 
         } catch (IOException ex) {
             Logger.getLogger(ProjectSceneController.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,6 +121,11 @@ public class ProjectSceneController implements Initializable {
     @FXML
     public void onActionParticipationButton(ActionEvent event) {
         content.getChildren().setAll(partInfoPane);
+    }
+
+    @FXML
+    public void onActionObjectiveButton(ActionEvent event) {
+        content.getChildren().setAll(objectivesInfoPane);
     }
 
 }

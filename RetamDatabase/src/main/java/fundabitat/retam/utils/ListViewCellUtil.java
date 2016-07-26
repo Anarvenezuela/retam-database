@@ -39,7 +39,7 @@ public class ListViewCellUtil {
                 if (!cell.isEmpty()) {
                     int index = cell.getIndex();
 
-                    // There's a bug with contains, when index is 0 contains
+                    // There's a bug with 'contains', when index is 0 'contains'
                     // returns false...
                     if (selectionModel.getSelectedIndices().indexOf(index) >= 0) {
                         selectionModel.clearSelection(index);

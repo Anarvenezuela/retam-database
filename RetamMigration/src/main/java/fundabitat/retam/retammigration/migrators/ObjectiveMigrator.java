@@ -30,7 +30,7 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
      */
     private static final String[] INITIATIVE_TYPE_NAMES = {
         "Institución Ejecutora", "Comnidad Beneficiada", "ONG",
-        "Agencia Financiadora", "Instituciñón Gubernamental",
+        "Agencia Financiadora", "Institución Gubernamental",
         "Institución Religiosa"
     };
 
