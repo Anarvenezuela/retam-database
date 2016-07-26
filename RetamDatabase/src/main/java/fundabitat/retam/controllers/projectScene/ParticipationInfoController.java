@@ -7,8 +7,11 @@ package fundabitat.retam.controllers.projectScene;
 
 import fundabitat.retam.models.Organization;
 import fundabitat.retam.models.Participation;
+import fundabitat.retam.models.ParticipationType;
 import fundabitat.retam.models.Project;
 import fundabitat.retam.persistence.PersistenceManager;
+import fundabitat.retam.utils.Function;
+import fundabitat.retam.utils.ListViewCellUtil;
 import java.net.URL;
 import java.util.Collection;
 import java.util.List;
@@ -17,9 +20,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
@@ -39,7 +44,10 @@ public class ParticipationInfoController implements Initializable {
     @FXML
     private TableColumn<Organization, String> organizationCountry;
 
-    private List<Organization> list;
+    @FXML
+    private ListView<ParticipationType> participationTypes;
+
+    private Project project;
 
     /**
      * Initializes the controller class.
@@ -49,6 +57,8 @@ public class ParticipationInfoController implements Initializable {
     }
 
     public void initData(Project p) {
+
+        project = p;
 
         PersistenceManager pManager = PersistenceManager.getInstance();
         EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
@@ -62,8 +72,6 @@ public class ParticipationInfoController implements Initializable {
 
         eManager.close();
 
-        Collection<Participation> participations = p.getParticipationCollection();
-
         organizationCode.setCellValueFactory(
                 new PropertyValueFactory<Organization, String>("code"));
         organizationName.setCellValueFactory(
@@ -73,6 +81,27 @@ public class ParticipationInfoController implements Initializable {
 
         final ObservableList<Organization> observableList = FXCollections.observableArrayList(orgs);
         organizationTable.setItems(observableList);
+    }
+
+    @FXML
+    public void onClickOrg(MouseEvent event) {
+
+        Organization org = organizationTable.getSelectionModel().getSelectedItem();
+        Collection<Participation> participations = project.getParticipationCollection();
+        List<ParticipationType> types = Participation.getPartTypeByOrgFromCollection(participations, org);
+
+        ObservableList<ParticipationType> observableTypeList;
+        observableTypeList = FXCollections.observableArrayList(types);
+        participationTypes.setItems(observableTypeList);
+
+        ListViewCellUtil.setupCell(participationTypes, new Function<ParticipationType, String>() {
+            @Override
+            public String apply(ParticipationType input) {
+                return input.getName();
+            }
+
+        });
+
     }
 
 }

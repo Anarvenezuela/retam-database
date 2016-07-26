@@ -91,4 +91,12 @@ public class ListViewCellUtil {
         });
     }
 
+    /**
+     * Polymorphism to call setupCell with multiselect as false
+     */
+    public static <E> void setupCell(final ListView<E> listView,
+            final Function<E, String> displayFunc) {
+        setupCell(listView, displayFunc, false);
+    }
+
 }
