@@ -35,6 +35,10 @@ public class ProjectInfoController implements Initializable {
     private Label projectNameLabel;
     @FXML
     private Label projectCountryLabel;
+    @FXML
+    private Label projectDurationLabel;
+    @FXML
+    private Label projectStartingDateLabel;
 
     @FXML
     private Label organizationCodeLabel;
@@ -89,6 +93,8 @@ public class ProjectInfoController implements Initializable {
         projectCodeLabel.setText(p.getCode());
         projectNameLabel.setText(p.getName());
         projectCountryLabel.setText(p.getCountryName());
+        projectDurationLabel.setText(p.getDuration());
+        projectStartingDateLabel.setText(p.getStartingDate());
     }
 
     private void initOrganization(Organization o) {
