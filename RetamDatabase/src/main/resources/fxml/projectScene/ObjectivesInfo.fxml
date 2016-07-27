@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -20,9 +21,9 @@
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
                                 <ScrollPane fitToWidth="true" layoutX="243.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <content>
-                              <VBox maxWidth="600.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                                 <children>
+                                    <content>
+                                        <VBox maxWidth="600.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                            <children>
                                                 <Label minHeight="-Infinity" minWidth="-Infinity" text="Objetivo General">
                                                     <font>
                                                         <Font name="System Bold" size="13.0" />
@@ -41,12 +42,12 @@
                                                     </font>
                                                 </Label>
                                                 <Label fx:id="methodology" maxWidth="600.0" minHeight="-Infinity" minWidth="400.0" prefWidth="200.0" text="&lt;methodology&gt;" wrapText="true" />
-                                 </children>
-                                 <padding>
-                                    <Insets left="20.0" top="20.0" />
-                                 </padding>
-                              </VBox>
-                           </content>
+                                            </children>
+                                            <padding>
+                                                <Insets left="20.0" top="20.0" />
+                                            </padding>
+                                        </VBox>
+                                    </content>
                                 </ScrollPane>
                             </children>
                         </AnchorPane>
@@ -56,37 +57,47 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                        <TitledPane animated="false" collapsible="false" layoutX="-42.0" layoutY="-83.0" text="Iniciativa para la formulacion del proyecto" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                            <ListView fx:id="initiativesListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </TitledPane>
+                                <TitledPane animated="false" collapsible="false" layoutX="-42.0" layoutY="-83.0" text="Iniciativa para la formulacion del proyecto" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <ListView fx:id="initiativesListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </TitledPane>
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="Población Beneficiada">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane fx:id="benefPopulationGrid" gridLinesVisible="true" layoutX="87.0" layoutY="57.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+                                </GridPane>
+                                <Label layoutX="32.0" layoutY="21.0" text="Población beneficiada" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="Participación de la Población">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                        <TitledPane animated="false" collapsible="false" layoutX="-81.0" layoutY="-58.0" text="Participacion de la poblacion" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                            <ListView fx:id="populationPartListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </TitledPane>
+                                <TitledPane animated="false" collapsible="false" layoutX="-81.0" layoutY="-58.0" text="Participacion de la poblacion" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <ListView fx:id="populationPartListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </TitledPane>
                             </children>
                         </AnchorPane>
                     </content>
