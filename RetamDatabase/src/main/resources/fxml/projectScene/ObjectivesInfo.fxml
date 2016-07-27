@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
@@ -41,6 +42,9 @@
                                                 </Label>
                                                 <Label fx:id="methodology" maxWidth="600.0" minHeight="-Infinity" minWidth="400.0" prefWidth="200.0" text="&lt;methodology&gt;" wrapText="true" />
                                  </children>
+                                 <padding>
+                                    <Insets left="20.0" top="20.0" />
+                                 </padding>
                               </VBox>
                            </content>
                                 </ScrollPane>
