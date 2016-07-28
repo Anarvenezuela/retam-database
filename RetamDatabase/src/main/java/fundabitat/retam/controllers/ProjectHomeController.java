@@ -55,7 +55,6 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
 
     private List<Country> countries;
     private List<Descriptor> descriptors;
-    private List<SubDescriptor> subDescriptors;
 
     // Used to keep the previous selected values because JavaFx is just too buggy.
     private final List<Descriptor> selectedDescriptors = new ArrayList();
@@ -70,7 +69,6 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
         EntityManager eManager = pManager.getEntityManagerFactory().createEntityManager();
         setupCountries(eManager);
         setupDescriptors(eManager);
-        setupSubDescriptors(eManager);
         eManager.close();
     }
 
@@ -86,10 +84,7 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
     private void setupCountries(EntityManager eManager) {
         Query findAllCountries = eManager.createNamedQuery("Country.findProjectCountries");
         countries = findAllCountries.getResultList();
-
-        ObservableList<Country> observableCountryList;
-        observableCountryList = FXCollections.observableArrayList(countries);
-        countryList.setItems(observableCountryList);
+        ListViewUtil.setItems(countryList, countries);
 
         ListViewCellUtil.setupCell(countryList, new Function<Country, String>() {
             @Override
@@ -107,10 +102,7 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
     private void setupDescriptors(EntityManager eManager) {
         Query findAllDescriptors = eManager.createNamedQuery("Descriptor.findAll");
         descriptors = findAllDescriptors.getResultList();
-
-        ObservableList<Descriptor> observableCountryList;
-        observableCountryList = FXCollections.observableArrayList(descriptors);
-        descriptorList.setItems(observableCountryList);
+        ListViewUtil.setItems(descriptorList, descriptors);
 
         ListViewCellUtil.setupCell(descriptorList, new Function<Descriptor, String>() {
             @Override
@@ -121,16 +113,6 @@ public class ProjectHomeController implements Initializable, ChildrenControllerI
         }, true);
 
         setupDescriptorSelectionAction();
-    }
-
-    /**
-     * Gets the list of subdescriptor to be used in the search.
-     *
-     * @param eManager
-     */
-    private void setupSubDescriptors(EntityManager eManager) {
-        Query findAllDescriptors = eManager.createNamedQuery("SubDescriptor.findAll");
-        subDescriptors = findAllDescriptors.getResultList();
     }
 
     /**

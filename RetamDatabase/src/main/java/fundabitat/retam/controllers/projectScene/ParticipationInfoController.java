@@ -5,6 +5,7 @@
  */
 package fundabitat.retam.controllers.projectScene;
 
+import fundabitat.retam.controllers.interfaces.ProjectSceneInfoController;
 import fundabitat.retam.models.Organization;
 import fundabitat.retam.models.Participation;
 import fundabitat.retam.models.ParticipationType;
@@ -33,7 +34,7 @@ import javax.persistence.Query;
  *
  * @author marcos
  */
-public class ParticipationInfoController implements Initializable {
+public class ParticipationInfoController implements Initializable, ProjectSceneInfoController {
 
     @FXML
     private TableView<Organization> organizationTable;
@@ -56,6 +57,7 @@ public class ParticipationInfoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }
 
+    @Override
     public void initData(Project p) {
 
         project = p;

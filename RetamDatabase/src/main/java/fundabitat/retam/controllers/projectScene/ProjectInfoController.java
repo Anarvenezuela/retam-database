@@ -5,6 +5,7 @@
  */
 package fundabitat.retam.controllers.projectScene;
 
+import fundabitat.retam.controllers.interfaces.ProjectSceneInfoController;
 import fundabitat.retam.models.Descriptor;
 import fundabitat.retam.models.Organization;
 import fundabitat.retam.models.Project;
@@ -27,7 +28,7 @@ import javafx.scene.control.TitledPane;
  *
  * @author marcos
  */
-public class ProjectInfoController implements Initializable {
+public class ProjectInfoController implements Initializable, ProjectSceneInfoController {
 
     @FXML
     private Label projectCodeLabel;
@@ -82,6 +83,7 @@ public class ProjectInfoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }
 
+    @Override
     public void initData(Project p) {
         initProyectoInfo(p);
         initOrganization(p.getIdRepresentative().getIdOrganization());

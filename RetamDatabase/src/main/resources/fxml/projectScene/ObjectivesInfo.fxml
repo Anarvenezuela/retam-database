@@ -36,7 +36,7 @@
                                                     </font>
                                                 </Label>
                                                 <Label fx:id="specificObjective" maxWidth="600.0" minHeight="-Infinity" minWidth="400.0" prefWidth="200.0" text="&lt;specific objective&gt;" wrapText="true" />
-                                                <Label minHeight="-Infinity" minWidth="-Infinity" text="Methodología">
+                                                <Label minHeight="-Infinity" minWidth="-Infinity" text="Metodología">
                                                     <font>
                                                         <Font name="System Bold" size="13.0" />
                                                     </font>

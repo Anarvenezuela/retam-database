@@ -5,6 +5,7 @@
  */
 package fundabitat.retam.controllers.projectScene;
 
+import fundabitat.retam.controllers.interfaces.ProjectSceneInfoController;
 import fundabitat.retam.models.InitiativeType;
 import fundabitat.retam.models.PopulationParticipationType;
 import fundabitat.retam.models.PopulationSegment;
@@ -14,12 +15,11 @@ import fundabitat.retam.models.ProjectPopulation;
 import fundabitat.retam.persistence.PersistenceManager;
 import fundabitat.retam.utils.Function;
 import fundabitat.retam.utils.ListViewCellUtil;
+import fundabitat.retam.utils.ListViewUtil;
 import java.net.URL;
 import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -35,7 +35,7 @@ import javax.persistence.Query;
  *
  * @author marcos
  */
-public class ObjectivesInfoController implements Initializable {
+public class ObjectivesInfoController implements Initializable, ProjectSceneInfoController {
 
     @FXML
     private Label generalObjective;
@@ -63,6 +63,7 @@ public class ObjectivesInfoController implements Initializable {
         // TODO
     }
 
+    @Override
     public void initData(Project p) {
 
         setupObjectives(p);
@@ -152,9 +153,7 @@ public class ObjectivesInfoController implements Initializable {
         Collection<PopulationParticipationType> partTypes
                 = p.getPopulationParticipationTypeCollection();
 
-        ObservableList<PopulationParticipationType> observablepopPartList;
-        observablepopPartList = FXCollections.observableArrayList(partTypes);
-        populationPartListView.setItems(observablepopPartList);
+        ListViewUtil.setItems(populationPartListView, partTypes);
 
         ListViewCellUtil.setupCell(populationPartListView, new Function<PopulationParticipationType, String>() {
             @Override
@@ -169,9 +168,7 @@ public class ObjectivesInfoController implements Initializable {
         Collection<InitiativeType> initiatives
                 = p.getInitiativeTypeCollection();
 
-        ObservableList<InitiativeType> observableInitTypeList;
-        observableInitTypeList = FXCollections.observableArrayList(initiatives);
-        initiativesListView.setItems(observableInitTypeList);
+        ListViewUtil.setItems(initiativesListView, initiatives);
 
         ListViewCellUtil.setupCell(initiativesListView, new Function<InitiativeType, String>() {
             @Override

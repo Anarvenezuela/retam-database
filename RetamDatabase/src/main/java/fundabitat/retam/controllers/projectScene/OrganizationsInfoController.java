@@ -5,6 +5,7 @@
  */
 package fundabitat.retam.controllers.projectScene;
 
+import fundabitat.retam.controllers.interfaces.ProjectSceneInfoController;
 import fundabitat.retam.models.Organization;
 import fundabitat.retam.models.Project;
 import java.net.URL;
@@ -24,7 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  *
  * @author marcos
  */
-public class OrganizationsInfoController implements Initializable {
+public class OrganizationsInfoController implements Initializable, ProjectSceneInfoController {
 
     @FXML
     private TableView<Organization> organizationTable;
@@ -44,6 +45,7 @@ public class OrganizationsInfoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }
 
+    @Override
     public void initData(Project p) {
         list = new ArrayList(p.getOrganizationCollection());
 

@@ -5,9 +5,12 @@
  */
 package fundabitat.retam.controllers.projectScene;
 
+import fundabitat.retam.controllers.interfaces.ProjectSceneInfoController;
 import fundabitat.retam.models.Project;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,7 +60,6 @@ public class ProjectSceneController implements Initializable {
         loadPanes();
 
         content.getChildren().setAll(projectInfoPane);
-
     }
 
     private void loadPanes() {
@@ -77,26 +79,25 @@ public class ProjectSceneController implements Initializable {
         objectivesInfoLoader = new FXMLLoader(getClass()
                 .getResource("/fxml/projectScene/ObjectivesInfo.fxml"));
 
+        List<FXMLLoader> loaders = new ArrayList();
+        loaders.add(projectInfoLoader);
+        loaders.add(orgsInfoLoader);
+        loaders.add(benefInfoLoader);
+        loaders.add(partInfoLoader);
+        loaders.add(objectivesInfoLoader);
+
         try {
+
             projectInfoPane = (AnchorPane) projectInfoLoader.load();
-            ProjectInfoController projectInfoCtrl = projectInfoLoader.getController();
-            projectInfoCtrl.initData(project);
-
             orgsInfoPane = (AnchorPane) orgsInfoLoader.load();
-            OrganizationsInfoController orgInfoCtrl = orgsInfoLoader.getController();
-            orgInfoCtrl.initData(project);
-
             benefInfoPane = (AnchorPane) benefInfoLoader.load();
-            BeneficiaryInfoController benefInfoCtrl = benefInfoLoader.getController();
-            benefInfoCtrl.initData(project);
-
             partInfoPane = (AnchorPane) partInfoLoader.load();
-            ParticipationInfoController partInfoCtrl = partInfoLoader.getController();
-            partInfoCtrl.initData(project);
-
             objectivesInfoPane = (AnchorPane) objectivesInfoLoader.load();
-            ObjectivesInfoController objInfoCtrl = objectivesInfoLoader.getController();
-            objInfoCtrl.initData(project);
+
+            for (FXMLLoader loader : loaders) {
+                ProjectSceneInfoController ctrl = loader.getController();
+                ctrl.initData(project);
+            }
 
         } catch (IOException ex) {
             Logger.getLogger(ProjectSceneController.class.getName()).log(Level.SEVERE, null, ex);

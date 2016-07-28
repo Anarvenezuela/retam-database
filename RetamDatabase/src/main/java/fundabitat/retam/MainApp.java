@@ -19,6 +19,8 @@ public class MainApp extends Application {
 
         stage.setTitle("RETAM - Base de datos");
         stage.setScene(scene);
+        stage.setMinWidth(800);
+        stage.setMinHeight(550);
 
         stage.show();
     }
