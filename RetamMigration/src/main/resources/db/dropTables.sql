@@ -1,3 +1,5 @@
+DROP TABLE project_staff;
+DROP TABLE staff_job_type;
 DROP TABLE population_participation;
 DROP TABLE population_participation_type;
 DROP TABLE project_population;

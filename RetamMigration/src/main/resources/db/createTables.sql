@@ -63,7 +63,9 @@ CREATE TABLE project (
     methodology TEXT,
     startingDate TEXT, -- Sqlite does not have date
     duration TEXT,
-    FOREIGN KEY(idRepresentative) REFERENCES representative(idRepresentative)
+    staffLivingInAmazon TEXT,
+    staffPartOfCommunity TEXT,
+    FOREIGN KEY(idRepresentative) REFERENCES representative(idRepresentative),
     FOREIGN KEY(idCountry) REFERENCES country(idCountry)
 );
 
@@ -165,4 +167,19 @@ CREATE TABLE population_participation (
     PRIMARY KEY (idProject, idPopulationParticipationType),
     FOREIGN KEY(idProject) REFERENCES project(idProject),
     FOREIGN KEY(idPopulationParticipationType) REFERENCES population_participation_type(idPopulationParticipationType)
+);
+
+CREATE TABLE staff_job_type (
+    idStaffJobType INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE project_staff (
+    idProject INTEGER NOT NULL,
+    idStaffJobType INTEGER NOT NULL,
+    isForeign BOOLEAN NOT NULL,
+    isVolunteer BOOLEAN NOT NULL,
+    PRIMARY KEY (idProject, idStaffJobType, isForeign, isVolunteer),
+    FOREIGN KEY(idProject) REFERENCES project(idProject),
+    FOREIGN KEY(idStaffJobType) REFERENCES staff_job_type(idStaffJobType)
 )
