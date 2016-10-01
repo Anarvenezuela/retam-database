@@ -59,7 +59,7 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
     }
 
     /**
-     * We are spliting the old 'objetivos' table into 8 different tables (3
+     * We are splitting the old 'objetivos' table into 8 different tables (3
      * different relations).
      */
     @Override

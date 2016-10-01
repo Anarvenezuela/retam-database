@@ -179,6 +179,7 @@ CREATE TABLE project_staff (
     idStaffJobType INTEGER NOT NULL,
     isForeign BOOLEAN NOT NULL,
     isVolunteer BOOLEAN NOT NULL,
+    quantity INTEGER NOT NULL,
     PRIMARY KEY (idProject, idStaffJobType, isForeign, isVolunteer),
     FOREIGN KEY(idProject) REFERENCES project(idProject),
     FOREIGN KEY(idStaffJobType) REFERENCES staff_job_type(idStaffJobType)

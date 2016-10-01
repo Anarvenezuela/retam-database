@@ -37,6 +37,7 @@ public class MigrationManager {
     public static String beneficiaryFile;
     public static String projectOrgPartFile;
     public static String objectiveFile;
+    public static String humanResourcesFile;
 
     private MigrationManager() {
     }
@@ -86,6 +87,9 @@ public class MigrationManager {
         migrator = new ObjectiveMigrator(objectiveFile);
         migrators.add(migrator);
 
+        migrator = new HumanResourcesMigrator(humanResourcesFile);
+        migrators.add(migrator);
+
         return migrators;
     }
 
@@ -122,5 +126,6 @@ public class MigrationManager {
         beneficiaryFile = PROP.getProperty("beneficiaryFile");
         projectOrgPartFile = PROP.getProperty("projectOrgPartFile");
         objectiveFile = PROP.getProperty("objectiveFile");
+        humanResourcesFile = PROP.getProperty("humanResourcesFile");
     }
 }
