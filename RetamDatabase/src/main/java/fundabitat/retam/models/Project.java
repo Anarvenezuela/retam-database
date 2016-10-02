@@ -81,6 +81,10 @@ public class Project implements Serializable {
     private String startingDate;
     @Column(name = "duration")
     private String duration;
+    @Column(name = "staffLivingInAmazon")
+    private String staffLivingInAmazon;
+    @Column(name = "staffPartOfCommunity")
+    private String staffPartOfCommunity;
 
     @JoinTable(name = "project_subDescriptor", joinColumns = {
         @JoinColumn(name = "idProject", referencedColumnName = "idProject")}, inverseJoinColumns = {
@@ -133,6 +137,9 @@ public class Project implements Serializable {
         @JoinColumn(name = "idPopulationParticipationType", referencedColumnName = "idPopulationParticipationType")})
     @ManyToMany
     private Collection<PopulationParticipationType> populationParticipationTypeCollection;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idProject")
+    private Collection<ProjectStaff> projectStaffCollection;
 
     public Project() {
     }
@@ -316,6 +323,30 @@ public class Project implements Serializable {
 
     public void setParticipationCollection(Collection<Participation> participationCollection) {
         this.participationCollection = participationCollection;
+    }
+
+    public String getStaffLivingInAmazon() {
+        return staffLivingInAmazon;
+    }
+
+    public void setStaffLivingInAmazon(String staffLivingInAmazon) {
+        this.staffLivingInAmazon = staffLivingInAmazon;
+    }
+
+    public String getStaffPartOfCommunity() {
+        return staffPartOfCommunity;
+    }
+
+    public void setStaffPartOfCommunity(String staffPartOfCommunity) {
+        this.staffPartOfCommunity = staffPartOfCommunity;
+    }
+
+    public Collection<ProjectStaff> getProjectStaffCollection() {
+        return projectStaffCollection;
+    }
+
+    public void setProjectStaffCollection(Collection<ProjectStaff> projectStaffCollection) {
+        this.projectStaffCollection = projectStaffCollection;
     }
 
 }
