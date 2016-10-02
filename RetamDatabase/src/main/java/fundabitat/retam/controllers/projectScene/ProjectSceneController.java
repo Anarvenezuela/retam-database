@@ -47,6 +47,9 @@ public class ProjectSceneController implements Initializable {
     private FXMLLoader objectivesInfoLoader;
     private AnchorPane objectivesInfoPane;
 
+    private FXMLLoader humanResourcesInfoLoader;
+    private AnchorPane humanResourcesInfoPane;
+
     /**
      * Initializes the controller class.
      */
@@ -79,12 +82,16 @@ public class ProjectSceneController implements Initializable {
         objectivesInfoLoader = new FXMLLoader(getClass()
                 .getResource("/fxml/projectScene/ObjectivesInfo.fxml"));
 
+        humanResourcesInfoLoader = new FXMLLoader(getClass()
+                .getResource("/fxml/projectScene/HumanResourcesInfo.fxml"));
+
         List<FXMLLoader> loaders = new ArrayList();
         loaders.add(projectInfoLoader);
         loaders.add(orgsInfoLoader);
         loaders.add(benefInfoLoader);
         loaders.add(partInfoLoader);
         loaders.add(objectivesInfoLoader);
+        loaders.add(humanResourcesInfoLoader);
 
         try {
 
@@ -93,6 +100,7 @@ public class ProjectSceneController implements Initializable {
             benefInfoPane = (AnchorPane) benefInfoLoader.load();
             partInfoPane = (AnchorPane) partInfoLoader.load();
             objectivesInfoPane = (AnchorPane) objectivesInfoLoader.load();
+            humanResourcesInfoPane = (AnchorPane) humanResourcesInfoLoader.load();
 
             for (FXMLLoader loader : loaders) {
                 ProjectSceneInfoController ctrl = loader.getController();
@@ -127,6 +135,11 @@ public class ProjectSceneController implements Initializable {
     @FXML
     public void onActionObjectiveButton(ActionEvent event) {
         content.getChildren().setAll(objectivesInfoPane);
+    }
+
+    @FXML
+    public void onActionHumaResourcesButton(ActionEvent event) {
+        content.getChildren().setAll(humanResourcesInfoPane);
     }
 
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fundabitat.retam.controllers.projectScene.HumanResourcesInfoController">
+    <children>
+        <VBox layoutX="384.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <children>
+                <Label text="Personal que trabaja en el proyecto">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+                <GridPane fx:id="staffGridPane" gridLinesVisible="true" prefHeight="8.0" prefWidth="15.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+                <Label prefHeight="38.0" prefWidth="542.0" text="De las personas que trabjan en el proyecto, &#10;¿Cuántas residen en la Amazonia?" VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="amazonResidentsLabel" text="&lt;Amazon residents&gt;" />
+                <Label text="¿Cuántas personas son miembros de la comunidad beneficiada?">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="benefStaffLabel" text="&lt;staffBenef&gt;" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
