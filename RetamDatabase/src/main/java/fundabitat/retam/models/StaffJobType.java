@@ -49,6 +49,10 @@ public class StaffJobType implements Serializable {
     public StaffJobType() {
     }
 
+    public StaffJobType(String name) {
+        this.name = name;
+    }
+
     public Integer getIdStaffJobType() {
         return idStaffJobType;
     }

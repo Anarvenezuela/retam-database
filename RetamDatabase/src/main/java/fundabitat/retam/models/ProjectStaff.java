@@ -36,10 +36,13 @@ public class ProjectStaff implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "isForeign")
-    private int isForeign;
+    private boolean isForeign;
     @Basic(optional = false)
     @Column(name = "isVolunteer")
-    private int isVolunteer;
+    private boolean isVolunteer;
+    @Basic(optional = false)
+    @Column(name = "quantity")
+    private int quantity;
 
     @MapsId("idStaffJobType")
     @JoinColumn(name = "idStaffJobType", referencedColumnName = "idStaffJobType")
@@ -58,17 +61,18 @@ public class ProjectStaff implements Serializable {
         this.projectStaffPK = projectStaffPK;
     }
 
-    public ProjectStaff(int isForeign, int isVolunteer,
+    public ProjectStaff(boolean isForeign, boolean isVolunteer, int quantity,
             StaffJobType idStaffJobType, Project idProject) {
         this.isForeign = isForeign;
         this.isVolunteer = isVolunteer;
+        this.quantity = quantity;
         this.idStaffJobType = idStaffJobType;
         this.idProject = idProject;
         this.projectStaffPK = new ProjectStaffPK(idProject.getIdProject(),
                 idStaffJobType.getIdStaffJobType());
     }
 
-    public ProjectStaff(ProjectStaffPK projectStaffPK, int isForeign, int isVolunteer) {
+    public ProjectStaff(ProjectStaffPK projectStaffPK, boolean isForeign, boolean isVolunteer) {
         this.projectStaffPK = projectStaffPK;
         this.isForeign = isForeign;
         this.isVolunteer = isVolunteer;
@@ -82,19 +86,19 @@ public class ProjectStaff implements Serializable {
         this.projectStaffPK = projectStaffPK;
     }
 
-    public int getIsForeign() {
+    public boolean getIsForeign() {
         return isForeign;
     }
 
-    public void setIsForeign(int isForeign) {
+    public void setIsForeign(boolean isForeign) {
         this.isForeign = isForeign;
     }
 
-    public int getIsVolunteer() {
+    public boolean getIsVolunteer() {
         return isVolunteer;
     }
 
-    public void setIsVolunteer(int isVolunteer) {
+    public void setIsVolunteer(boolean isVolunteer) {
         this.isVolunteer = isVolunteer;
     }
 
@@ -112,6 +116,14 @@ public class ProjectStaff implements Serializable {
 
     public void setIdProject(Project idProject) {
         this.idProject = idProject;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override

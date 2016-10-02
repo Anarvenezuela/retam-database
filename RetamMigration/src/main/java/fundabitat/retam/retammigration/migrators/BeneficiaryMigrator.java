@@ -32,7 +32,8 @@ public class BeneficiaryMigrator extends AbstractMigrator<Beneficiarios> {
 
     }
 
-    private void associateWithProjects(List<Beneficiarios> elements, List<Beneficiary> savedBenef) {
+    private void associateWithProjects(List<Beneficiarios> elements,
+            List<Beneficiary> savedBenef) {
 
         Query findProjects = em.createNamedQuery("Project.findAll");
         List<Project> projects = findProjects.getResultList();
