@@ -35,9 +35,12 @@ public class ProjectStaff implements Serializable {
     protected ProjectStaffPK projectStaffPK;
 
     @Basic(optional = false)
+    @MapsId("isForeign")
     @Column(name = "isForeign")
     private boolean isForeign;
+
     @Basic(optional = false)
+    @MapsId("isVolunteer")
     @Column(name = "isVolunteer")
     private boolean isVolunteer;
     @Basic(optional = false)

@@ -23,6 +23,12 @@ public class ProjectStaffPK implements Serializable {
     @Column(name = "idStaffJobType")
     private Integer idStaffJobType;
 
+    @Column(name = "isForeign")
+    private Integer isForeign;
+
+    @Column(name = "isVolunteer")
+    private Integer isVolunteer;
+
     public ProjectStaffPK() {
     }
 
@@ -45,6 +51,22 @@ public class ProjectStaffPK implements Serializable {
 
     public void setIdStaffJobType(Integer idStaffJobType) {
         this.idStaffJobType = idStaffJobType;
+    }
+
+    public Integer getIsForeign() {
+        return isForeign;
+    }
+
+    public void setIsForeign(Integer isForeign) {
+        this.isForeign = isForeign;
+    }
+
+    public Integer getIsVolunteer() {
+        return isVolunteer;
+    }
+
+    public void setIsVolunteer(Integer isVolunteer) {
+        this.isVolunteer = isVolunteer;
     }
 
     @Override

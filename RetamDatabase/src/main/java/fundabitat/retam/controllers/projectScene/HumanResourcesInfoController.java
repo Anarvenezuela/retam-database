@@ -7,9 +7,11 @@ package fundabitat.retam.controllers.projectScene;
 
 import fundabitat.retam.controllers.interfaces.ProjectSceneInfoController;
 import fundabitat.retam.models.Project;
+import fundabitat.retam.models.ProjectStaff;
 import fundabitat.retam.models.StaffJobType;
 import fundabitat.retam.persistence.PersistenceManager;
 import java.net.URL;
+import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -59,6 +61,7 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
 
         makeGridRows();
         makeGridColumns(jobTypes);
+        fillGrid(p, jobTypes);
 
     }
 
@@ -101,6 +104,59 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
         for (int i = 0; i < VOLUNTEER_LABELS.length * jobTypes.size(); ++i) {
             staffGridPane.add(new Label("   " + jobTypes.get(i % jobTypes.size()).getName()), i + 1, 1);
         }
+    }
+
+    private void fillGrid(Project p, List<StaffJobType> jobTypes) {
+        Collection<ProjectStaff> projectStaff = p.getProjectStaffCollection();
+
+        int foreignTotal = 0;
+        int nationalTotal = 0;
+        int[] notVolunteerTotal = new int[jobTypes.size()];
+        int[] volunteerTotal = new int[jobTypes.size()];
+
+        for (ProjectStaff ps : projectStaff) {
+
+            int index = jobTypes.indexOf(ps.getIdStaffJobType());
+
+            if (ps.getIsForeign()) {
+
+                foreignTotal += ps.getQuantity();
+
+                if (ps.getIsVolunteer()) {
+                    volunteerTotal[index] += ps.getQuantity();
+                    staffGridPane.add(new Label("   " + ps.getQuantity()), jobTypes.size() + index + 1, 3);
+                } else {
+                    notVolunteerTotal[index] += ps.getQuantity();
+                    staffGridPane.add(new Label("   " + ps.getQuantity()), index + 1, 3);
+                }
+
+            } else {
+                nationalTotal += ps.getQuantity();
+
+                if (ps.getIsVolunteer()) {
+                    volunteerTotal[index] += ps.getQuantity();
+                    staffGridPane.add(new Label("   " + ps.getQuantity()), jobTypes.size() + index + 1, 2);
+                } else {
+                    notVolunteerTotal[index] += ps.getQuantity();
+                    staffGridPane.add(new Label("   " + ps.getQuantity()), index + 1, 2);
+                }
+            }
+        }
+
+        for (int i = 0; i < notVolunteerTotal.length; ++i) {
+            staffGridPane.add(new Label("   " + notVolunteerTotal[i]), i + 1, 4);
+        }
+
+        for (int i = 0; i < volunteerTotal.length; ++i) {
+            staffGridPane.add(new Label("   " + volunteerTotal[i]),
+                    i + 1 + notVolunteerTotal.length, 4);
+        }
+
+        staffGridPane.add(new Label("   " + nationalTotal),
+                jobTypes.size() * 2 + 1, 2);
+
+        staffGridPane.add(new Label("   " + foreignTotal),
+                jobTypes.size() * 2 + 1, 3);
     }
 
 }
