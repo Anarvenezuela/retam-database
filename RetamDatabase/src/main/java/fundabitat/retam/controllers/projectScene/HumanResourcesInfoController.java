@@ -69,6 +69,11 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
         Query findAllJobtypes = eManager.createNamedQuery("StaffJobType.findAll");
         List<StaffJobType> jobTypes = findAllJobtypes.getResultList();
 
+        eManager.close();
+
+        TABLE_COLUMNS = FIRST_VOLUNTEER_COLUMN
+                + VOLUNTEER_LABELS.length * jobTypes.size() + 1;
+
         makeGridRows();
         makeGridColumns(jobTypes);
         fillGrid(p, jobTypes);
@@ -82,9 +87,11 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
                     i + FIRST_NATIONALITY_ROW);
         }
 
-        staffGridPane.add(new Label(FAKE_TAB + TOTAL_LABEL), 0,
-                FOREIGN_LABELS.length + FIRST_NATIONALITY_ROW);
+        addTotalRow();
+        setRowPercentageSize();
+    }
 
+    private void setRowPercentageSize() {
         int percentageRow = 100 / TABLE_ROWS;
 
         // The first row already had a constraint in the corresponding fxml
@@ -96,20 +103,21 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
         }
     }
 
+    private void addTotalRow() {
+        staffGridPane.add(new Label(FAKE_TAB + TOTAL_LABEL), 0,
+                FOREIGN_LABELS.length + FIRST_NATIONALITY_ROW);
+    }
+
     private void makeGridColumns(List<StaffJobType> jobTypes) {
 
-        for (int i = 0; i < VOLUNTEER_LABELS.length; ++i) {
-            staffGridPane.add(new Label(FAKE_TAB + VOLUNTEER_LABELS[i]),
-                    i * jobTypes.size() + FIRST_VOLUNTEER_COLUMN,
-                    VOLUNTEER_ROW, jobTypes.size(), 1);
-        }
+        makeVolunteerColumns(jobTypes);
+        addTotalColumn(jobTypes);
+        makeJobColumns(jobTypes);
+        setColumnPercetangeSize();
 
-        staffGridPane.add(new Label(FAKE_TAB + TOTAL_LABEL),
-                VOLUNTEER_LABELS.length * jobTypes.size() + FIRST_VOLUNTEER_COLUMN, 0);
+    }
 
-        TABLE_COLUMNS = FIRST_VOLUNTEER_COLUMN
-                + VOLUNTEER_LABELS.length * jobTypes.size() + 1;
-
+    private void setColumnPercetangeSize() {
         int percentageCol = 100 / (TABLE_COLUMNS);
 
         // The first column already had a constraint in the corresponding fxml
@@ -119,12 +127,27 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
             col.setPercentWidth(percentageCol);
             staffGridPane.getColumnConstraints().add(col);
         }
+    }
 
+    private void makeJobColumns(List<StaffJobType> jobTypes) {
         for (int i = 0; i < VOLUNTEER_LABELS.length * jobTypes.size(); ++i) {
             String jobName = jobTypes.get(i % jobTypes.size()).getName();
             staffGridPane.add(new Label(FAKE_TAB + jobName),
                     i + FIRST_VOLUNTEER_COLUMN, JOB_TYPE_ROW);
         }
+    }
+
+    private void makeVolunteerColumns(List<StaffJobType> jobTypes) {
+        for (int i = 0; i < VOLUNTEER_LABELS.length; ++i) {
+            staffGridPane.add(new Label(FAKE_TAB + VOLUNTEER_LABELS[i]),
+                    i * jobTypes.size() + FIRST_VOLUNTEER_COLUMN,
+                    VOLUNTEER_ROW, jobTypes.size(), 1);
+        }
+    }
+
+    private void addTotalColumn(List<StaffJobType> jobTypes) {
+        staffGridPane.add(new Label(FAKE_TAB + TOTAL_LABEL),
+                VOLUNTEER_LABELS.length * jobTypes.size() + FIRST_VOLUNTEER_COLUMN, 0);
     }
 
     private void fillGrid(Project p, List<StaffJobType> jobTypes) {
@@ -169,6 +192,11 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
                 }
             }
         }
+
+        fillTotals(notVolunteerTotal, volunteerTotal, nationalTotal, foreignTotal);
+    }
+
+    private void fillTotals(int[] notVolunteerTotal, int[] volunteerTotal, int nationalTotal, int foreignTotal) {
 
         for (int i = 0; i < notVolunteerTotal.length; ++i) {
             staffGridPane.add(new Label(FAKE_TAB + notVolunteerTotal[i]),
