@@ -33,6 +33,16 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
     private static final String[] FOREIGN_LABELS = {"Nacional", "Extranjero"};
     private static final String[] VOLUNTEER_LABELS = {"Remunerado", "Voluntario"};
     private static final String TOTAL_LABEL = "Total";
+    private static final String FAKE_TAB = "   ";
+
+    private static final int FIRST_NATIONALITY_ROW = 2;
+    private static final int TABLE_ROWS = 5;
+    private static final int FIRST_VOLUNTEER_COLUMN = 1;
+    private static final int VOLUNTEER_ROW = 0;
+    private static int TABLE_COLUMNS;
+    private static final int JOB_TYPE_ROW = 1;
+    private static final int FOREING_ROW = 3;
+    private static final int NATIVE_ROW = 2;
 
     @FXML
     private GridPane staffGridPane;
@@ -67,17 +77,18 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
 
     private void makeGridRows() {
 
-        staffGridPane.add(new Label(""), 0, 1);
-
         for (int i = 0; i < FOREIGN_LABELS.length; ++i) {
-            staffGridPane.add(new Label("   " + FOREIGN_LABELS[i]), 0, i + 2);
+            staffGridPane.add(new Label(FAKE_TAB + FOREIGN_LABELS[i]), 0,
+                    i + FIRST_NATIONALITY_ROW);
         }
 
-        staffGridPane.add(new Label("   " + TOTAL_LABEL), 0, FOREIGN_LABELS.length + 2);
+        staffGridPane.add(new Label(FAKE_TAB + TOTAL_LABEL), 0,
+                FOREIGN_LABELS.length + FIRST_NATIONALITY_ROW);
 
-        int percentageRow = 100 / (3 + FOREIGN_LABELS.length);
+        int percentageRow = 100 / TABLE_ROWS;
 
-        for (int i = 0; i <= FOREIGN_LABELS.length + 1; ++i) {
+        // The first row already had a constraint in the corresponding fxml
+        for (int i = 0; i < TABLE_ROWS - 1; ++i) {
 
             RowConstraints row = new RowConstraints();
             row.setPercentHeight(percentageRow);
@@ -86,15 +97,23 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
     }
 
     private void makeGridColumns(List<StaffJobType> jobTypes) {
+
         for (int i = 0; i < VOLUNTEER_LABELS.length; ++i) {
-            staffGridPane.add(new Label("   " + VOLUNTEER_LABELS[i]), i * jobTypes.size() + 1, 0, jobTypes.size(), 1);
+            staffGridPane.add(new Label(FAKE_TAB + VOLUNTEER_LABELS[i]),
+                    i * jobTypes.size() + FIRST_VOLUNTEER_COLUMN,
+                    VOLUNTEER_ROW, jobTypes.size(), 1);
         }
 
-        staffGridPane.add(new Label("   " + TOTAL_LABEL), VOLUNTEER_LABELS.length * jobTypes.size() + 1, 0);
+        staffGridPane.add(new Label(FAKE_TAB + TOTAL_LABEL),
+                VOLUNTEER_LABELS.length * jobTypes.size() + FIRST_VOLUNTEER_COLUMN, 0);
 
-        int percentageCol = 100 / (2 + VOLUNTEER_LABELS.length * jobTypes.size());
+        TABLE_COLUMNS = FIRST_VOLUNTEER_COLUMN
+                + VOLUNTEER_LABELS.length * jobTypes.size() + 1;
 
-        for (int i = 0; i <= VOLUNTEER_LABELS.length * jobTypes.size(); ++i) {
+        int percentageCol = 100 / (TABLE_COLUMNS);
+
+        // The first column already had a constraint in the corresponding fxml
+        for (int i = 0; i < TABLE_COLUMNS - 1; ++i) {
 
             ColumnConstraints col = new ColumnConstraints();
             col.setPercentWidth(percentageCol);
@@ -102,7 +121,9 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
         }
 
         for (int i = 0; i < VOLUNTEER_LABELS.length * jobTypes.size(); ++i) {
-            staffGridPane.add(new Label("   " + jobTypes.get(i % jobTypes.size()).getName()), i + 1, 1);
+            String jobName = jobTypes.get(i % jobTypes.size()).getName();
+            staffGridPane.add(new Label(FAKE_TAB + jobName),
+                    i + FIRST_VOLUNTEER_COLUMN, JOB_TYPE_ROW);
         }
     }
 
@@ -124,10 +145,13 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
 
                 if (ps.getIsVolunteer()) {
                     volunteerTotal[index] += ps.getQuantity();
-                    staffGridPane.add(new Label("   " + ps.getQuantity()), jobTypes.size() + index + 1, 3);
+                    staffGridPane.add(new Label(FAKE_TAB + ps.getQuantity()),
+                            jobTypes.size() + index + FIRST_VOLUNTEER_COLUMN,
+                            FOREING_ROW);
                 } else {
                     notVolunteerTotal[index] += ps.getQuantity();
-                    staffGridPane.add(new Label("   " + ps.getQuantity()), index + 1, 3);
+                    staffGridPane.add(new Label(FAKE_TAB + ps.getQuantity()),
+                            index + FIRST_VOLUNTEER_COLUMN, FOREING_ROW);
                 }
 
             } else {
@@ -135,28 +159,33 @@ public class HumanResourcesInfoController implements Initializable, ProjectScene
 
                 if (ps.getIsVolunteer()) {
                     volunteerTotal[index] += ps.getQuantity();
-                    staffGridPane.add(new Label("   " + ps.getQuantity()), jobTypes.size() + index + 1, 2);
+                    staffGridPane.add(new Label(FAKE_TAB + ps.getQuantity()),
+                            jobTypes.size() + index + FIRST_VOLUNTEER_COLUMN,
+                            NATIVE_ROW);
                 } else {
                     notVolunteerTotal[index] += ps.getQuantity();
-                    staffGridPane.add(new Label("   " + ps.getQuantity()), index + 1, 2);
+                    staffGridPane.add(new Label(FAKE_TAB + ps.getQuantity()),
+                            index + FIRST_VOLUNTEER_COLUMN, NATIVE_ROW);
                 }
             }
         }
 
         for (int i = 0; i < notVolunteerTotal.length; ++i) {
-            staffGridPane.add(new Label("   " + notVolunteerTotal[i]), i + 1, 4);
+            staffGridPane.add(new Label(FAKE_TAB + notVolunteerTotal[i]),
+                    i + FIRST_VOLUNTEER_COLUMN, TABLE_ROWS - 1);
         }
 
         for (int i = 0; i < volunteerTotal.length; ++i) {
-            staffGridPane.add(new Label("   " + volunteerTotal[i]),
-                    i + 1 + notVolunteerTotal.length, 4);
+            staffGridPane.add(new Label(FAKE_TAB + volunteerTotal[i]),
+                    i + FIRST_VOLUNTEER_COLUMN + notVolunteerTotal.length,
+                    TABLE_ROWS - 1);
         }
 
-        staffGridPane.add(new Label("   " + nationalTotal),
-                jobTypes.size() * 2 + 1, 2);
+        staffGridPane.add(new Label(FAKE_TAB + nationalTotal), TABLE_COLUMNS - 1,
+                NATIVE_ROW);
 
-        staffGridPane.add(new Label("   " + foreignTotal),
-                jobTypes.size() * 2 + 1, 3);
+        staffGridPane.add(new Label(FAKE_TAB + foreignTotal), TABLE_COLUMNS - 1,
+                FOREING_ROW);
     }
 
 }
