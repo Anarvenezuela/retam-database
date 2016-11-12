@@ -72,7 +72,7 @@ public class ProjectStaff implements Serializable {
         this.idStaffJobType = idStaffJobType;
         this.idProject = idProject;
         this.projectStaffPK = new ProjectStaffPK(idProject.getIdProject(),
-                idStaffJobType.getIdStaffJobType());
+                idStaffJobType.getIdStaffJobType(), isForeign, isVolunteer);
     }
 
     public ProjectStaff(ProjectStaffPK projectStaffPK, boolean isForeign, boolean isVolunteer) {

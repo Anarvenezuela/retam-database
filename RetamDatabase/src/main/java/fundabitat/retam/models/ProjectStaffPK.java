@@ -24,17 +24,20 @@ public class ProjectStaffPK implements Serializable {
     private Integer idStaffJobType;
 
     @Column(name = "isForeign")
-    private Integer isForeign;
+    private boolean isForeign;
 
     @Column(name = "isVolunteer")
-    private Integer isVolunteer;
+    private boolean isVolunteer;
 
     public ProjectStaffPK() {
     }
 
-    public ProjectStaffPK(Integer idProject, Integer idStaffJobType) {
+    public ProjectStaffPK(Integer idProject, Integer idStaffJobType,
+            boolean isForeign, boolean isVolunteer) {
         this.idProject = idProject;
         this.idStaffJobType = idStaffJobType;
+        this.isForeign = isForeign;
+        this.isVolunteer = isVolunteer;
     }
 
     public Integer getIdProject() {
@@ -53,19 +56,19 @@ public class ProjectStaffPK implements Serializable {
         this.idStaffJobType = idStaffJobType;
     }
 
-    public Integer getIsForeign() {
+    public boolean getIsForeign() {
         return isForeign;
     }
 
-    public void setIsForeign(Integer isForeign) {
+    public void setIsForeign(boolean isForeign) {
         this.isForeign = isForeign;
     }
 
-    public Integer getIsVolunteer() {
+    public boolean getIsVolunteer() {
         return isVolunteer;
     }
 
-    public void setIsVolunteer(Integer isVolunteer) {
+    public void setIsVolunteer(boolean isVolunteer) {
         this.isVolunteer = isVolunteer;
     }
 
