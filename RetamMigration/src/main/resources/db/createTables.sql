@@ -183,4 +183,23 @@ CREATE TABLE project_staff (
     PRIMARY KEY (idProject, idStaffJobType, isForeign, isVolunteer),
     FOREIGN KEY(idProject) REFERENCES project(idProject),
     FOREIGN KEY(idStaffJobType) REFERENCES staff_job_type(idStaffJobType)
-)
+);
+
+CREATE TABLE exchange (
+    idProject INTEGER PRIMARY KEY,
+    projectName TEXT,
+    organization TEXT,
+    representative TEXT,
+    address TEXT,
+    city TEXT,
+    idCountry INTEGER,
+    phone TEXT,
+    fax TEXT,
+    email TEXT,
+    webpage TEXT,
+    exchangeType TEXT,
+    contactExists BOOLEAN NOT NULL,
+    noContactReason TEXT,
+    FOREIGN KEY(idProject) REFERENCES project(idProject),
+    FOREIGN KEY(idCountry) REFERENCES country(idCountry)
+);

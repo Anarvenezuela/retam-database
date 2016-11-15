@@ -1,3 +1,4 @@
+DELETE FROM exchange;
 DELETE FROM project_staff;
 DELETE FROM staff_job_type;
 DELETE FROM population_participation;

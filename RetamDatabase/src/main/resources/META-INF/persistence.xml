@@ -20,6 +20,7 @@
     <class>fundabitat.retam.models.ParticipationType</class>
     <class>fundabitat.retam.models.StaffJobType</class>
     <class>fundabitat.retam.models.ProjectStaff</class>
+    <class>fundabitat.retam.models.Exchange</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:/home/marcos/NetBeansProjects/retam-database/RetamMigration/src/main/resources/db/database.db"/>
       <property name="javax.persistence.jdbc.user" value=""/>

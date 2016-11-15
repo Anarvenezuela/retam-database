@@ -1,3 +1,4 @@
+DROP TABLE exchange;
 DROP TABLE project_staff;
 DROP TABLE staff_job_type;
 DROP TABLE population_participation;
