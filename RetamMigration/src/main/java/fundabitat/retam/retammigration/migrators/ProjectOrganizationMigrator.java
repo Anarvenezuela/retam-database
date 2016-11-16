@@ -33,7 +33,7 @@ public class ProjectOrganizationMigrator extends AbstractMigrator<ProyectoInstit
         for (ProyectoInstitucion po : elements) {
 
             Organization org = getOrgByCode(orgs, po.getCod_InstitucionEjecutora());
-            Project project = getProjectByCode(projects, po.getCod_Proyecto());
+            Project project = getProjectByCode(projects, po.getCod_Proyecto().trim().toUpperCase());
 
             project.getOrganizationCollection().add(org);
             em.persist(project);
@@ -48,12 +48,6 @@ public class ProjectOrganizationMigrator extends AbstractMigrator<ProyectoInstit
 
     private Organization getOrgByCode(List<Organization> list, int code) {
         return list.stream().filter(o -> o.getCode() == code)
-                .findFirst().get();
-    }
-
-    private Project getProjectByCode(List<Project> list, String code) {
-        return list.stream().filter(o -> o.getCode()
-                .equals(code.trim().toUpperCase()))
                 .findFirst().get();
     }
 

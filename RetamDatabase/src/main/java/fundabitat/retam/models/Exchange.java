@@ -63,7 +63,7 @@ public class Exchange implements Serializable {
     private String exchangeType;
     @Basic(optional = false)
     @Column(name = "contactExists")
-    private int contactExists;
+    private boolean contactExists;
     @Column(name = "noContactReason")
     private String noContactReason;
 
@@ -162,11 +162,11 @@ public class Exchange implements Serializable {
         this.exchangeType = exchangeType;
     }
 
-    public int getContactExists() {
+    public boolean getContactExists() {
         return contactExists;
     }
 
-    public void setContactExists(int contactExists) {
+    public void setContactExists(boolean contactExists) {
         this.contactExists = contactExists;
     }
 

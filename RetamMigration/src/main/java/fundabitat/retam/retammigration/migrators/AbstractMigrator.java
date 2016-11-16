@@ -9,6 +9,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 import fundabitat.retam.models.Country;
+import fundabitat.retam.models.Project;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
@@ -75,6 +76,9 @@ public abstract class AbstractMigrator<E> {
 
     public abstract void run() throws FileNotFoundException;
 
+    /**
+     * Gets the longest string form an array of strings.
+     */
     protected String getLongest(String... strs) {
         String current = strs[0];
         current = (current == null ? "" : current.trim());
@@ -108,6 +112,16 @@ public abstract class AbstractMigrator<E> {
      */
     protected Country getNotAvailableCountry(List<Country> countries) {
         return getCountryByName(countries, NOT_AVAILABLE);
+    }
+
+    /**
+     * Gets a country from the list of countries.
+     */
+    protected Project getProjectByCode(List<Project> projects, String code) {
+
+        return projects.stream().
+                filter(c -> c.getCode().equals(code)).
+                findFirst().get();
     }
 
 }

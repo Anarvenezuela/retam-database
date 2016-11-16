@@ -37,7 +37,7 @@ public class DescriptorMigrator extends AbstractMigrator<Descriptores> {
 
         for (Descriptores d : elements) {
 
-            Project p = getProjectByCode(projects, d.getCod_Proyecto());
+            Project p = getProjectByCode(projects, d.getCod_Proyecto().toUpperCase());
 
             addConstructionDescriptors(d, p, descriptors, subdescriptors);
             addBasicSanitationDescriptors(d, p, descriptors, subdescriptors);
@@ -200,11 +200,6 @@ public class DescriptorMigrator extends AbstractMigrator<Descriptores> {
     private SubDescriptor getSubDescriptorByName(List<SubDescriptor> descriptors,
             String name) {
         return descriptors.stream().filter(d -> d.getName().equals(name))
-                .findFirst().get();
-    }
-
-    private Project getProjectByCode(List<Project> projects, String code) {
-        return projects.stream().filter(p -> p.getCode().equals(code.toUpperCase()))
                 .findFirst().get();
     }
 

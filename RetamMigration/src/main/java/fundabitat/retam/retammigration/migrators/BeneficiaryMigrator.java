@@ -41,9 +41,7 @@ public class BeneficiaryMigrator extends AbstractMigrator<Beneficiarios> {
         for (Beneficiarios b : elements) {
 
             String projectCode = b.getCod_Proyecto();
-            Project project = projects.stream().
-                    filter(p -> p.getCode().equals(projectCode)).
-                    findFirst().get();
+            Project project = getProjectByCode(projects, projectCode);
 
             String benefCode = b.getCod_Beneficiario();
             Beneficiary benef = savedBenef.stream().

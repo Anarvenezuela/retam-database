@@ -381,10 +381,4 @@ public class ObjectiveMigrator extends AbstractMigrator<Objetivos> {
         return s;
     }
 
-    private Project getProjectByCode(List<Project> projects, String projectCode) {
-        return projects.stream().
-                filter(p -> p.getCode().equals(projectCode)).
-                findFirst().get();
-    }
-
 }

@@ -103,10 +103,7 @@ public class HumanResourcesMigrator extends AbstractMigrator<RecursosHumanos> {
 
     private Project getProject(RecursosHumanos rh, List<Project> projects) {
         String projectCode = rh.getCodigo();
-        Project project = projects.stream().
-                filter(p -> p.getCode().equals(projectCode)).
-                findFirst().get();
-        return project;
+        return getProjectByCode(projects, projectCode);
     }
 
     private List<StaffJobType> seedJobTypes() {

@@ -49,7 +49,7 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
             List<Country> countries, List<ParticipationType> participations) {
 
         for (OtrasParticipantes o : elements) {
-            Project project = getProject(projects, o.getCodigo());
+            Project project = getProjectByCode(projects, o.getCodigo());
             Organization org;
 
             // Check if org exists
@@ -82,11 +82,6 @@ public class ProjectOrgPartMigrator extends AbstractMigrator<OtrasParticipantes>
     public void run() throws FileNotFoundException {
         List<OtrasParticipantes> list = read(OtrasParticipantes.class);
         write(list);
-    }
-
-    private Project getProject(List<Project> projects, String code) {
-        return projects.stream().filter(p -> p.getCode().equals(code))
-                .findFirst().get();
     }
 
     private Organization getOrg(List<Organization> projects, int code) {
