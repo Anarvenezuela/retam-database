@@ -52,7 +52,19 @@ public class ExchangeMigrator extends AbstractMigrator<Intercambio> {
             e.setNoContactReason(i.getTextoNoContacto());
 
             Project project = getProjectByCode(projects, i.getCodigo());
-            e.setIdProject(project.getIdProject());
+            e.setIdProject(project);
+
+            Country country;
+            String countryName = i.getPais();
+
+            if (isNullOrEmpty(countryName)) {
+                country = getNotAvailableCountry(countries);
+            } else {
+                System.out.println(countryName);
+                country = getCountryByName(countries, countryName);
+            }
+
+            e.setIdCountry(country);
 
             em.persist(e);
         }

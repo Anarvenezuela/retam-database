@@ -141,6 +141,9 @@ public class Project implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idProject")
     private Collection<ProjectStaff> projectStaffCollection;
 
+    @OneToMany(mappedBy = "idProject")
+    private Collection<Exchange> exchangeCollection;
+
     public Project() {
     }
 
@@ -347,6 +350,14 @@ public class Project implements Serializable {
 
     public void setProjectStaffCollection(Collection<ProjectStaff> projectStaffCollection) {
         this.projectStaffCollection = projectStaffCollection;
+    }
+
+    public Collection<Exchange> getExchangeCollection() {
+        return exchangeCollection;
+    }
+
+    public void setExchangeCollection(Collection<Exchange> exchangeCollection) {
+        this.exchangeCollection = exchangeCollection;
     }
 
 }

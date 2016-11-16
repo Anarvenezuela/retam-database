@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -40,7 +42,9 @@ public class Exchange implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private Integer idProject;
+    @JoinColumn(name = "idProject", referencedColumnName = "idProject")
+    @ManyToOne
+    private Project idProject;
     @Column(name = "projectName")
     private String projectName;
     @Column(name = "organization")
@@ -61,24 +65,27 @@ public class Exchange implements Serializable {
     private String webpage;
     @Column(name = "exchangeType")
     private String exchangeType;
+    @Column(name = "noContactReason")
+    private String noContactReason;
     @Basic(optional = false)
     @Column(name = "contactExists")
     private boolean contactExists;
-    @Column(name = "noContactReason")
-    private String noContactReason;
+    @JoinColumn(name = "idCountry", referencedColumnName = "idCountry")
+    @ManyToOne
+    private Country idCountry;
 
     public Exchange() {
     }
 
-    public Exchange(Integer idProject) {
+    public Exchange(Project idProject) {
         this.idProject = idProject;
     }
 
-    public Integer getIdProject() {
+    public Project getIdProject() {
         return idProject;
     }
 
-    public void setIdProject(Integer idProject) {
+    public void setIdProject(Project idProject) {
         this.idProject = idProject;
     }
 
@@ -162,6 +169,14 @@ public class Exchange implements Serializable {
         this.exchangeType = exchangeType;
     }
 
+    public String getNoContactReason() {
+        return noContactReason;
+    }
+
+    public void setNoContactReason(String noContactReason) {
+        this.noContactReason = noContactReason;
+    }
+
     public boolean getContactExists() {
         return contactExists;
     }
@@ -170,12 +185,12 @@ public class Exchange implements Serializable {
         this.contactExists = contactExists;
     }
 
-    public String getNoContactReason() {
-        return noContactReason;
+    public Country getIdCountry() {
+        return idCountry;
     }
 
-    public void setNoContactReason(String noContactReason) {
-        this.noContactReason = noContactReason;
+    public void setIdCountry(Country idCountry) {
+        this.idCountry = idCountry;
     }
 
     @Override

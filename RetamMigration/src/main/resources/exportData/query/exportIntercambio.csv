@@ -3,12 +3,12 @@ IdIntercambio|TipoIntercambio|Proyecto|Institucion|Direccion|Ciudad|Pais|Telefon
 156|||||||||||PE041IIP01T01||False|
 157||Saneamiento Básico, Enegías Alternativas, Vivienda|CEPIS_CENTRO PANAMERICANO  DE INGENIERIA SANITARIA Y CIENCIAS DEL AMBIENTE ||Lima |Perú|||||PE003IIP03T01||True|
 171|||||||||||EC251IIP01T01||False|
-178|Tecnico-Cientifico|Abiente sano, Cocinas Saludables, Gestión Ambiental|CENTRO ECOLOGICO Y GENERO|AV. UNIÓN Nº 122 Urb. Santa Elena Chiclayo|Pacora|Peru|074-203922 |074-9775567|centroeco@centroeco-peru.org|www.centroeco-peru.org|PE246II-IIIP02T01|Ing. JOSE M. RETO TIMANA|True|
+178|Tecnico-Cientifico|Abiente sano, Cocinas Saludables, Gestión Ambiental|CENTRO ECOLOGICO Y GENERO|AV. UNIÓN Nº 122 Urb. Santa Elena Chiclayo|Pacora|Perú|074-203922 |074-9775567|centroeco@centroeco-peru.org|www.centroeco-peru.org|PE246II-IIIP02T01|Ing. JOSE M. RETO TIMANA|True|
 179||Saneamiento Básico, Energias Alternas, Descontaminación, Vivienda|CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|Los Pinos 251, Urb. Camacho La Molina, Lima 12|Lima|Perú|||cepis@paho.org|http://www.bvsde.ops-oms.org|PE003IIP09T00||False|
-183|Documental|Letrina Abonera seca familiar -LASF-|FUNDABITAT||Caracas|Venezuela|58-0212-5730593|58-0212-5730593|fundabitat@gmail.com|www.fundabitat.org.ve (en construcción)|BO146IIP00aT01|Ruby De valencia|True|
+183|Documental|Letrina Abonera seca familiar -LASF-|FUNDABITAT||Caracas|Venezuela|58-0212-5730593|58-0212-5730593|fundabitat@gmail.com|www.fundabitat.org.ve (en construcción)|BO146IIP00AT01|Ruby De valencia|True|
 187|Bibliográfico y experiencias con cursos.|Proyectos de agua Potable Barrio Kami Cochabamba, Km. 11 a QuillaCollo y Proyecto de Kainacas, Chuquisaca:Obra de Toma|||||||||BO148IIP01T00||False|
-197||salud pública y saneamiento ambiental básico|CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|Los Pinos 251, Urb. Camacho La Molina|LIMA|PERU|(51-1) 319 - 5700|(51-1) 437- 3603|cepis@paho.org|http://www.bvsde.ops-oms.org|PE003IIP11T00||True|
-198|TECNICO-CIENTIFICO|ENERGIAS RENOVABLES, AGROINDUSTRIAS, PREVENCION DE DESASTRES, VIVIENDA Y RECONSTRUCCION, ENTRE OTROS.|ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|Av Jorge Chávez 275 - Miraflores Lima 18 |LIMA|PERU|(511) 447-5127|(511) 446-6621|info @ itdg.org.pe|www.itdg.org.pe|PE009IIP04T00||True|
+197||salud pública y saneamiento ambiental básico|CEPIS_CENTRO PANAMERICANO DE INGENIERIA SANITARIAS Y CIENCIAS AMBIENTALES|Los Pinos 251, Urb. Camacho La Molina|LIMA|Perú|(51-1) 319 - 5700|(51-1) 437- 3603|cepis@paho.org|http://www.bvsde.ops-oms.org|PE003IIP11T00||True|
+198|TECNICO-CIENTIFICO|ENERGIAS RENOVABLES, AGROINDUSTRIAS, PREVENCION DE DESASTRES, VIVIENDA Y RECONSTRUCCION, ENTRE OTROS.|ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|Av Jorge Chávez 275 - Miraflores Lima 18 |LIMA|Perú|(511) 447-5127|(511) 446-6621|info @ itdg.org.pe|www.itdg.org.pe|PE009IIP04T00||True|
 199|||||||||||BR156IIP01T01||False|
 202|||||||||||BR158IIP01T01||False|
 213|Viviendas o casas de jatata||||||||||BO111IP01T00||False|
@@ -18,7 +18,7 @@ IdIntercambio|TipoIntercambio|Proyecto|Institucion|Direccion|Ciudad|Pais|Telefon
 222|||||||||||BO147IIP03T01||False|
 223|||||||||||BO113I-IIP01T00||False|
 224|||SEMTA|Calle Alfredo Ascarrunz 2675|La Paz|Bolivia|591-241.00.42|591-241.14.94|semta@entelnet.bo|www.semta.org|BO112IIP03T06|Ing Gumercindo Benavides|False|
-226||Saneamiento Basico Ambiental, Salud y Vivienda|UNESCO||||||||GU004IVP00dT00||True|
+226||Saneamiento Basico Ambiental, Salud y Vivienda|UNESCO||||||||GU004IVP00DT00||True|
 227|||||||||||EC313IIIP01T01||False|
 229|||||||||||EC314IIIP02T00||False|
 238|||||||||||EC310IIP01T01||False|
@@ -39,7 +39,6 @@ IdIntercambio|TipoIntercambio|Proyecto|Institucion|Direccion|Ciudad|Pais|Telefon
 346|||||||||||EC311IIIP01T00||False|
 348|||||||||||EC311IIIP03T00||False|
 349|||||||||||PE028IIP03T01||False|
-351||ITDG_INTERMEDIATE TECHNOLOGY DEVELOPMENT GROUP|||LIMA|PERU|||||PE040IIIP01T01||True|
 367|||||||||||CO015IIIP01T01||False|
 372|||||||||||CO031IIP01T01||False|
 373|Técnico-científico|Aguas Servidas,  Residuos Sólidos, Salud Ambiental|AIDIS- División Argentina, Chile, México, Perú|Ingeniero São Paulo, SP - BRASIL Tel.: (55-11) 3812-4080 - Fax: (55-11) 3814-2441 São Paulo, SP|São Paulo |Brasil|(55-11) 3812-4080 -| (55-11) 3814-2441| aidis@aidis.org.br |www.aidis.org.br|BR034II-IVP00T00|Ingeniero Isaac Zilberman|True|

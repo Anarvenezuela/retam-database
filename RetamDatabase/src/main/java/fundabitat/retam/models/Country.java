@@ -47,6 +47,8 @@ public class Country implements Serializable {
     private Collection<Organization> organizationCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCountry")
     private Collection<Project> projectCollection;
+    @OneToMany(mappedBy = "idCountry")
+    private Collection<Exchange> exchangeCollection;
 
     public Country() {
     }
@@ -85,6 +87,14 @@ public class Country implements Serializable {
 
     public void setProjectCollection(Collection<Project> projectCollection) {
         this.projectCollection = projectCollection;
+    }
+
+    public Collection<Exchange> getExchangeCollection() {
+        return exchangeCollection;
+    }
+
+    public void setExchangeCollection(Collection<Exchange> exchangeCollection) {
+        this.exchangeCollection = exchangeCollection;
     }
 
     @Override
