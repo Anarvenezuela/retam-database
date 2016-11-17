@@ -50,6 +50,9 @@ public class ProjectSceneController implements Initializable {
     private FXMLLoader humanResourcesInfoLoader;
     private AnchorPane humanResourcesInfoPane;
 
+    private FXMLLoader exchangeInfoLoader;
+    private AnchorPane exchangeInfoPane;
+
     /**
      * Initializes the controller class.
      */
@@ -85,6 +88,9 @@ public class ProjectSceneController implements Initializable {
         humanResourcesInfoLoader = new FXMLLoader(getClass()
                 .getResource("/fxml/projectScene/HumanResourcesInfo.fxml"));
 
+        exchangeInfoLoader = new FXMLLoader(getClass()
+                .getResource("/fxml/projectScene/ExchangeInfo.fxml"));
+
         List<FXMLLoader> loaders = new ArrayList();
         loaders.add(projectInfoLoader);
         loaders.add(orgsInfoLoader);
@@ -92,6 +98,7 @@ public class ProjectSceneController implements Initializable {
         loaders.add(partInfoLoader);
         loaders.add(objectivesInfoLoader);
         loaders.add(humanResourcesInfoLoader);
+        loaders.add(exchangeInfoLoader);
 
         try {
 
@@ -101,6 +108,7 @@ public class ProjectSceneController implements Initializable {
             partInfoPane = (AnchorPane) partInfoLoader.load();
             objectivesInfoPane = (AnchorPane) objectivesInfoLoader.load();
             humanResourcesInfoPane = (AnchorPane) humanResourcesInfoLoader.load();
+            exchangeInfoPane = (AnchorPane) exchangeInfoLoader.load();
 
             for (FXMLLoader loader : loaders) {
                 ProjectSceneInfoController ctrl = loader.getController();
@@ -140,6 +148,11 @@ public class ProjectSceneController implements Initializable {
     @FXML
     public void onActionHumaResourcesButton(ActionEvent event) {
         content.getChildren().setAll(humanResourcesInfoPane);
+    }
+
+    @FXML
+    public void onActionExchangeButton(ActionEvent event) {
+        content.getChildren().setAll(exchangeInfoPane);
     }
 
 }

@@ -60,7 +60,6 @@ public class ExchangeMigrator extends AbstractMigrator<Intercambio> {
             if (isNullOrEmpty(countryName)) {
                 country = getNotAvailableCountry(countries);
             } else {
-                System.out.println(countryName);
                 country = getCountryByName(countries, countryName);
             }
 
